@@ -266,3 +266,24 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
+
+
+/* ===== VIEW CRAFT TOGGLE ===== */
+function toggleCraft(btn) {
+  const card = btn.closest('.project-card');
+  const panel = card.querySelector('.craft-panel');
+  const isOpen = panel.classList.contains('open');
+
+  // Close all other open panels first
+  document.querySelectorAll('.craft-panel.open').forEach(p => {
+    p.classList.remove('open');
+    p.closest('.project-card').querySelector('.craft-toggle').setAttribute('aria-expanded', 'false');
+  });
+
+  if (!isOpen) {
+    panel.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    // Scroll card into view smoothly
+    setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+  }
+}
