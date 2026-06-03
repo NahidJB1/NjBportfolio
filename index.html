@@ -3,138 +3,414 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nahid Jahan Bhuiyan - Portfolio</title>
-    <meta name="description" content="Portfolio of Nahid Jahan Bhuiyan - Web Developer and IT Student.">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Nahid Jahan Bhuiyan | Full-Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for High-Tech Theme */
+        :root {
+            --bg-color: #050505;
+            --surface-color: #111;
+            --primary-color: #00ffcc; /* Neon Cyan */
+            --secondary-color: #0088ff;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a0a0;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        /* Base Reset & Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .tech-font {
+            font-family: 'Fira Code', monospace;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(5, 5, 5, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 5%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        /* Hero Section */
+        #home {
+            align-items: flex-start;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-desc {
+            max-width: 600px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 1px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            font-family: 'Fira Code', monospace;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background: rgba(0, 255, 204, 0.1);
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            background: var(--surface-color);
+            padding: 40px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* Projects Section */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--surface-color);
+            padding: 30px;
+            border-radius: 8px;
+            transition: var(--transition);
+            border: 1px solid #222;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .card:hover::before {
+            left: 0;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: #333;
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .contact-item {
+            background: var(--surface-color);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 250px;
+            border: 1px solid #222;
+        }
+
+        .contact-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .contact-item a, .contact-item p {
+            display: block;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #020202;
+            border-top: 1px solid #222;
+            color: var(--text-muted);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        /* Animations via JS classes */
+        .hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Can be replaced with a hamburger menu later */
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            section {
+                padding: 80px 5%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <nav class="navbar">
-        <div class="logo">NJB</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+
+    <nav>
+        <div class="logo">NJB.</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
-    <section id="home" class="hero section">
-        <div class="hero-content">
-            <h2 class="subtitle">Hello, I'm</h2>
-            <h1 class="title">Nahid Jahan <span>Bhuiyan</span></h1>
-            <p class="description">IT Student & Full Stack Web Developer</p>
-            <a href="#projects" class="btn primary-btn">View My Work</a>
-        </div>
-        <div class="hero-image">
-            <div class="image-container">
-                <img src="profile.jpg" alt="Nahid Jahan Bhuiyan">
+    <section id="home" class="hidden">
+        <p class="hero-subtitle tech-font">> System.out.println("Hello World");</p>
+        <h1 class="hero-title">I'm Nahid Jahan<br>Bhuiyan.</h1>
+        <p class="hero-desc">I design and build high-performance, full-stack web applications. From e-commerce platforms to championship-winning hackathon projects, I turn complex problems into elegant digital solutions.</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title hidden">About Me</h2>
+        <div class="about-content hidden">
+            <div class="about-text">
+                <p>Born and raised in <strong>Bangladesh</strong>, my journey in technology began with a strong foundation in Science during my SSC and HSC.</p>
+                <p>I am currently pursuing my <strong>Bachelor's degree in Information Technology at City University, Malaysia</strong>. My passion lies in full-stack development, where I bridge the gap between seamless user interfaces and robust backend architectures.</p>
+                <p>I thrive in competitive environments and take pride in delivering end-to-end solutions, from the initial design phase to continuous maintenance.</p>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about section">
-        <h2 class="section-title">About <span>Me</span></h2>
-        <div class="about-container">
-            <div class="about-text glass-card">
-                <p>I was born in Bangladesh, where I completed my SSC and HSC in the Science track. My passion for technology led me to pursue my Bachelor's degree in Information Technology at City University Malaysia.</p>
-                <p>I specialize in full-stack web development, creating high-performance, dynamic, and visually stunning websites and applications. From designing user interfaces to building robust backend systems, I strive for excellence in every project.</p>
+    <section id="projects">
+        <h2 class="section-title hidden">Featured Projects</h2>
+        <div class="grid">
+            <div class="card hidden">
+                <h3>YS Study Focus</h3>
+                <p>The very first website I developed. A full-stack and design project for a Malaysian-based agency. I am still actively maintaining this platform.</p>
+                <a href="https://ysstudyfocus.com" target="_blank" class="tech-font">ysstudyfocus.com ↗</a>
             </div>
-            <div class="about-stats">
-                <div class="stat glass-card">
-                    <h3>2+</h3>
-                    <p>Years Experience</p>
-                </div>
-                <div class="stat glass-card">
-                    <h3>6+</h3>
-                    <p>Major Projects</p>
-                </div>
+
+            <div class="card hidden">
+                <h3>One Step MY</h3>
+                <p>A comprehensive platform for an agency operating across ~12 countries. Handled complete UI/UX design and full-stack development. Currently under my maintenance.</p>
+                <a href="https://onestepmy.com" target="_blank" class="tech-font">onestepmy.com ↗</a>
+            </div>
+
+            <div class="card hidden">
+                <h3>Medelife</h3>
+                <p>My final year project that gained significant recognition. I was proudly shortlisted by the prestigious <strong>Hult Prize</strong> competition for this innovation.</p>
+                <a href="https://medelife.onestepmy.com" target="_blank" class="tech-font">medelife.onestepmy.com ↗</a>
+            </div>
+
+            <div class="card hidden">
+                <h3>IELTS Mok</h3>
+                <p>A specialized platform developed to help users prepare for the IELTS exam. Features include free practice modules and a community system to find speaking partners.</p>
+                <a href="https://ieltsmok.onestepmy.com" target="_blank" class="tech-font">ieltsmok.onestepmy.com ↗</a>
+            </div>
+
+            <div class="card hidden">
+                <h3>Fact Shield</h3>
+                <p>A highly successful hackathon project. We built this platform for the CityU Hackathon 0.1 and ultimately won the <strong>Championship</strong>.</p>
+                <a href="https://Factsheild.com" target="_blank" class="tech-font">Factsheild.com ↗</a>
+            </div>
+
+            <div class="card hidden">
+                <h3>Percentage MY</h3>
+                <p>A modern online clothing store. Designed the aesthetic, built the full-stack architecture, and currently handling its ongoing maintenance.</p>
+                <a href="https://percentage.my" target="_blank" class="tech-font">percentage.my ↗</a>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="projects section">
-        <h2 class="section-title">My <span>Projects</span></h2>
-        <div class="project-grid">
-            <div class="project-card glass-card">
-                <h3>ysstudyfocus.com</h3>
-                <p>An agency website based in Malaysia. My very first development project featuring full-stack development and design. Currently maintaining.</p>
-                <a href="https://ysstudyfocus.com" target="_blank" class="project-link">Visit Site <i class="fas fa-external-link-alt"></i></a>
+    <section id="contact">
+        <h2 class="section-title hidden">Get In Touch</h2>
+        <div class="contact-container hidden">
+            
+            <div class="contact-item">
+                <h4><span class="tech-font">@</span> Email</h4>
+                <a href="mailto:njb@nahidjahanbhuiyan.com">njb@nahidjahanbhuiyan.com</a>
+                <a href="mailto:nahidjahanb1@gmail.com">nahidjahanb1@gmail.com</a>
+                <a href="mailto:nahidjahan696@gmail.com">nahidjahan696@gmail.com</a>
             </div>
-            <div class="project-card glass-card">
-                <h3>onestepmy.com</h3>
-                <p>An agency operating in around 12 countries. Full-stack development, UI/UX design, and ongoing maintenance.</p>
-                <a href="https://onestepmy.com" target="_blank" class="project-link">Visit Site <i class="fas fa-external-link-alt"></i></a>
-            </div>
-            <div class="project-card glass-card">
-                <h3>medelife.onestepmy.com</h3>
-                <p>My final year project. Recognized and shortlisted by Hult Prize during the competition.</p>
-                <a href="https://medelife.onestepmy.com" target="_blank" class="project-link">Visit Site <i class="fas fa-external-link-alt"></i></a>
-            </div>
-            <div class="project-card glass-card">
-                <h3>ieltsmok.onestepmy.com</h3>
-                <p>A platform for IELTS preparation, allowing users to practice modules for free and find speaking partners.</p>
-                <a href="https://ieltsmok.onestepmy.com" target="_blank" class="project-link">Visit Site <i class="fas fa-external-link-alt"></i></a>
-            </div>
-            <div class="project-card glass-card">
-                <h3>Factsheild.com</h3>
-                <p>A collaborative project created for the CityU Hackathon v1.0 which won the championship.</p>
-                <a href="https://Factsheild.com" target="_blank" class="project-link">Visit Site <i class="fas fa-external-link-alt"></i></a>
-            </div>
-            <div class="project-card glass-card">
-                <h3>percentage.my</h3>
-                <p>An online clothing store where I handled full-stack development, design, and currently perform maintenance.</p>
-                <a href="https://percentage.my" target="_blank" class="project-link">Visit Site <i class="fas fa-external-link-alt"></i></a>
-            </div>
-        </div>
-    </section>
 
-    <section id="contact" class="contact section">
-        <h2 class="section-title">Get In <span>Touch</span></h2>
-        <div class="contact-container">
-            <div class="contact-info glass-card">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email</h4>
-                        <p><a href="mailto:njb@nahidjahanbhuiyan.com">njb@nahidjahanbhuiyan.com</a></p>
-                        <p><a href="mailto:nahidjahanb1@gmail.com">nahidjahanb1@gmail.com</a></p>
-                        <p><a href="mailto:nahidjahan696@gmail.com">nahidjahan696@gmail.com</a></p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <div>
-                        <h4>WhatsApp</h4>
-                        <p><a href="https://wa.me/601119359497" target="_blank">+60 111 9359497</a></p>
-                        <p><a href="https://wa.me/8801714640537" target="_blank">+880 1714640537</a></p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-share-alt"></i>
-                    <div>
-                        <h4>Social</h4>
-                        <p><a href="https://www.facebook.com/share/1E188Ktb8F/" target="_blank">Facebook</a></p>
-                        <p><a href="https://www.instagram.com/nahidjahanbhuiyan?igsh=azlmMGxjNm1rYWs=" target="_blank">Instagram</a></p>
-                    </div>
-                </div>
+            <div class="contact-item">
+                <h4><span class="tech-font">#</span> Social</h4>
+                <a href="https://www.facebook.com/share/1E188Ktb8F/" target="_blank">Facebook Profile</a>
+                <a href="https://www.instagram.com/nahidjahanbhuiyan?igsh=azlmMGxjNm1rYWs=" target="_blank">Instagram Profile</a>
             </div>
+
+            <div class="contact-item">
+                <h4><span class="tech-font">+</span> WhatsApp</h4>
+                <p>Malaysia: +60 111 9359497</p>
+                <p>Bangladesh: +880 1714640537</p>
+            </div>
+
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Nahid Jahan Bhuiyan. All rights reserved.</p>
+        <p>Designed & Developed by Nahid Jahan Bhuiyan. <br>© 2026 All Rights Reserved.</p>
     </footer>
 
-    <!-- Particles.js for high tech background -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for scroll animations (fade in effect)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target); // Stop observing once it's visible
+                }
+            });
+        }, observerOptions);
+
+        // Select all elements with the 'hidden' class and observe them
+        document.querySelectorAll('.hidden').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
