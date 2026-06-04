@@ -4,6 +4,27 @@
 
 'use strict';
 
+/* ===== LOAD GLOBALS ===== */
+async function loadGlobals() {
+  try {
+    const [headerRes, footerRes] = await Promise.all([
+      fetch('/assets/header.html'),
+      fetch('/assets/footer.html')
+    ]);
+    const headerHtml = await headerRes.text();
+    const footerHtml = await footerRes.text();
+    
+    document.getElementById('header-placeholder').outerHTML = headerHtml;
+    document.getElementById('footer-placeholder').outerHTML = footerHtml;
+
+    // Initialize nav events AFTER injection
+    if(typeof initNav === 'function') initNav();
+  } catch (error) {
+    console.error('Error loading global components:', error);
+  }
+}
+loadGlobals();
+
 /* ===== LOADER ===== */
 (function initLoader() {
   const loader = document.getElementById('loader');
@@ -74,7 +95,7 @@
 })();
 
 /* ===== NAVIGATION ===== */
-(function initNav() {
+function initNav() {
   const nav = document.getElementById('nav');
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -110,7 +131,7 @@
       link.classList.toggle('active', link.getAttribute('href') === '#' + current);
     });
   }, { passive: true });
-})();
+}
 
 /* ===== HERO CANVAS — NETWORK NODES ===== */
 (function initCanvas() {
@@ -265,52 +286,4 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     const top = target.getBoundingClientRect().top + window.scrollY - 72;
     window.scrollTo({ top, behavior: 'smooth' });
   });
-});
-
-
-/* ===== FRAMER-STYLE MODAL LOGIC ===== */
-function openCraftModal(btn) {
-  const card = btn.closest('.project-card');
-  
-  // Extract the hidden inner HTML from the specific project card
-  const panelContent = card.querySelector('.craft-panel-inner').innerHTML;
-  
-  const modal = document.getElementById('craftModal');
-  const modalBody = document.getElementById('craftModalBody');
-  const backdrop = document.getElementById('craftModalBackdrop');
-  
-  // Inject the specific project's content into the central modal
-  modalBody.innerHTML = panelContent;
-  
-  // Activate the modal (triggers CSS transitions)
-  backdrop.classList.add('active');
-  modal.classList.add('active');
-  
-  // Lock the background scrolling
-  document.body.style.overflow = 'hidden';
-}
-
-function closeCraftModal() {
-  const modal = document.getElementById('craftModal');
-  const backdrop = document.getElementById('craftModalBackdrop');
-  const modalBody = document.getElementById('craftModalBody');
-  
-  // Deactivate the modal
-  backdrop.classList.remove('active');
-  modal.classList.remove('active');
-  
-  // Restore background scrolling
-  document.body.style.overflow = '';
-  
-  // Clear the iframe after the close transition finishes to stop playback/loading
-  setTimeout(() => {
-    modalBody.innerHTML = '';
-  }, 500); // Matches the CSS transition duration
-}
-
-// Close modal when pressing the Escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && document.getElementById('craftModal').classList.contains('active')) {
-    closeCraftModal();
-  }
 });
