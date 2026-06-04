@@ -287,3 +287,22 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
+
+
+/* ===== CRAFT PAGE LOGIC ===== */
+(function initCraftPages() {
+  // Fix navigation links for subpages
+  const isCraftPage = window.location.pathname.includes('/projects/');
+  if (!isCraftPage) return;
+
+  // Wait for the header to be injected by loadGlobals()
+  setTimeout(() => {
+    document.querySelectorAll('.nav-link, .mobile-link').forEach(link => {
+      const href = link.getAttribute('href');
+      // If the link is just a hash (e.g. "#community"), force it to absolute index path
+      if (href && href.startsWith('#')) {
+        link.setAttribute('href', '/' + href);
+      }
+    });
+  }, 500); // Small delay ensures DOM is populated
+})();
