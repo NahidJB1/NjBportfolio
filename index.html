@@ -1,36 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /
-<title>Nahid Jahan Bhuiyan | Web Developer</title>
-<meta name="description" content="Portfolio of Nahid Jahan Bhuiyan, a web developer based in Malaysia.">
-<meta name="keywords" content="Nahid, Nahid Jahan, Nahid Jahan Bhuiyan, Web Developer, Malaysia, City University, Make Website, Information Technology">
-  <meta name="google-site-verification" content="1YBWNbDlYxGwW_bt0hVmHajjVFk5oR_XEjI7AOl0ntQ" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NJB — Nahid Jahan Bhuiyan</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/animations.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet" />
-
-  <!-- Search Engine & Browser Tab Icon (Favicon) -->
-<link rel="icon" type="image/png" href="assets/photo/njblogo.png" sizes="512x512">
-<link rel="apple-touch-icon" href="assets/photo/njblogo.png">
-
-<!-- Social Media & Link Preview Image (Open Graph) -->
-<meta property="og:image" content="https://nahidjahanbhuiyan.com/assets/photo/njblogo.png">
-<meta property="og:image:width" content="512">
-<meta property="og:image:height" content="512">
-
-<!-- Google Structured Data (Tells Google this is YOUR official image) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Nahid Jahan Bhuiyan",
-  "url": "https://nahidjahanbhuiyan.com",
-  "image": "https://nahidjahanbhuiyan.com/assets/photo/njblogo.png"
-}
-</script>
 </head>
 <body>
 
@@ -190,7 +167,7 @@
         <span>Visit Site</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <button class="craft-toggle" onclick="toggleCraft(this)" aria-expanded="false">
+      <button class="craft-toggle" onclick="openCraftModal(this)" aria-expanded="false">
         <span>View Craft</span>
         <svg class="craft-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -223,7 +200,7 @@
         <span>Visit Site</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <button class="craft-toggle" onclick="toggleCraft(this)" aria-expanded="false">
+      <button class="craft-toggle" onclick="openCraftModal(this)" aria-expanded="false">
         <span>View Craft</span>
         <svg class="craft-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -256,7 +233,7 @@
         <span>Visit Site</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <button class="craft-toggle" onclick="toggleCraft(this)" aria-expanded="false">
+      <button class="craft-toggle" onclick="openCraftModal(this)" aria-expanded="false">
         <span>View Craft</span>
         <svg class="craft-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -289,7 +266,7 @@
         <span>Visit Site</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <button class="craft-toggle" onclick="toggleCraft(this)" aria-expanded="false">
+      <button class="craft-toggle" onclick="openCraftModal(this)" aria-expanded="false">
         <span>View Craft</span>
         <svg class="craft-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -322,7 +299,7 @@
         <span>Visit Site</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <button class="craft-toggle" onclick="toggleCraft(this)" aria-expanded="false">
+      <button class="craft-toggle" onclick="openCraftModal(this)" aria-expanded="false">
         <span>View Craft</span>
         <svg class="craft-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -355,7 +332,7 @@
         <span>Visit Site</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <button class="craft-toggle" onclick="toggleCraft(this)" aria-expanded="false">
+      <button class="craft-toggle" onclick="openCraftModal(this)" aria-expanded="false">
         <span>View Craft</span>
         <svg class="craft-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -478,6 +455,15 @@
       </div>
     </div>
   </footer>
+
+  <div class="craft-modal-backdrop" id="craftModalBackdrop" onclick="closeCraftModal()"></div>
+  <div class="craft-modal" id="craftModal">
+    <button class="craft-modal-close" onclick="closeCraftModal()" aria-label="Close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="craft-modal-body" id="craftModalBody">
+      </div>
+  </div>
 
   <script src="assets/js/main.js"></script>
 </body>
