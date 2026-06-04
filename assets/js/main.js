@@ -268,22 +268,49 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 
-/* ===== VIEW CRAFT TOGGLE ===== */
-function toggleCraft(btn) {
+/* ===== FRAMER-STYLE MODAL LOGIC ===== */
+function openCraftModal(btn) {
   const card = btn.closest('.project-card');
-  const panel = card.querySelector('.craft-panel');
-  const isOpen = panel.classList.contains('open');
-
-  // Close all other open panels first
-  document.querySelectorAll('.craft-panel.open').forEach(p => {
-    p.classList.remove('open');
-    p.closest('.project-card').querySelector('.craft-toggle').setAttribute('aria-expanded', 'false');
-  });
-
-  if (!isOpen) {
-    panel.classList.add('open');
-    btn.setAttribute('aria-expanded', 'true');
-    // Scroll card into view smoothly
-    setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
-  }
+  
+  // Extract the hidden inner HTML from the specific project card
+  const panelContent = card.querySelector('.craft-panel-inner').innerHTML;
+  
+  const modal = document.getElementById('craftModal');
+  const modalBody = document.getElementById('craftModalBody');
+  const backdrop = document.getElementById('craftModalBackdrop');
+  
+  // Inject the specific project's content into the central modal
+  modalBody.innerHTML = panelContent;
+  
+  // Activate the modal (triggers CSS transitions)
+  backdrop.classList.add('active');
+  modal.classList.add('active');
+  
+  // Lock the background scrolling
+  document.body.style.overflow = 'hidden';
 }
+
+function closeCraftModal() {
+  const modal = document.getElementById('craftModal');
+  const backdrop = document.getElementById('craftModalBackdrop');
+  const modalBody = document.getElementById('craftModalBody');
+  
+  // Deactivate the modal
+  backdrop.classList.remove('active');
+  modal.classList.remove('active');
+  
+  // Restore background scrolling
+  document.body.style.overflow = '';
+  
+  // Clear the iframe after the close transition finishes to stop playback/loading
+  setTimeout(() => {
+    modalBody.innerHTML = '';
+  }, 500); // Matches the CSS transition duration
+}
+
+// Close modal when pressing the Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && document.getElementById('craftModal').classList.contains('active')) {
+    closeCraftModal();
+  }
+});
