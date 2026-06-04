@@ -25,33 +25,7 @@
   </div>
 
   <!-- NAVIGATION -->
-  <nav class="nav" id="nav">
-    <div class="nav-logo">
-      <a href="#hero">
-        <img src="assets/photo/njblogo.png" alt="NJB Logo" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <span class="nav-logo-fallback">NJB</span>
-      </a>
-    </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about" class="nav-link" data-text="About">About</a></li>
-      <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
-      <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
-      <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
-    </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="#about" class="mobile-link">About</a></li>
-      <li><a href="#projects" class="mobile-link">Projects</a></li>
-      <li><a href="#skills" class="mobile-link">Skills</a></li>
-      <li><a href="#contact" class="mobile-link">Contact</a></li>
-    </ul>
-  </div>
+  <div id="header-placeholder"></div>
 
   <!-- HERO SECTION -->
   <section class="hero" id="hero">
@@ -157,205 +131,79 @@
       </div>
       <div class="projects-grid">
 
-  <div class="project-card scroll-reveal" data-index="1">
-    <div class="project-num">01</div>
-    <div class="project-tags"><span class="ptag">Design</span><span class="ptag">Full-Stack</span><span class="ptag">Active</span></div>
-    <h3 class="project-title">YSStudyFocus</h3>
-    <p class="project-desc">My very first professional project — a fully designed and developed agency website based in Malaysia. From concept to deployment, built and still actively maintained.</p>
-    <div class="project-actions">
-      <a href="https://ysstudyfocus.com" target="_blank" rel="noopener" class="project-link">
-        <span>Visit Site</span>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <button class="craft-toggle" onclick="openCraftModal(this)" aria-expanded="false">
-        <span>View Craft</span>
-        <svg class="craft-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-    </div>
-    <div class="craft-panel">
-      <div class="craft-panel-inner">
-        <div class="craft-preview">
-          <div class="craft-browser">
-            <div class="craft-browser-bar"><span></span><span></span><span></span><span class="craft-url">ysstudyfocus.com</span></div>
-            <iframe src="https://ysstudyfocus.com" loading="lazy" title="YSStudyFocus preview" sandbox="allow-scripts allow-same-origin"></iframe>
-          </div>
+        <div class="project-card scroll-reveal" data-index="1">
+          <div class="project-num">01</div>
+          <div class="project-tags"><span class="ptag">Design</span><span class="ptag">Full-Stack</span><span class="ptag">Active</span></div>
+          <h3 class="project-title">YSStudyFocus</h3>
+          <p class="project-desc">My very first professional project — a fully designed and developed agency website based in Malaysia. From concept to deployment, built and still actively maintained.</p>
+          <a href="https://ysstudyfocus.com" target="_blank" rel="noopener" class="project-link">
+            <span>Visit Site</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="project-glow"></div>
         </div>
-        <div class="craft-meta">
-          <div class="craft-meta-row"><span class="craft-meta-label">Role</span><span>Designer &amp; Full-Stack Developer</span></div>
-          <div class="craft-meta-row"><span class="craft-meta-label">Status</span><span class="craft-status active">● Live &amp; Maintained</span></div>
-          <div class="craft-meta-row"><span class="craft-meta-label">Region</span><span>Malaysia</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="project-glow"></div>
-  </div>
 
-  <div class="project-card scroll-reveal" data-index="2">
-    <div class="project-num">02</div>
-    <div class="project-tags"><span class="ptag">Design</span><span class="ptag">Full-Stack</span><span class="ptag">Global</span><span class="ptag">Active</span></div>
-    <h3 class="project-title">OneStepMY</h3>
-    <p class="project-desc">A large-scale agency platform operating across approximately 12 countries. Full design and full-stack development — a project that proves scale is just a problem waiting to be solved.</p>
-    <div class="project-actions">
-      <a href="https://onestepmy.com" target="_blank" rel="noopener" class="project-link">
-        <span>Visit Site</span>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <button class="craft-toggle" onclick="openCraftModal(this)" aria-expanded="false">
-        <span>View Craft</span>
-        <svg class="craft-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-    </div>
-    <div class="craft-panel">
-      <div class="craft-panel-inner">
-        <div class="craft-preview">
-          <div class="craft-browser">
-            <div class="craft-browser-bar"><span></span><span></span><span></span><span class="craft-url">onestepmy.com</span></div>
-            <iframe src="https://onestepmy.com" loading="lazy" title="OneStepMY preview" sandbox="allow-scripts allow-same-origin"></iframe>
-          </div>
+        <div class="project-card scroll-reveal" data-index="2">
+          <div class="project-num">02</div>
+          <div class="project-tags"><span class="ptag">Design</span><span class="ptag">Full-Stack</span><span class="ptag">Global</span><span class="ptag">Active</span></div>
+          <h3 class="project-title">OneStepMY</h3>
+          <p class="project-desc">A large-scale agency platform operating across approximately 12 countries. Full design and full-stack development — a project that proves scale is just a problem waiting to be solved.</p>
+          <a href="https://onestepmy.com" target="_blank" rel="noopener" class="project-link">
+            <span>Visit Site</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="project-glow"></div>
         </div>
-        <div class="craft-meta">
-          <div class="craft-meta-row"><span class="craft-meta-label">Role</span><span>Designer &amp; Full-Stack Developer</span></div>
-          <div class="craft-meta-row"><span class="craft-meta-label">Status</span><span class="craft-status active">● Live &amp; Maintained</span></div>
-          <div class="craft-meta-row"><span class="craft-meta-label">Reach</span><span>~12 Countries</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="project-glow"></div>
-  </div>
 
-  <div class="project-card scroll-reveal featured" data-index="3">
-    <div class="project-num">03</div>
-    <div class="project-tags"><span class="ptag">Final Year</span><span class="ptag">Healthcare</span><span class="ptag">Hult Prize</span></div>
-    <h3 class="project-title">MedElIfe</h3>
-    <p class="project-desc">My final year project — a healthcare innovation platform that earned a Hult Prize shortlist. A testament to what happens when technology meets meaningful purpose.</p>
-    <div class="project-actions">
-      <a href="https://medelife.onestepmy.com" target="_blank" rel="noopener" class="project-link">
-        <span>Visit Site</span>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <button class="craft-toggle" onclick="openCraftModal(this)" aria-expanded="false">
-        <span>View Craft</span>
-        <svg class="craft-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-    </div>
-    <div class="craft-panel">
-      <div class="craft-panel-inner">
-        <div class="craft-preview">
-          <div class="craft-browser">
-            <div class="craft-browser-bar"><span></span><span></span><span></span><span class="craft-url">medelife.onestepmy.com</span></div>
-            <iframe src="https://medelife.onestepmy.com" loading="lazy" title="MedElIfe preview" sandbox="allow-scripts allow-same-origin"></iframe>
-          </div>
+        <div class="project-card scroll-reveal featured" data-index="3">
+          <div class="project-num">03</div>
+          <div class="project-tags"><span class="ptag">Final Year</span><span class="ptag">Healthcare</span><span class="ptag">Hult Prize</span></div>
+          <h3 class="project-title">MedElIfe</h3>
+          <p class="project-desc">My final year project — a healthcare innovation platform that earned a Hult Prize shortlist. A testament to what happens when technology meets meaningful purpose.</p>
+          <a href="https://medelife.onestepmy.com" target="_blank" rel="noopener" class="project-link">
+            <span>Visit Site</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="project-glow"></div>
         </div>
-        <div class="craft-meta">
-          <div class="craft-meta-row"><span class="craft-meta-label">Role</span><span>Designer &amp; Full-Stack Developer</span></div>
-          <div class="craft-meta-row"><span class="craft-meta-label">Award</span><span class="craft-status gold">★ Hult Prize Shortlist</span></div>
-          <div class="craft-meta-row"><span class="craft-meta-label">Type</span><span>Final Year Project</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="project-glow"></div>
-  </div>
 
-  <div class="project-card scroll-reveal" data-index="4">
-    <div class="project-num">04</div>
-    <div class="project-tags"><span class="ptag">EdTech</span><span class="ptag">Full-Stack</span><span class="ptag">Free</span></div>
-    <h3 class="project-title">IELTS Mock</h3>
-    <p class="project-desc">A free IELTS preparation platform where learners can practice all four modules and connect with speaking partners. Making quality test prep accessible to everyone.</p>
-    <div class="project-actions">
-      <a href="https://ieltsmok.onestepmy.com" target="_blank" rel="noopener" class="project-link">
-        <span>Visit Site</span>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <button class="craft-toggle" onclick="openCraftModal(this)" aria-expanded="false">
-        <span>View Craft</span>
-        <svg class="craft-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-    </div>
-    <div class="craft-panel">
-      <div class="craft-panel-inner">
-        <div class="craft-preview">
-          <div class="craft-browser">
-            <div class="craft-browser-bar"><span></span><span></span><span></span><span class="craft-url">ieltsmok.onestepmy.com</span></div>
-            <iframe src="https://ieltsmok.onestepmy.com" loading="lazy" title="IELTS Mock preview" sandbox="allow-scripts allow-same-origin"></iframe>
-          </div>
+        <div class="project-card scroll-reveal" data-index="4">
+          <div class="project-num">04</div>
+          <div class="project-tags"><span class="ptag">EdTech</span><span class="ptag">Full-Stack</span><span class="ptag">Free</span></div>
+          <h3 class="project-title">IELTS Mock</h3>
+          <p class="project-desc">A free IELTS preparation platform where learners can practice all four modules and connect with speaking partners. Making quality test prep accessible to everyone.</p>
+          <a href="https://ieltsmok.onestepmy.com" target="_blank" rel="noopener" class="project-link">
+            <span>Visit Site</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="project-glow"></div>
         </div>
-        <div class="craft-meta">
-          <div class="craft-meta-row"><span class="craft-meta-label">Role</span><span>Designer &amp; Full-Stack Developer</span></div>
-          <div class="craft-meta-row"><span class="craft-meta-label">Status</span><span class="craft-status active">● Free Platform</span></div>
-          <div class="craft-meta-row"><span class="craft-meta-label">Modules</span><span>All 4 IELTS + Speaking Partners</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="project-glow"></div>
-  </div>
 
-  <div class="project-card scroll-reveal featured" data-index="5">
-    <div class="project-num">05</div>
-    <div class="project-tags"><span class="ptag">Hackathon</span><span class="ptag">Champion 🏆</span><span class="ptag">CityU</span></div>
-    <h3 class="project-title">FactShield</h3>
-    <p class="project-desc">Built for the CityU Hackathon — a misinformation-fighting platform that took home the championship. Speed, teamwork, and a problem worth solving.</p>
-    <div class="project-actions">
-      <a href="https://factshield.com" target="_blank" rel="noopener" class="project-link">
-        <span>Visit Site</span>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <button class="craft-toggle" onclick="openCraftModal(this)" aria-expanded="false">
-        <span>View Craft</span>
-        <svg class="craft-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-    </div>
-    <div class="craft-panel">
-      <div class="craft-panel-inner">
-        <div class="craft-preview">
-          <div class="craft-browser">
-            <div class="craft-browser-bar"><span></span><span></span><span></span><span class="craft-url">factshield.com</span></div>
-            <iframe src="https://factshield.com" loading="lazy" title="FactShield preview" sandbox="allow-scripts allow-same-origin"></iframe>
-          </div>
+        <div class="project-card scroll-reveal featured" data-index="5">
+          <div class="project-num">05</div>
+          <div class="project-tags"><span class="ptag">Hackathon</span><span class="ptag">Champion 🏆</span><span class="ptag">CityU</span></div>
+          <h3 class="project-title">FactShield</h3>
+          <p class="project-desc">Built for the CityU Hackathon — a misinformation-fighting platform that took home the championship. Speed, teamwork, and a problem worth solving.</p>
+          <a href="https://factshield.com" target="_blank" rel="noopener" class="project-link">
+            <span>Visit Site</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="project-glow"></div>
         </div>
-        <div class="craft-meta">
-          <div class="craft-meta-row"><span class="craft-meta-label">Role</span><span>Designer &amp; Full-Stack Developer</span></div>
-          <div class="craft-meta-row"><span class="craft-meta-label">Award</span><span class="craft-status gold">★ CityU Hackathon Champion</span></div>
-          <div class="craft-meta-row"><span class="craft-meta-label">Type</span><span>Misinformation Detection</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="project-glow"></div>
-  </div>
 
-  <div class="project-card scroll-reveal" data-index="6">
-    <div class="project-num">06</div>
-    <div class="project-tags"><span class="ptag">Design</span><span class="ptag">E-Commerce</span><span class="ptag">Active</span></div>
-    <h3 class="project-title">Percentage.my</h3>
-    <p class="project-desc">A full e-commerce clothing store — designed, developed, and actively maintained. From product listings to checkout, a complete retail experience built end-to-end.</p>
-    <div class="project-actions">
-      <a href="https://percentage.my" target="_blank" rel="noopener" class="project-link">
-        <span>Visit Site</span>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <button class="craft-toggle" onclick="openCraftModal(this)" aria-expanded="false">
-        <span>View Craft</span>
-        <svg class="craft-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5L7 10L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-    </div>
-    <div class="craft-panel">
-      <div class="craft-panel-inner">
-        <div class="craft-preview">
-          <div class="craft-browser">
-            <div class="craft-browser-bar"><span></span><span></span><span></span><span class="craft-url">percentage.my</span></div>
-            <iframe src="https://percentage.my" loading="lazy" title="Percentage.my preview" sandbox="allow-scripts allow-same-origin"></iframe>
-          </div>
+        <div class="project-card scroll-reveal" data-index="6">
+          <div class="project-num">06</div>
+          <div class="project-tags"><span class="ptag">Design</span><span class="ptag">E-Commerce</span><span class="ptag">Active</span></div>
+          <h3 class="project-title">Percentage.my</h3>
+          <p class="project-desc">A full e-commerce clothing store — designed, developed, and actively maintained. From product listings to checkout, a complete retail experience built end-to-end.</p>
+          <a href="https://percentage.my" target="_blank" rel="noopener" class="project-link">
+            <span>Visit Site</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="project-glow"></div>
         </div>
-        <div class="craft-meta">
-          <div class="craft-meta-row"><span class="craft-meta-label">Role</span><span>Designer &amp; Full-Stack Developer</span></div>
-          <div class="craft-meta-row"><span class="craft-meta-label">Status</span><span class="craft-status active">● Live &amp; Maintained</span></div>
-          <div class="craft-meta-row"><span class="craft-meta-label">Type</span><span>Online Clothing Store</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="project-glow"></div>
-  </div>
 
-</div>
+      </div>
     </div>
   </section>
 
@@ -403,68 +251,78 @@
         <h2 class="section-title">Let's <em>Connect</em></h2>
       </div>
       <div class="contact-grid">
-  <div class="contact-text scroll-reveal">
-    <p class="contact-lead">Got a project, a collab idea, or just want to say hi? I'm always open to interesting conversations and new opportunities.</p>
-    <div class="contact-icons-row">
-      <a href="mailto:njb@nahidjahanbhuiyan.com" class="contact-icon-btn" title="njb@nahidjahanbhuiyan.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </a>
-      <a href="mailto:nahidjahanb1@gmail.com" class="contact-icon-btn" title="nahidjahanb1@gmail.com">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.9.734-1.636 1.636-1.636h.749l9.615 7.21 9.615-7.21h.749A1.636 1.636 0 0 1 24 5.457z"/></svg>
-      </a>
-      <a href="https://wa.me/601119359497" target="_blank" rel="noopener" class="contact-icon-btn" title="WhatsApp MY: +60 111 9359497">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-      </a>
-      <a href="https://wa.me/8801714640537" target="_blank" rel="noopener" class="contact-icon-btn" title="WhatsApp BD: +880 1714640537">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-      </a>
-      <a href="https://www.facebook.com/share/1E188Ktb8F/" target="_blank" rel="noopener" class="contact-icon-btn" title="Facebook — Nahid Jahan Bhuiyan">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/nahidjahanbhuiyan" target="_blank" rel="noopener" class="contact-icon-btn" title="Instagram — @nahidjahanbhuiyan">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      </a>
-      <a href="https://github.com/NahidJB1" target="_blank" rel="noopener" class="contact-icon-btn" title="GitHub — NahidJB1">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-      </a>
-    </div>
-  </div>
-
-  <div class="contact-social scroll-reveal">
-    <h3 class="social-heading">Based in Malaysia 🇲🇾</h3>
-    <p style="color: var(--text-dim); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem;">Originally from Bangladesh 🇧🇩. Open to remote work, freelance projects, and full-time opportunities. Let's build something great together.</p>
-    <a href="mailto:njb@nahidjahanbhuiyan.com" class="btn btn-primary" style="width:fit-content">
-      Say Hello →
-    </a>
-  </div>
-</div>
+        <div class="contact-text scroll-reveal">
+          <p class="contact-lead">Got a project, a collab idea, or just want to say hi? I'm always open to interesting conversations and new opportunities.</p>
+          <div class="contact-items">
+            <a href="mailto:njb@nahidjahanbhuiyan.com" class="contact-item">
+              <div class="ci-icon">✉</div>
+              <div>
+                <div class="ci-label">Primary Email</div>
+                <div class="ci-value">njb@nahidjahanbhuiyan.com</div>
+              </div>
+            </a>
+            <a href="mailto:nahidjahanb1@gmail.com" class="contact-item">
+              <div class="ci-icon">✉</div>
+              <div>
+                <div class="ci-label">Gmail</div>
+                <div class="ci-value">nahidjahanb1@gmail.com</div>
+              </div>
+            </a>
+            <a href="https://wa.me/601119359497" target="_blank" class="contact-item">
+              <div class="ci-icon">📱</div>
+              <div>
+                <div class="ci-label">WhatsApp (MY)</div>
+                <div class="ci-value">+60 111 9359497</div>
+              </div>
+            </a>
+            <a href="https://wa.me/8801714640537" target="_blank" class="contact-item">
+              <div class="ci-icon">📱</div>
+              <div>
+                <div class="ci-label">WhatsApp (BD)</div>
+                <div class="ci-value">+880 1714640537</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="contact-social scroll-reveal">
+          <h3 class="social-heading">Find me on</h3>
+          <div class="social-links">
+            <a href="https://www.facebook.com/share/1E188Ktb8F/" target="_blank" rel="noopener" class="social-card">
+              <div class="social-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </div>
+              <div>
+                <div class="social-name">Facebook</div>
+                <div class="social-handle">Nahid Jahan Bhuiyan</div>
+              </div>
+            </a>
+            <a href="https://www.instagram.com/nahidjahanbhuiyan" target="_blank" rel="noopener" class="social-card">
+              <div class="social-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <div>
+                <div class="social-name">Instagram</div>
+                <div class="social-handle">@nahidjahanbhuiyan</div>
+              </div>
+            </a>
+            <a href="https://github.com/NahidJB1" target="_blank" rel="noopener" class="social-card">
+              <div class="social-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </div>
+              <div>
+                <div class="social-name">GitHub</div>
+                <div class="social-handle">NahidJB1</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-left">
-          <span class="footer-logo">NJB</span>
-          <span class="footer-copy">© 2025 Nahid Jahan Bhuiyan. All rights reserved.</span>
-        </div>
-        <div class="footer-right">
-          <span>Designed &amp; Developed by NJB</span>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <div class="craft-modal-backdrop" id="craftModalBackdrop" onclick="closeCraftModal()"></div>
-  <div class="craft-modal" id="craftModal">
-    <button class="craft-modal-close" onclick="closeCraftModal()" aria-label="Close">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-    </button>
-    <div class="craft-modal-body" id="craftModalBody">
-      </div>
-  </div>
-
+  <div id="footer-placeholder"></div>
+  
   <script src="assets/js/main.js"></script>
 </body>
 </html>
