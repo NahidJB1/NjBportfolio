@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FactShield — Nahid Jahan Bhuiyan</title>
+  
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/animations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div id="header-placeholder"></div>
+
+  <main class="craft-main">
+    
+    <section class="craft-hero">
+      <div class="container">
+        <a href="/" class="btn btn-ghost" style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem;">← Back to Home</a>
+        
+        <h1 class="craft-title scroll-reveal">FactShield</h1>
+        <div class="craft-subtitle scroll-reveal delay-1">AI &amp; Blockchain Powered Fact-Checking Platform</div>
+        
+        <div class="project-tags scroll-reveal delay-2">
+          <span class="ptag" style="color: var(--gold); background: var(--gold-dim); border-color: rgba(240, 180, 41, 0.15);">Hackathon Champion 🏆</span>
+          <span class="ptag">Full-Stack</span>
+          <span class="ptag">Blockchain Integration</span>
+        </div>
+
+        <div class="craft-meta-grid scroll-reveal delay-3">
+          <div class="meta-item">
+            <span class="meta-label">My Role</span>
+            <span class="meta-value">Full-Stack Dev &amp; Feature Planner</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Team Partner</span>
+            <span class="meta-value">Shihab Dewan (UI/UX Design)</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Timeline</span>
+            <span class="meta-value">30 Days (Idea to Pitch)</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Live Link</span>
+            <a href="https://factshield.com" target="_blank" class="meta-value" style="color: var(--cyan); text-decoration: underline;">Visit Platform ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="craft-section">
+      <div class="container">
+        <h2 class="craft-heading scroll-reveal">The Problem &amp; Objective</h2>
+        <p class="craft-text scroll-reveal">
+          Fake news travels at the speed of panic. Existing fact-checking tools like Snopes require days for human review, and manual Google searches take too much effort in the moment of consumption[cite: 140]. Our objective was clear: design and develop an instant AI-powered fact-checking platform that gives users the truth in under 15 seconds — verified forever on the blockchain[cite: 140].
+        </p>
+        <p class="craft-text scroll-reveal" style="margin-top: -1.5rem;">
+          Conceived and built entirely within a 30-day university hackathon[cite: 140], I led the system architecture, full-stack development, and feature planning, collaborating with my teammate who handled the UI. The platform won 1st place at the CityU FusionX Hackathon, judged by industry cybersecurity professionals[cite: 137, 140].
+        </p>
+
+        <h2 class="craft-heading scroll-reveal" style="margin-top: 4rem;">System Architecture &amp; Features</h2>
+        <div class="feature-grid">
+          
+          <div class="feature-card scroll-reveal">
+            <h3 class="feature-title">AI Claim-by-Claim Breakdown</h3>
+            <p class="feature-desc">Instead of a simple binary verdict, I engineered the backend to break down articles claim-by-claim using AI[cite: 140]. It assigns a three-tier verdict (Real, Fake, Suspicious) and cross-references data against trusted global sources, showing the exact evidence[cite: 140].</p>
+          </div>
+
+          <div class="feature-card scroll-reveal delay-1">
+            <h3 class="feature-title">Immutable Blockchain Records</h3>
+            <p class="feature-desc">To ensure absolute trust and transparency, I integrated blockchain technology. Every verification result is permanently stored on the Polygon network, generating a tamper-proof, public transaction hash that cannot be altered or deleted[cite: 140].</p>
+          </div>
+
+          <div class="feature-card scroll-reveal delay-2">
+            <h3 class="feature-title">Live Misinformation Heatmap</h3>
+            <p class="feature-desc">Developed a dynamic, global heatmap that aggregates user submissions to display color-coded live dots[cite: 140]. This tracks where specific fake news topics (Health, Politics, War) are actively spreading, turning a personal tool into a public service[cite: 140].</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="craft-section" style="background: var(--bg2);">
+      <div class="container">
+        <h2 class="craft-heading scroll-reveal">Championship Milestones</h2>
+        <p class="craft-text scroll-reveal">Validating the system architecture and taking home the grand prize at CityU FusionX Hackathon 1.0 (2026).</p>
+        
+        <div class="craft-gallery">
+          
+          <div class="craft-img-wrapper scroll-reveal">
+            <img src="/assets/photo/hackathonchampdn.jpeg" alt="CityU Hackathon Champions" style="aspect-ratio: 16/9; object-fit: cover; object-position: center 30%;"/>
+            <div class="craft-img-caption"><strong>1st Place Champions:</strong> Receiving our certificates, medals, and cheque from CityU Dean, Assoc Prof Dr. Nurul Hafeez Ibrahim.</div>
+          </div>
+          
+          <div class="craft-img-wrapper scroll-reveal">
+            <img src="/assets/photo/hackathonchampach.jpeg" alt="Hackathon Medals" style="aspect-ratio: 16/9; object-fit: cover;"/>
+            <div class="craft-img-caption"><strong>The Hardware:</strong> The championship medals earned for FactShield's innovative approach to combating misinformation.</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
