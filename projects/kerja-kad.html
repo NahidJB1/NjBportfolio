@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kerja-Kad — Nahid Jahan Bhuiyan</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/animations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body class="craft-page">
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div id="header-placeholder"></div>
+
+  <section class="craft-hero">
+    <div class="container">
+      <div class="craft-meta reveal-up delay-1">
+        <span class="craft-tag">National Finalist</span>
+        <span class="craft-tag">Hackathon</span>
+        <span class="craft-tag">System Architecture</span>
+      </div>
+      <h1 class="craft-title reveal-up delay-2">Kerja-Kad</h1>
+      <p class="craft-subtitle reveal-up delay-3">A Digital Identity & Verification System For Malaysia's Foreign Workers.</p>
+    </div>
+  </section>
+
+  <section class="craft-content section">
+    <div class="container">
+      
+      <div class="craft-details-grid scroll-reveal">
+        <div class="detail-item">
+          <span class="detail-label">My Role</span>
+          <span class="detail-value">System Architecture & Prototyping</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">UI/UX Partner</span>
+          <span class="detail-value">Shihab Dewan</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Event</span>
+          <span class="detail-value">Godam Lah! 2.0 Hackathon</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Duration</span>
+          <span class="detail-value">1.5 Months</span>
+        </div>
+      </div>
+
+      <div class="craft-text-block scroll-reveal">
+        <h2>01 / Overview</h2>
+        <p>Kerja-Kad is a digital identity and verification system designed for all foreign workers in Malaysia — regardless of nationality. It consists of two mobile applications paired with a physical NFC-enabled card that allows instant identity verification without requiring a passport.</p>
+        <p>The system was born from a real crisis: thousands of legal foreign workers face detention, harassment, and denial of basic services because they cannot prove their legal status in the moment it matters. While my teammate Shihab focused on the UX psychology and interface, my role was to architect the technical logic and build the interactive prototypes that brought the complex verification flows to life.</p>
+      </div>
+
+      <div class="craft-text-block scroll-reveal">
+        <h2>02 / The Technical Challenge</h2>
+        <p>Our field research with over 100 foreign workers revealed a startling reality: 100% of respondents had their passports held by employers, and 75% had never received their legal physical i-Kad. The existing infrastructure existed on paper, but was completely inaccessible to the users.</p>
+        <p>The core technical challenge was autonomy. How do we remove the employer from the equation entirely? The breakthrough was realizing the immigration record already exists the moment documentation is approved. I engineered a flow where the virtual card links directly to that government record—meaning the worker always owns their identity, even if the physical card is withheld.</p>
+      </div>
+
+      <div class="craft-img-wrapper scroll-reveal">
+        <img src="../assets/photo/image_8c4195.png" alt="Godam Lah! 2.0 Smart ID Hackathon" />
+        <div class="craft-img-caption">National Finalist: Godam Lah! 2.0 Smart ID Hackathon</div>
+      </div>
+
+      <div class="craft-text-block scroll-reveal">
+        <h2>03 / System Architecture & Prototyping</h2>
+        <p>Building the prototype required designing three distinct system layers that had to interact flawlessly:</p>
+        <ul>
+          <li><strong>The Worker's App:</strong> Designed for high stress and low cognitive bandwidth. I mapped out a maximum 3-tap logic flow for all critical actions, including a virtual card that emulates an NFC signal directly from the phone.</li>
+          <li><strong>The Administrator's App:</strong> Built for immigration officers requiring instant, definitive data. I prototyped three verification modes: QR scan, NFC tap, and manual ID entry, outputting unambiguous green/amber/red statuses.</li>
+          <li><strong>The Physical NFC Card:</strong> Designed as a fallback for workers without smartphones, supporting bulk verification via NFC chips and standard QR scanning.</li>
+        </ul>
+      </div>
+
+      <div class="craft-text-block scroll-reveal">
+        <h2>04 / The System in Action</h2>
+      </div>
+
+      <div class="craft-gallery">
+        <div class="craft-img-wrapper scroll-reveal">
+          <img src="../assets/photo/image_8c41b5.jpg" alt="Kerja-Kad Physical NFC Card" />
+          <div class="craft-img-caption">The Physical NFC/QR Identity Card</div>
+        </div>
+        
+        <div class="craft-img-wrapper scroll-reveal">
+          <img src="../assets/photo/image_8c41d3.jpg" alt="Admin App Start Screen" />
+          <div class="craft-img-caption">Administrator App: Secure Login & Verification Portal</div>
+        </div>
+
+        <div class="craft-img-wrapper scroll-reveal">
+          <img src="../assets/photo/image_8c40f9.jpg" alt="Verification History Dashboard" />
+          <div class="craft-img-caption">Administrator Dashboard: Timestamped Verification Logs & Status Overviews</div>
+        </div>
+
+        <div class="craft-img-wrapper scroll-reveal">
+          <img src="../assets/photo/image_8c411d.jpg" alt="Worker App Help and Resources" />
+          <div class="craft-img-caption">Worker App: Live GPS Mapping, Emergency Embassy Contacts, and Resources</div>
+        </div>
+      </div>
+
+      <div class="craft-text-block scroll-reveal" style="margin-top: 4rem;">
+        <h2>05 / Outcome & Impact</h2>
+        <p>Kerja-Kad was recognized as a National Finalist in the inclusivity track. We successfully countered the argument that "a system already exists" by proving that a system unknown to 80% of its users is a failed infrastructure. By merging empathetic UI design with robust, frictionless system architecture, we created a prototype ready for real-world scaling—with the potential to extend into healthcare access, banking, and telecom registration.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
