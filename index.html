@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NJB — Nahid Jahan Bhuiyan</title>
+  <meta name="description" content="Portfolio of Nahid Jahan Bhuiyan, a Full-Stack Developer & UI/UX Designer crafting digital experiences." />
+  <link rel="icon" type="image/png" href="assets/photo/njblogo.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">NJB</div>
+      <div class="loader-bar"><div class="loader-bar-fill" id="loaderBar"></div></div>
+      <div class="loader-text" id="loaderText">Initializing...</div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div id="header-placeholder"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-tag reveal-up delay-1">
+        <span class="tag-dot"></span> Available for Projects
+      </div>
+      <h1 class="hero-title reveal-up delay-2">
+        <span class="hero-name glitch" data-text="Nahid Jahan">Nahid Jahan</span>
+        <span class="hero-surname">Bhuiyan</span>
+      </h1>
+      <div class="hero-roles reveal-up delay-3">
+        <span class="role-static">I build — </span>
+        <span class="role-dynamic" id="roleDynamic"></span>
+      </div>
+      <p class="hero-desc reveal-up delay-4">
+        Full-Stack Developer &amp; UI/UX Designer from Bangladesh, studying IT at City University Malaysia. Crafting digital experiences that live at the intersection of performance and design.
+      </p>
+      <div class="hero-cta reveal-up delay-5">
+        <a href="#projects" class="btn btn-primary">View Work</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+      <div class="hero-scroll reveal-up delay-6">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+    <div class="hero-photo reveal-fade delay-3">
+      <div class="photo-glow"></div>
+      <img src="assets/photo/photo.jpg" alt="Nahid Jahan Bhuiyan" class="hero-img" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>NJB</span></div>'" />
+      <div class="photo-border-anim"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">01 / About</span>
+        <h2 class="section-title">Who <em>I Am</em></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text scroll-reveal">
+          <p class="about-lead">I'm a Full-Stack Developer &amp; UI/UX Designer with a passion for building things that matter — from agency websites serving 12 countries to award-winning hackathon projects.</p>
+          <p>Born and raised in Bangladesh where I completed my SSC and HSC in Science, I moved to Malaysia to pursue my Bachelor's in Information Technology at City University Malaysia. Every line of code I write is powered by curiosity and a drive to solve real problems.</p>
+          <p>When I'm not building, I'm competing — I've been shortlisted by the Hult Prize and won a CityU hackathon championship. I believe the best software is the kind that quietly changes someone's day.</p>
+          <div class="about-stats">
+            <div class="stat scroll-reveal">
+              <span class="stat-number" data-target="6">0</span>
+              <span class="stat-label">Live Projects</span>
+            </div>
+            <div class="stat scroll-reveal">
+              <span class="stat-number" data-target="12">0</span>
+              <span class="stat-label">Countries Reached</span>
+            </div>
+            <div class="stat scroll-reveal">
+              <span class="stat-number" data-target="1">0</span>
+              <span class="stat-label">Hackathon Win</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-badges scroll-reveal">
+          <div class="badge-card">
+            <div class="badge-icon">🎓</div>
+            <div>
+              <div class="badge-title">Bachelor of IT</div>
+              <div class="badge-sub">City University Malaysia</div>
+            </div>
+          </div>
+          <div class="badge-card">
+            <div class="badge-icon">🏆</div>
+            <div>
+              <div class="badge-title">Hackathon Champion</div>
+              <div class="badge-sub">CityU Hackathon — FactShield</div>
+            </div>
+          </div>
+          <div class="badge-card">
+            <div class="badge-icon">🌍</div>
+            <div>
+              <div class="badge-title">Hult Prize Shortlist</div>
+              <div class="badge-sub">MedElIfe — Healthcare Innovation</div>
+            </div>
+          </div>
+          <div class="badge-card">
+            <div class="badge-icon">🚀</div>
+            <div>
+              <div class="badge-title">Full-Stack Dev</div>
+              <div class="badge-sub">Design · Build · Maintain</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">02 / Projects</span>
+        <h2 class="section-title">Built &amp; <em>Deployed</em></h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card scroll-reveal featured" data-index="1">
+          <div class="project-num">01</div>
+          <div class="project-tags"><span class="ptag">Final Year</span><span class="ptag">Healthcare</span><span class="ptag">Hult Prize</span></div>
+          <h3 class="project-title">MEDeLIFE</h3>
+          <p class="project-desc">My final year project — a healthcare innovation platform that earned a Hult Prize shortlist. A testament to what happens when technology meets meaningful purpose.</p>
+          <div class="project-actions">
+            <a href="/projects/medelife.html" class="project-link craft-link">
+              <span>View Craft</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3L13 8M13 8L8 13M13 8H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="https://medelife.onestepmy.com" target="_blank" rel="noopener" class="project-link site-link">
+              <span>Visit Site</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <div class="project-card scroll-reveal featured" data-index="2">
+          <div class="project-num">02</div>
+          <div class="project-tags"><span class="ptag">Hackathon</span><span class="ptag">Champion 🏆</span><span class="ptag">CityU</span></div>
+          <h3 class="project-title">FactShield</h3>
+          <p class="project-desc">Built for the CityU Hackathon — a misinformation-fighting platform that took home the championship. Speed, teamwork, and a problem worth solving.</p>
+          <div class="project-actions">
+            <a href="/projects/factshield.html" class="project-link craft-link">
+              <span>View Craft</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3L13 8M13 8L8 13M13 8H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="https://facktshield.percentagemy.com/" target="_blank" rel="noopener" class="project-link site-link">
+              <span>Visit Site</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <div class="project-card scroll-reveal" data-index="3">
+          <div class="project-num">03</div>
+          <div class="project-tags"><span class="ptag">Design</span><span class="ptag">Full-Stack</span><span class="ptag">Active</span></div>
+          <h3 class="project-title">YS Study Focus</h3>
+          <p class="project-desc">My very first professional project — a fully designed and developed agency website based in Malaysia. From concept to deployment, built and still actively maintained.</p>
+          <div class="project-actions">
+            <a href="/projects/ysstudyfocus.html" class="project-link craft-link">
+              <span>View Craft</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3L13 8M13 8L8 13M13 8H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="https://ysstudyfocus.com" target="_blank" rel="noopener" class="project-link site-link">
+              <span>Visit Site</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <div class="project-card scroll-reveal" data-index="4">
+          <div class="project-num">04</div>
+          <div class="project-tags"><span class="ptag">EdTech</span><span class="ptag">Full-Stack</span><span class="ptag">Free</span></div>
+          <h3 class="project-title">IELTS Mock</h3>
+          <p class="project-desc">A free IELTS preparation platform where learners can practice all four modules and connect with speaking partners. Making quality test prep accessible to everyone.</p>
+          <div class="project-actions">
+            <a href="/projects/ieltsmock.html" class="project-link craft-link">
+              <span>View Craft</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3L13 8M13 8L8 13M13 8H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="https://ieltsmock.onestepmy.com" target="_blank" rel="noopener" class="project-link site-link">
+              <span>Visit Site</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <div class="project-card scroll-reveal" data-index="5">
+          <div class="project-num">05</div>
+          <div class="project-tags"><span class="ptag">Design</span><span class="ptag">Full-Stack</span><span class="ptag">Global</span><span class="ptag">Active</span></div>
+          <h3 class="project-title">One Step</h3>
+          <p class="project-desc">A large-scale agency platform operating across approximately 12 countries. Full design and full-stack development — a project that proves scale is just a problem waiting to be solved.</p>
+          <div class="project-actions">
+            <a href="/projects/onestepmy.html" class="project-link craft-link">
+              <span>View Craft</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3L13 8M13 8L8 13M13 8H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="https://onestepmy.com" target="_blank" rel="noopener" class="project-link site-link">
+              <span>Visit Site</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <div class="project-card scroll-reveal" data-index="6">
+          <div class="project-num">06</div>
+          <div class="project-tags"><span class="ptag">Design</span><span class="ptag">E-Commerce</span><span class="ptag">Active</span></div>
+          <h3 class="project-title">Percentage</h3>
+          <p class="project-desc">A full e-commerce clothing store — designed, developed, and actively maintained. From product listings to checkout, a complete retail experience built end-to-end.</p>
+          <div class="project-actions">
+            <a href="/projects/percentage.html" class="project-link craft-link">
+              <span>View Craft</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3L13 8M13 8L8 13M13 8H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="https://percentagemy.com" target="_blank" rel="noopener" class="project-link site-link">
+              <span>Visit Site</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+
+        <div class="project-card scroll-reveal" data-index="7">
+          <div class="project-num">07</div>
+          <div class="project-tags"><span class="ptag">Hackathon</span><span class="ptag">Finalist</span><span class="ptag">Prototype</span></div>
+          <h3 class="project-title">Kerja-Kad</h3>
+          <p class="project-desc">A digital identity and verification system for Malaysia's foreign workers. Reached the national finals of the Godam Lah! 2.0 Hackathon. I led the system architecture and technical prototyping.</p>
+          <div class="project-actions">
+            <a href="/projects/kerja-kad.html" class="project-link craft-link">
+              <span>View Craft</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3L13 8M13 8L8 13M13 8H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            </div>
+          <div class="project-glow"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">03 / Skills</span>
+        <h2 class="section-title">Tech &amp; <em>Tools</em></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group scroll-reveal">
+          <h3 class="skill-group-title">Frontend</h3>
+          <div class="skill-pills">
+            <span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span><span class="pill">React</span><span class="pill">Responsive Design</span><span class="pill">UI/UX</span>
+          </div>
+        </div>
+        <div class="skill-group scroll-reveal">
+          <h3 class="skill-group-title">Backend</h3>
+          <div class="skill-pills">
+            <span class="pill">Node.js</span><span class="pill">PHP</span><span class="pill">MySQL</span><span class="pill">REST APIs</span><span class="pill">Database Design</span>
+          </div>
+        </div>
+        <div class="skill-group scroll-reveal">
+          <h3 class="skill-group-title">Design</h3>
+          <div class="skill-pills">
+            <span class="pill">Figma</span><span class="pill">UI Design</span><span class="pill">Branding</span><span class="pill">Prototyping</span><span class="pill">Design Systems</span>
+          </div>
+        </div>
+        <div class="skill-group scroll-reveal">
+          <h3 class="skill-group-title">DevOps &amp; Tools</h3>
+          <div class="skill-pills">
+            <span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">Hosting &amp; Deployment</span><span class="pill">Domain Management</span><span class="pill">SEO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY / ACHIEVEMENTS SECTION -->
+  <section class="community section" id="community">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">03.5 / Community &amp; Achievements</span>
+        <h2 class="section-title">Moments &amp; <em>Milestones</em></h2>
+      </div>
+      <div class="gallery-grid">
+        
+        <!-- Card 1 -->
+        <div class="gallery-card scroll-reveal">
+          <div class="gallery-img-wrapper">
+            <div class="photo-glow"></div>
+            <img src="assets/photo/hackathonchampdn.jpeg" alt="CityU Hackathon Champions" />
+          </div>
+          <div class="gallery-content">
+            <h3 class="gallery-title">CityU Fusion Hackathon 1.0 Champions</h3>
+            <p class="gallery-desc">My teammate Mr. Shihab Dewan and I were declared champions for 'CityU Fusion Hackathon 1.0 - 2026'. Receiving our certificates, medals, and presentation cheque from CityU Dean, Assoc Prof Dr. Nurul Hafeez Ibrahim for our project 'FactShield'.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="gallery-card scroll-reveal">
+          <div class="gallery-img-wrapper">
+            <div class="photo-glow"></div>
+            <img src="assets/photo/hackathonchampach.jpeg" alt="Hackathon Medals" />
+          </div>
+          <div class="gallery-content">
+            <h3 class="gallery-title">The Winning Medals</h3>
+            <p class="gallery-desc">The championship medals we proudly received for 'CityU Fusion Hackathon 1.0 - 2026'.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="gallery-card scroll-reveal">
+          <div class="gallery-img-wrapper">
+            <div class="photo-glow"></div>
+            <img src="assets/photo/hackathonchamp.jpg" alt="Hackathon Medal Detail" />
+          </div>
+          <div class="gallery-content">
+            <h3 class="gallery-title">Champion's Hardware</h3>
+            <p class="gallery-desc">A closer look at the championship medal earned during the 'CityU Fusion Hackathon 1.0 - 2026'.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="gallery-card scroll-reveal">
+          <div class="gallery-img-wrapper">
+            <div class="photo-glow"></div>
+            <img src="assets/photo/hultprize.jpeg" alt="Hult Prize 2026 Shortlist" />
+          </div>
+          <div class="gallery-content">
+            <h3 class="gallery-title">Hult Prize 2026 Shortlist</h3>
+            <p class="gallery-desc">My team and I with the Dean, Assoc Prof Dr. Nurul Hafeez Ibrahim, after MEDeLIFE was officially shortlisted for the Hult Prize 2026.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="gallery-card scroll-reveal">
+          <div class="gallery-img-wrapper">
+            <div class="photo-glow"></div>
+            <img src="assets/photo/runnerup_hultprize.jpeg" alt="Hult Prize 2025 Runner-up" />
+          </div>
+          <div class="gallery-content">
+            <h3 class="gallery-title">Hult Prize 2025 Runner-up</h3>
+            <p class="gallery-desc">My teammate Mr. Molla Rayhan and I after our team was announced runner-up in the Hult Prize 2025 for our project MEDeLIFE.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">04 / Contact</span>
+        <h2 class="section-title">Let's <em>Connect</em></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-text scroll-reveal">
+          <p class="contact-lead">Got a project, a collab idea, or just want to say hi? I'm always open to interesting conversations and new opportunities.</p>
+          <div class="contact-items">
+            <a href="mailto:njb@nahidjahanbhuiyan.com" class="contact-item">
+              <div class="ci-icon">✉</div>
+              <div>
+                <div class="ci-label">Primary Email</div>
+                <div class="ci-value">njb@nahidjahanbhuiyan.com</div>
+              </div>
+            </a>
+            <a href="mailto:nahidjahanb1@gmail.com" class="contact-item">
+              <div class="ci-icon">✉</div>
+              <div>
+                <div class="ci-label">Gmail</div>
+                <div class="ci-value">nahidjahanb1@gmail.com</div>
+              </div>
+            </a>
+            <a href="https://wa.me/601119359497" target="_blank" class="contact-item">
+              <div class="ci-icon">📱</div>
+              <div>
+                <div class="ci-label">WhatsApp (MY)</div>
+                <div class="ci-value">+60 111 9359497</div>
+              </div>
+            </a>
+            <a href="https://wa.me/8801714640537" target="_blank" class="contact-item">
+              <div class="ci-icon">📱</div>
+              <div>
+                <div class="ci-label">WhatsApp (BD)</div>
+                <div class="ci-value">+880 1714640537</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="contact-social scroll-reveal">
+          <h3 class="social-heading">Find me on</h3>
+          <div class="social-links">
+            <a href="https://www.facebook.com/share/1E188Ktb8F/" target="_blank" rel="noopener" class="social-card">
+              <div class="social-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </div>
+              <div>
+                <div class="social-name">Facebook</div>
+                <div class="social-handle">Nahid Jahan Bhuiyan</div>
+              </div>
+            </a>
+            <a href="https://www.instagram.com/nahidjahanbhuiyan" target="_blank" rel="noopener" class="social-card">
+              <div class="social-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <div>
+                <div class="social-name">Instagram</div>
+                <div class="social-handle">@nahidjahanbhuiyan</div>
+              </div>
+            </a>
+            <a href="https://github.com/NahidJB1" target="_blank" rel="noopener" class="social-card">
+              <div class="social-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </div>
+              <div>
+                <div class="social-name">GitHub</div>
+                <div class="social-handle">NahidJB1</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

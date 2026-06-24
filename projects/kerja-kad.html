@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kerja-Kad — Nahid Jahan Bhuiyan</title>
+  <meta name="description" content="Kerja-Kad: A project by Nahid Jahan Bhuiyan, Full-Stack Developer & UI/UX Designer." />
+  
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/animations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div id="header-placeholder"></div>
+
+  <main class="craft-main">
+    
+    <section class="craft-hero">
+      <div class="container">
+        <a href="/index.html" class="btn btn-ghost" style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem;">← Back to Home</a>
+        
+        <h1 class="craft-title scroll-reveal">Kerja-Kad</h1>
+        <div class="craft-subtitle scroll-reveal delay-1">Digital Identity & Verification System for Foreign Workers</div>
+        
+        <div class="project-tags scroll-reveal delay-2">
+          <span class="ptag" style="color: var(--gold); background: var(--gold-dim); border-color: rgba(255, 215, 0, 0.15);">Hackathon Finalist</span>
+          <span class="ptag">System Architecture</span>
+          <span class="ptag">Prototyping</span>
+        </div>
+
+        <div class="craft-meta-grid scroll-reveal delay-3">
+          <div class="meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Research, System Architecture &amp; Prototyping</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Team</span>
+            <span class="meta-value">3 Members (UI by Shihab Dewan)</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Timeline</span>
+            <span class="meta-value">1.5 Months</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Status</span>
+            <span class="meta-value" style="color: var(--gold);">Top Finalist National Hackathon</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="craft-section">
+      <div class="container">
+        <h2 class="craft-heading scroll-reveal">Overview &amp; The Problem</h2>
+        <p class="craft-text scroll-reveal">
+          Kerja-Kad is a digital identity and verification system designed for all foreign workers in Malaysia — regardless of nationality. It consists of two mobile applications paired with a physical NFC-enabled card that allows instant identity verification without requiring a passport.
+        </p>
+        <p class="craft-text scroll-reveal" style="margin-top: -1.5rem;">
+          The system was born from a real crisis: thousands of legal foreign workers face detention, harassment, and denial of basic services because they cannot prove their legal status in the moment it matters. Legal workers are frequently treated like criminals simply because their passports are held by employers. Kerja-Kad solves this with a virtual card, an NFC physical card, and a real-time verification system.
+        </p>
+
+        <h2 class="craft-heading scroll-reveal" style="margin-top: 4rem;">Field Research &amp; Hard Data</h2>
+        <div class="craft-meta-grid scroll-reveal delay-1" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+          <div class="meta-item">
+            <span class="meta-label" style="font-size: 2rem; color: var(--cyan);">100+</span>
+            <span class="meta-value">Field Interviews Conducted</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label" style="font-size: 2rem; color: var(--cyan);">100%</span>
+            <span class="meta-value">Had Passports Held by Employer</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label" style="font-size: 2rem; color: var(--cyan);">75%</span>
+            <span class="meta-value">Had Never Received Their i-Kad</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label" style="font-size: 2rem; color: var(--cyan);">0%</span>
+            <span class="meta-value">Knew They Could Request Their i-Kad</span>
+          </div>
+        </div>
+
+        <h2 class="craft-heading scroll-reveal" style="margin-top: 4rem;">System Prototype &amp; UX Psychology</h2>
+        <div class="feature-grid">
+          
+          <div class="feature-card scroll-reveal">
+            <h3 class="feature-title">Stress &amp; Cognitive Impairment</h3>
+            <p class="feature-desc">Research on decision-making under stress shows that people under threat revert to the simplest possible actions. I architected every critical flow in the worker app prototype for a maximum of 3 taps — because a worker being questioned by immigration does not have the cognitive bandwidth for complex navigation.</p>
+          </div>
+
+          <div class="feature-card scroll-reveal delay-1">
+            <h3 class="feature-title">Autonomy Bias</h3>
+            <p class="feature-desc">The virtual card feature gives workers something they've never had: direct access to their own legal record without employer involvement. Restoring a sense of control and autonomy was just as important to the system architecture as the functional verification.</p>
+          </div>
+
+          <div class="feature-card scroll-reveal delay-2">
+            <h3 class="feature-title">Trust Calibration</h3>
+            <p class="feature-desc">The NFC tap-and-verify flow for immigration officers was programmed to feel instantaneous and definitive — utilizing a green/amber/red status system with zero ambiguity. Officers under pressure make faster, fairer decisions when the system gives clear signals rather than complex data sets.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="craft-section" style="background: var(--bg2);">
+      <div class="container">
+        <h2 class="craft-heading scroll-reveal">The Interface &amp; Verification Flow</h2>
+        <p class="craft-text scroll-reveal">A closer look at the dual-application system and identity verification screens.</p>
+        
+        <div class="craft-gallery">
+          
+          <div class="craft-img-wrapper scroll-reveal">
+            <img src="/assets/photo/SS1-KC.png" alt="Kerja-Kad Physical Card" />
+            <div class="craft-img-caption">The physical card</div>
+          </div>
+
+          <div class="craft-img-wrapper scroll-reveal">
+            <img src="/assets/photo/SS2-KC.png" alt="Kerja-Kad Link Card Interface" />
+            <div class="craft-img-caption">Get / Link Your Card</div>
+          </div>
+
+          <div class="craft-img-wrapper scroll-reveal">
+            <img src="/assets/photo/SS3-KC.png" alt="Kerja-Kad Home Screen Virtual ID" />
+            <div class="craft-img-caption">Home Screen - virtual card display with name, work permit number, employer, and status.</div>
+          </div>
+
+          <div class="craft-img-wrapper scroll-reveal">
+            <img src="/assets/photo/SS4-KC.png" alt="Kerja-Kad Real-Time Status" />
+            <div class="craft-img-caption">Status screen - real-time permit status: active, expiring soon expired, under renewal.</div>
+          </div>
+          
+          <div class="craft-img-wrapper scroll-reveal">
+            <img src="/assets/photo/SS5-KC.png" alt="Kerja-Kad Emergency Map and Resources" />
+            <div class="craft-img-caption">Help and Resources - Live GPS map showing nearest police stations, hospitals, immigration offices, and one-tap embassy emergency contacts.</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
