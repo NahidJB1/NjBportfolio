@@ -84,12 +84,12 @@ loadGlobals();
     el.addEventListener('mouseenter', () => {
       cursor.style.width = '20px'; cursor.style.height = '20px';
       follower.style.width = '56px'; follower.style.height = '56px';
-      follower.style.borderColor = 'rgba(0,212,255,0.7)';
+      follower.style.borderColor = 'rgba(86,200,245,0.6)';
     });
     el.addEventListener('mouseleave', () => {
       cursor.style.width = '10px'; cursor.style.height = '10px';
       follower.style.width = '36px'; follower.style.height = '36px';
-      follower.style.borderColor = 'rgba(0,212,255,0.4)';
+      follower.style.borderColor = 'rgba(86,200,245,0.35)';
     });
   });
 })();
@@ -137,10 +137,11 @@ function initNav() {
 (function initCanvas() {
   const canvas = document.getElementById('heroCanvas');
   if (!canvas) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const ctx = canvas.getContext('2d');
   let W, H, nodes = [], animId;
-  const NODE_COUNT = 60;
-  const MAX_DIST = 130;
+  const NODE_COUNT = 50;
+  const MAX_DIST = 120;
 
   function resize() {
     W = canvas.width = canvas.offsetWidth;
@@ -175,7 +176,7 @@ function initNav() {
           ctx.beginPath();
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(nodes[j].x, nodes[j].y);
-          ctx.strokeStyle = `rgba(0,212,255,${alpha})`;
+          ctx.strokeStyle = `rgba(86,200,245,${alpha})`;
           ctx.lineWidth = 0.6;
           ctx.stroke();
         }
@@ -186,7 +187,7 @@ function initNav() {
     nodes.forEach(n => {
       ctx.beginPath();
       ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0,212,255,${n.alpha})`;
+      ctx.fillStyle = `rgba(86,200,245,${n.alpha})`;
       ctx.fill();
 
       // Move
