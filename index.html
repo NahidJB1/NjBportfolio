@@ -6,69 +6,96 @@
   <title>NJB — Nahid Jahan Bhuiyan</title>
   <meta name="description" content="Portfolio of Nahid Jahan Bhuiyan, a Full-Stack Developer & UI/UX Designer crafting digital experiences." />
   <link rel="icon" type="image/png" href="assets/photo/njblogo.png" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/animations.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-  <!-- CURSOR -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursorFollower"></div>
+  <!-- Reusable icon defs -->
+  <svg style="display:none">
+    <symbol id="icon-cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+      <line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><circle cx="12" cy="12" r="6.5"/>
+    </symbol>
+  </svg>
 
-  <!-- LOADER -->
-  <div class="loader" id="loader">
-    <div class="loader-inner">
-      <div class="loader-logo">NJB</div>
-      <div class="loader-bar"><div class="loader-bar-fill" id="loaderBar"></div></div>
-      <div class="loader-text" id="loaderText">Initializing...</div>
-    </div>
-  </div>
+  <!-- ============================ NAVIGATION ============================ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-row">
+      <a href="#hero" class="logo"><svg><use href="#icon-cross"/></svg> NJB</a>
 
-  <!-- NAVIGATION -->
-  <div id="header-placeholder"></div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#community">Community</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-  <!-- HERO SECTION -->
-  <section class="hero" id="hero">
-    <canvas class="hero-canvas" id="heroCanvas"></canvas>
-    <div class="hero-content">
-      <div class="hero-tag reveal-up delay-1">
-        <span class="tag-dot"></span> Available for Projects
-      </div>
-      <h1 class="hero-title reveal-up delay-2">
-        <span class="hero-name glitch" data-text="Nahid Jahan">Nahid Jahan</span>
-        <span class="hero-surname">Bhuiyan</span>
-      </h1>
-      <div class="hero-roles reveal-up delay-3">
-        <span class="role-static">I build — </span>
-        <span class="role-dynamic" id="roleDynamic"></span>
-      </div>
-      <p class="hero-desc reveal-up delay-4">
-        Full-Stack Developer &amp; UI/UX Designer from Bangladesh, studying IT at City University Malaysia. Crafting digital experiences that live at the intersection of performance and design.
-      </p>
-      <div class="hero-cta reveal-up delay-5">
-        <a href="#projects" class="btn btn-primary">View Work</a>
-        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      <div class="nav-cta">
         <a href="assets/NJB_CV.pdf" target="_blank" class="btn btn-ghost">Download CV</a>
-      </div>
-      <div class="hero-scroll reveal-up delay-6">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
+        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
       </div>
     </div>
-    <div class="hero-photo reveal-fade delay-3">
-      <div class="photo-glow"></div>
-      <img src="assets/photo/photo.jpg" alt="Nahid Jahan Bhuiyan" class="hero-img" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>NJB</span></div>'" />
-      <div class="photo-border-anim"></div>
+  </header>
+
+  <div class="mobile-scrim" id="mobileScrim"></div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#community">Community</a>
+    <a href="#contact">Contact</a>
+    <a href="assets/NJB_CV.pdf" target="_blank">Download CV</a>
+  </nav>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero" id="hero">
+    <div class="grid-tex"></div>
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="hero-text">
+        <div class="hero-tag reveal-up delay-1">
+          <span class="tag-dot"></span> Available for Projects
+        </div>
+        <h1 class="hero-title reveal-up delay-2">
+          <span class="hero-name">Nahid Jahan</span>
+          <span class="hero-surname">Bhuiyan</span>
+        </h1>
+        <div class="hero-roles reveal-up delay-3">
+          <span class="role-static">I build — </span><span class="role-dynamic" id="roleDynamic"></span>
+        </div>
+        <p class="hero-desc reveal-up delay-4">
+          Full-Stack Developer &amp; UI/UX Designer from Bangladesh, studying IT at City University Malaysia. Crafting digital experiences that live at the intersection of performance and design.
+        </p>
+        <div class="hero-cta reveal-up delay-5">
+          <a href="#projects" class="btn btn-primary">View Work</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+          <a href="assets/NJB_CV.pdf" target="_blank" class="btn btn-ghost">Download CV</a>
+        </div>
+        <div class="hero-scroll reveal-up delay-6">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+
+      <div class="hero-photo reveal-fade delay-3">
+        <div class="photo-ring"></div>
+        <div class="photo-frame">
+          <img src="assets/photo/photo.jpg" alt="Nahid Jahan Bhuiyan" onerror="this.onerror=null;this.outerHTML='<div class=\'photo-placeholder\'><span>NJB</span></div>'" />
+        </div>
+        <div class="photo-chip">🇧🇩 <b>BD</b> → 🇲🇾 <b>MY</b></div>
+      </div>
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
+  <!-- ============================ ABOUT ============================ -->
   <section class="about section" id="about">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">01 / About</span>
+      <div class="section-header scroll-reveal">
+        <span class="section-label"><svg><use href="#icon-cross"/></svg> 01 / About</span>
         <h2 class="section-title">Who <em>I Am</em></h2>
       </div>
       <div class="about-grid">
@@ -125,11 +152,11 @@
     </div>
   </section>
 
-  <!-- PROJECTS SECTION -->
+  <!-- ============================ PROJECTS ============================ -->
   <section class="projects section" id="projects">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">02 / Projects</span>
+      <div class="section-header scroll-reveal">
+        <span class="section-label"><svg><use href="#icon-cross"/></svg> 02 / Projects</span>
         <h2 class="section-title">Built &amp; <em>Deployed</em></h2>
       </div>
       <div class="projects-grid">
@@ -242,7 +269,6 @@
           <div class="project-glow"></div>
         </div>
 
-
         <div class="project-card scroll-reveal" data-index="7">
           <div class="project-num">07</div>
           <div class="project-tags"><span class="ptag">Hackathon</span><span class="ptag">Finalist</span><span class="ptag">Prototype</span></div>
@@ -253,7 +279,7 @@
               <span>View Craft</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3L13 8M13 8L8 13M13 8H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            </div>
+          </div>
           <div class="project-glow"></div>
         </div>
 
@@ -261,11 +287,11 @@
     </div>
   </section>
 
-  <!-- SKILLS SECTION -->
+  <!-- ============================ SKILLS ============================ -->
   <section class="skills section" id="skills">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">03 / Skills</span>
+      <div class="section-header scroll-reveal">
+        <span class="section-label"><svg><use href="#icon-cross"/></svg> 03 / Skills</span>
         <h2 class="section-title">Tech &amp; <em>Tools</em></h2>
       </div>
       <div class="skills-grid">
@@ -297,20 +323,18 @@
     </div>
   </section>
 
-  <!-- COMMUNITY / ACHIEVEMENTS SECTION -->
+  <!-- ============================ COMMUNITY ============================ -->
   <section class="community section" id="community">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">03.5 / Community &amp; Achievements</span>
+      <div class="section-header scroll-reveal">
+        <span class="section-label"><svg><use href="#icon-cross"/></svg> 03.5 / Community &amp; Achievements</span>
         <h2 class="section-title">Moments &amp; <em>Milestones</em></h2>
       </div>
       <div class="gallery-grid">
-        
-        <!-- Card 1 (Dean's List) -->
+
         <div class="gallery-card scroll-reveal">
           <div class="gallery-img-wrapper">
-            <div class="photo-glow"></div>
-            <img src="assets/photo/njbdean.jpeg" alt="Dean's List Award" style="object-position: top;" />
+            <img src="assets/photo/njbdean.jpeg" alt="Dean's List Award" style="object-position: top;" onerror="this.onerror=null;this.outerHTML='<div class=\'photo-placeholder\'><span>🎓</span></div>'" />
           </div>
           <div class="gallery-content">
             <h3 class="gallery-title">Dean's List Award</h3>
@@ -318,11 +342,9 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
         <div class="gallery-card scroll-reveal">
           <div class="gallery-img-wrapper">
-            <div class="photo-glow"></div>
-            <img src="assets/photo/hackathonchampdn.jpeg" alt="CityU Hackathon Champions" />
+            <img src="assets/photo/hackathonchampdn.jpeg" alt="CityU Hackathon Champions" onerror="this.onerror=null;this.outerHTML='<div class=\'photo-placeholder\'><span>🏆</span></div>'" />
           </div>
           <div class="gallery-content">
             <h3 class="gallery-title">CityU Fusion Hackathon 1.0 Champions</h3>
@@ -330,11 +352,9 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
         <div class="gallery-card scroll-reveal">
           <div class="gallery-img-wrapper">
-            <div class="photo-glow"></div>
-            <img src="assets/photo/hackathonchampach.jpeg" alt="Hackathon Medals" />
+            <img src="assets/photo/hackathonchampach.jpeg" alt="Hackathon Medals" onerror="this.onerror=null;this.outerHTML='<div class=\'photo-placeholder\'><span>🥇</span></div>'" />
           </div>
           <div class="gallery-content">
             <h3 class="gallery-title">The Winning Medals</h3>
@@ -342,11 +362,9 @@
           </div>
         </div>
 
-        <!-- Card 3 -->
         <div class="gallery-card scroll-reveal">
           <div class="gallery-img-wrapper">
-            <div class="photo-glow"></div>
-            <img src="assets/photo/hackathonchamp.jpg" alt="Hackathon Medal Detail" />
+            <img src="assets/photo/hackathonchamp.jpg" alt="Hackathon Medal Detail" onerror="this.onerror=null;this.outerHTML='<div class=\'photo-placeholder\'><span>🥇</span></div>'" />
           </div>
           <div class="gallery-content">
             <h3 class="gallery-title">Champion's Hardware</h3>
@@ -354,11 +372,9 @@
           </div>
         </div>
 
-        <!-- Card 4 -->
         <div class="gallery-card scroll-reveal">
           <div class="gallery-img-wrapper">
-            <div class="photo-glow"></div>
-            <img src="assets/photo/hultprize.jpeg" alt="Hult Prize 2026 Shortlist" />
+            <img src="assets/photo/hultprize.jpeg" alt="Hult Prize 2026 Shortlist" onerror="this.onerror=null;this.outerHTML='<div class=\'photo-placeholder\'><span>🌍</span></div>'" />
           </div>
           <div class="gallery-content">
             <h3 class="gallery-title">Hult Prize 2026 Shortlist</h3>
@@ -366,11 +382,9 @@
           </div>
         </div>
 
-        <!-- Card 5 -->
         <div class="gallery-card scroll-reveal">
           <div class="gallery-img-wrapper">
-            <div class="photo-glow"></div>
-            <img src="assets/photo/runnerup_hultprize.jpeg" alt="Hult Prize 2025 Runner-up" />
+            <img src="assets/photo/runnerup_hultprize.jpeg" alt="Hult Prize 2025 Runner-up" onerror="this.onerror=null;this.outerHTML='<div class=\'photo-placeholder\'><span>🌍</span></div>'" />
           </div>
           <div class="gallery-content">
             <h3 class="gallery-title">Hult Prize 2025 Runner-up</h3>
@@ -382,11 +396,11 @@
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
+  <!-- ============================ CONTACT ============================ -->
   <section class="contact section" id="contact">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">04 / Contact</span>
+      <div class="section-header scroll-reveal">
+        <span class="section-label"><svg><use href="#icon-cross"/></svg> 04 / Contact</span>
         <h2 class="section-title">Let's <em>Connect</em></h2>
       </div>
       <div class="contact-grid">
@@ -459,8 +473,24 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <div id="footer-placeholder"></div>
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div class="footer-left">
+        <svg><use href="#icon-cross"/></svg>
+        <span>© <span id="year">2026</span> Nahid Jahan Bhuiyan. All rights reserved.</span>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:njb@nahidjahanbhuiyan.com">Email</a>
+        <a href="https://github.com/NahidJB1" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.instagram.com/nahidjahanbhuiyan" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <a href="#hero" id="toTop" class="to-top">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M8 13V3M8 3L3 8M8 3l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to top
+      </a>
+    </div>
+  </footer>
 
   <script src="assets/js/main.js"></script>
 </body>
