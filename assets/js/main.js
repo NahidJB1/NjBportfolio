@@ -152,7 +152,9 @@ function initNav() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const el = entry.target;
+        if (!el.dataset.target) return;
         const target = +el.dataset.target;
+        if (isNaN(target)) return;
         let current = 0;
         const step = target / 40;
         const timer = setInterval(() => {
