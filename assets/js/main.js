@@ -199,3 +199,53 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     });
   }, 500); // Small delay ensures DOM is populated
 })();
+
+/* ===== LIGHTBOX ===== */
+(function initLightbox() {
+  const lb = document.createElement('div');
+  lb.id = 'craft-lightbox';
+  lb.innerHTML = `
+    <div class="craft-lightbox-content">
+      <img id="craft-lightbox-img" src="" alt="">
+      <div id="craft-lightbox-caption"></div>
+      <button id="craft-lightbox-close" aria-label="Close">&times;</button>
+    </div>
+  `;
+  document.body.appendChild(lb);
+
+  const imgEl = document.getElementById('craft-lightbox-img');
+  const capEl = document.getElementById('craft-lightbox-caption');
+  const closeBtn = document.getElementById('craft-lightbox-close');
+
+  const openLightbox = (src, caption) => {
+    imgEl.src = src;
+    capEl.innerHTML = caption || '';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { if(!lb.classList.contains('open')) imgEl.src = ''; }, 300);
+  };
+
+  const galleryImgs = document.querySelectorAll('.craft-gallery img, .hackathon-gallery img, .gallery-img-wrapper img');
+  galleryImgs.forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      const wrapper = img.closest('.craft-img-wrapper, .gallery-card');
+      const captionEl = wrapper ? wrapper.querySelector('.craft-img-caption, .gallery-desc') : null;
+      const caption = captionEl ? captionEl.innerHTML : img.alt;
+      openLightbox(img.src, caption);
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', (e) => {
+    if (e.target === lb || e.target.classList.contains('craft-lightbox-content')) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
+  });
+})();

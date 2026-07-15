@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Ismam Zaman Shuptoo — Personal Profile Passport
+   animations.css — every keyframe, animation and transition in the site
+   ========================================================================== */
+
+/* ---------- keyframes ---------- */
+@keyframes riseIn{ from{opacity:0; transform:translateY(16px);} to{opacity:1; transform:translateY(0);} }
+@keyframes shine{ to{ background-position:-220% center; } }
+@keyframes spin{ to{ transform:rotate(360deg);} }
+@keyframes scrollmrz{ from{transform:translateX(6%);} to{transform:translateX(-106%);} }
+@keyframes bob{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(8px);} }
+@keyframes pulse{ 0%,100%{ box-shadow:0 0 0 4px rgba(47,110,103,0.15);} 50%{ box-shadow:0 0 0 7px rgba(47,110,103,0.05);} }
+@keyframes blinkStamp{ 0%,100%{opacity:1;} 50%{opacity:.55;} }
+
+/* ---------- pagenav ---------- */
+.pagenav{ opacity:0; transition:opacity .5s ease; }
+.pagenav.show{ opacity:1; }
+.pagenav button{ transition:background .3s, transform .3s; }
+.pagenav button.active{ transform:scale(1.3); }
+.pagenav .pn-label{ opacity:0; transition:opacity .2s; }
+.pagenav button:hover .pn-label{ opacity:1; }
+
+/* ---------- cover load-in sequence ---------- */
+.eyebrow{ opacity:0; animation:riseIn .8s ease forwards; animation-delay:.1s; }
+.seal{ opacity:0; animation:riseIn .9s ease forwards; animation-delay:.25s; }
+.seal-ring{ animation:spin 40s linear infinite; }
+.hero-name{ opacity:0; animation:riseIn .9s ease forwards; animation-delay:.4s; }
+.hero-name .shine{ animation:shine 5s linear infinite 1.4s; }
+.role-strip{ opacity:0; animation:riseIn .9s ease forwards; animation-delay:.55s; }
+.role-track{ transition:transform .6s cubic-bezier(.65,0,.35,1); }
+.tagline{ opacity:0; animation:riseIn .9s ease forwards; animation-delay:.7s; }
+.cta-row{ opacity:0; animation:riseIn .9s ease forwards; animation-delay:.85s; }
+.scrollcue{ opacity:0; animation:riseIn .9s ease forwards, bob 2.2s ease-in-out infinite; animation-delay:1s, 2.2s; }
+
+.btn{ transition:transform .25s, background .25s, color .25s; }
+.btn-solid:hover{ transform:translateY(-2px); background:var(--gold-bright); }
+.btn-ghost:hover{ transform:translateY(-2px); background:rgba(201,162,39,0.12); }
+
+/* ---------- MRZ marquee ---------- */
+.mrz-line{ animation:scrollmrz 22s linear infinite; }
+.mrz-line + .mrz-line{ animation-duration:24s; }
+
+/* ---------- scroll-reveal (paper pages) ---------- */
+.page-head{ opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s ease; }
+.page-head.in{ opacity:1; transform:translateY(0); }
+.reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s ease; }
+.reveal.in{ opacity:1; transform:translateY(0); }
+.reveal:nth-child(2){ transition-delay:.08s; }
+.reveal:nth-child(3){ transition-delay:.16s; }
+
+.status-open .dot{ animation:pulse 2s infinite; }
+
+/* ---------- ventures / stamps ---------- */
+.stamp-card{ transition:transform .4s ease, box-shadow .4s ease; }
+.stamp-card:hover{ transform:rotate(0deg) translateY(-4px); box-shadow:0 20px 40px rgba(36,28,20,0.12); }
+.stamp-link{ transition:gap .25s, color .25s, border-color .25s; }
+.stamp-link:hover{ gap:13px; color:var(--gold); border-color:var(--gold); }
+
+/* ---------- education ---------- */
+.edu-item.current .edu-stamp{ animation:blinkStamp 2.6s infinite; }
+
+/* ---------- achievements gallery ---------- */
+.gallery-item{ transition:transform .35s ease, box-shadow .35s ease; }
+.gallery-item:hover{ transform:rotate(0deg) translateY(-6px); box-shadow:0 20px 36px rgba(36,28,20,0.16); }
+
+/* ---------- lightbox ---------- */
+@keyframes lightboxIn{ from{ opacity:0; transform:scale(.96); } to{ opacity:1; transform:scale(1); } }
+.lightbox.open figure{ animation:lightboxIn .3s ease; }
+.lightbox-close{ transition:background .25s, transform .25s; }
+.lightbox-close:hover{ background:rgba(201,162,39,0.12); transform:rotate(90deg); }
+
+/* ---------- contact ---------- */
+.contact-card{ transition:transform .3s, border-color .3s, background .3s; }
+.contact-card:hover{ transform:translateY(-4px); border-color:var(--gold); background:rgba(201,162,39,0.06); }
+
+/* ---------- respect reduced motion everywhere ---------- */
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation-duration:0.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;
+    scroll-behavior:auto !important;
+  }
+  .eyebrow,.seal,.hero-name,.role-strip,.tagline,.cta-row,.scrollcue{ opacity:1; }
+}
