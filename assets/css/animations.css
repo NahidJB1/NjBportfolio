@@ -1,20 +1,16 @@
 /* ============================================
    NJB PORTFOLIO — ANIMATIONS
+   Minimal / Refined
    ============================================ */
 
 /* KEYFRAMES */
-@keyframes pulse-glow {
-  0%, 100% { text-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 212, 255, 0.3); }
-  50% { text-shadow: 0 0 40px rgba(0, 212, 255, 1), 0 0 80px rgba(0, 212, 255, 0.5); }
-}
-
 @keyframes blink {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  50% { opacity: 0.3; }
 }
 
 @keyframes blink-cursor {
-  0%, 100% { border-color: var(--cyan); }
+  0%, 100% { border-color: var(--accent); }
   50% { border-color: transparent; }
 }
 
@@ -23,13 +19,8 @@
   100% { left: 100%; }
 }
 
-@keyframes gradient-rotate {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 400% 400%; }
-}
-
 @keyframes reveal-up-anim {
-  from { opacity: 0; transform: translateY(40px); }
+  from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -38,83 +29,20 @@
   to { opacity: 1; }
 }
 
+/* HERO PHOTO — gentle float */
+.hero-photo {
+  animation: float 6s ease-in-out infinite;
+}
+
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
+  0%, 100% { transform: translateY(-50%); }
+  50% { transform: translateY(calc(-50% - 8px)); }
 }
-
-@keyframes glitch-1 {
-  0%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0); }
-  20% { clip-path: inset(20% 0 60% 0); transform: translate(-3px, 2px); }
-  40% { clip-path: inset(60% 0 20% 0); transform: translate(3px, -2px); }
-  60% { clip-path: inset(80% 0 5% 0); transform: translate(-2px, 1px); }
-  80% { clip-path: inset(5% 0 85% 0); transform: translate(2px, -1px); }
-}
-
-@keyframes glitch-2 {
-  0%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0); }
-  20% { clip-path: inset(40% 0 40% 0); transform: translate(3px, -2px); }
-  40% { clip-path: inset(10% 0 75% 0); transform: translate(-3px, 2px); }
-  60% { clip-path: inset(70% 0 15% 0); transform: translate(2px, -1px); }
-  80% { clip-path: inset(30% 0 55% 0); transform: translate(-2px, 1px); }
-}
-
-@keyframes scan-line {
-  0% { top: -2px; }
-  100% { top: 100%; }
-}
-
-@keyframes node-pulse {
-  0%, 100% { r: 2; opacity: 0.5; }
-  50% { r: 4; opacity: 1; }
-}
-
-/* GLITCH EFFECT */
-.glitch {
-  position: relative;
-}
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0; left: 0; width: 100%;
-  font-family: inherit; font-size: inherit; font-weight: inherit;
-  color: var(--cyan);
-  opacity: 0;
-}
-.glitch:hover::before {
-  opacity: 0.8;
-  color: #ff004c;
-  animation: glitch-1 0.4s steps(2) forwards;
-}
-.glitch:hover::after {
-  opacity: 0.8;
-  color: var(--cyan);
-  animation: glitch-2 0.4s steps(2) 0.05s forwards;
-}
-
-/* HERO PHOTO FLOAT */
-.hero-photo { animation: float 5s ease-in-out infinite; }
-
-/* PROJECT CARD HOVER SCAN LINE */
-.project-card::before {
-  content: '';
-  position: absolute; top: -2px; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.project-card.featured::before { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-.project-card:hover::before { opacity: 1; animation: scan-line 0.5s linear; }
-
-/* NAV LOGO GLOW ON HOVER */
-.nav-logo a:hover .nav-logo-img { filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.6)); }
-.nav-logo a:hover .nav-logo-fallback { box-shadow: 0 0 16px rgba(0, 212, 255, 0.35); }
 
 /* SECTION LABEL ANIMATION ON ENTRY */
 .section-label {
   opacity: 0;
-  transform: translateX(-16px);
+  transform: translateX(-12px);
   transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
 }
 .section-label.visible {
@@ -128,22 +56,18 @@
 .badge-card:nth-child(3) { transition-delay: 0.15s; }
 .badge-card:nth-child(4) { transition-delay: 0.2s; }
 
-/* STAT COUNTER GLOW */
-.stat-number { transition: text-shadow 0.3s; }
-.stat:hover .stat-number { text-shadow: 0 0 20px rgba(0, 212, 255, 0.6); }
+/* PILL HOVER — subtle */
+.pill { transition: color 0.2s, border-color 0.2s, transform 0.2s; }
+.pill:hover { transform: scale(1.02); }
 
-/* PILL HOVER STAGGER — subtle scale */
-.pill { transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s; }
-.pill:hover { transform: scale(1.04); }
+/* NAV LOGO HOVER */
+.nav-logo a:hover .nav-logo-img { opacity: 0.8; transition: opacity 0.3s; }
 
-/* CONTACT ITEM ICON PULSE */
-.contact-item:hover .ci-icon { animation: pulse-glow 0.5s ease; }
-
-/* SMOOTH SECTION TRANSITIONS */
+/* SMOOTH SECTION DIVIDERS */
 .section { position: relative; }
 .section::before {
   content: '';
   position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-  width: 80px; height: 1px;
+  width: 60px; height: 1px;
   background: linear-gradient(90deg, transparent, var(--border-hover), transparent);
 }
