@@ -1,0 +1,148 @@
+/* ============================================
+   FACTSHIELD PROJECT STYLES
+   Minimalist extension for specific case study data
+   ============================================ */
+
+/* Data Sections */
+.craft-problem-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+.craft-problem-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: transform var(--transition), border-color var(--transition);
+}
+.craft-problem-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-hover);
+}
+.craft-problem-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+.craft-problem-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+
+/* Stat Callout */
+.craft-stat-callout {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+}
+.craft-stat-callout .stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+.craft-stat-callout .stat-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text);
+  font-weight: 500;
+}
+.craft-stat-callout cite {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  margin-top: 0.5rem;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Stats Row */
+.craft-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+.craft-stats-row .stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.craft-stats-row .stat-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.craft-stats-row .stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+/* ASCII Diagram */
+.craft-ascii-diagram {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+  overflow-x: auto;
+  white-space: pre;
+  margin: 3rem 0;
+}
+.craft-ascii-diagram::-webkit-scrollbar {
+  height: 6px;
+}
+.craft-ascii-diagram::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+/* Specific styling for the hackathon gallery */
+.hackathon-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Callout Comment */
+.craft-callout-comment {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin: 2.5rem 0;
+  padding: 1.5rem;
+  border-left: 2px solid var(--accent);
+  background: var(--surface);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.craft-callout-comment span {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .craft-stat-callout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FactShield — Case Study | Nahid Jahan Bhuiyan</title>
+  <meta name="description" content="FactShield: an AI & blockchain-powered fact-checking platform built by Nahid Jahan Bhuiyan and Shihab Dewan. 1st Place, CityU FusionX Hackathon." />
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net; base-uri 'self'; form-action 'self'; frame-ancestors 'none';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/case-study.css" />
+
+  <!-- Page-scoped override only — case-study.css stays untouched so it
+       can keep being reused as-is by every other case study page. This
+       just gives the "Hackathon Champion" tag a bit more presence than
+       a plain tag, using existing tokens (no new colors). -->
+  <style>
+    .tag-featured {
+      color: var(--ink);
+      border-color: var(--ink);
+      background: var(--glass-bg-strong);
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="rail">
+    <div class="rail-top">
+      <a href="../index.html" class="logo" aria-label="Back to homepage">NJB</a>
+      <a href="../index.html#projects" class="back-link">← Portfolio</a>
+    </div>
+
+    <nav class="rail-nav" aria-label="Case study section navigation">
+      <button class="nav-dot" data-target="hero" aria-label="Go to Overview section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Overview</span>
+      </button>
+      <button class="nav-dot" data-target="problem" aria-label="Go to Problem section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Problem</span>
+      </button>
+      <button class="nav-dot" data-target="objective" aria-label="Go to Objective section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Objective</span>
+      </button>
+      <button class="nav-dot" data-target="features" aria-label="Go to Features section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Features</span>
+      </button>
+      <button class="nav-dot" data-target="milestones" aria-label="Go to Milestones section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Milestones</span>
+      </button>
+      <button class="nav-dot" data-target="architecture" aria-label="Go to Architecture section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Architecture</span>
+      </button>
+    </nav>
+
+    <div class="rail-bottom">
+      <a href="https://github.com/NahidJB1" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
+      <a href="https://www.instagram.com/nahidjahanbhuiyan" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+    </div>
+  </header>
+
+  <div class="terminal-bar" aria-hidden="true">
+    <span class="terminal-path" id="terminal-path">guest@njb:~/projects/factshield$ whoami</span><span class="terminal-cursor">_</span>
+  </div>
+
+  <main id="main" class="content">
+
+    <!-- ============ HERO / OVERVIEW ============ -->
+    <section id="hero" class="panel" data-path="guest@njb:~/projects/factshield$ whoami">
+      <div class="glass hero-glass">
+        <a href="../index.html#projects" class="back-link">← All projects</a>
+        <p class="eyebrow">~/projects/factshield</p>
+        <h1 class="hero-name">FactShield</h1>
+        <p class="tagline">AI &amp; Blockchain Powered Fact-Checking Platform</p>
+
+        <div class="tag-row hero-tags">
+          <span class="tag tag-featured">🏆 Hackathon Champion</span>
+          <span class="tag">Full-Stack</span>
+          <span class="tag">Blockchain Integration</span>
+        </div>
+
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Full-Stack Dev &amp; Feature Planner</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Timeline</span>
+            <span class="meta-value">30 Days · Idea to Pitch</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Status</span>
+            <span class="meta-value">1st Place · CityU FusionX Hackathon</span>
+          </div>
+        </div>
+
+        <div class="tech-pills pill-row">
+          <span class="pill">PHP</span>
+          <span class="pill">MySQL</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Polygon Blockchain</span>
+          <span class="pill">Solidity</span>
+          <span class="pill">AI / LLM API</span>
+        </div>
+
+        <div class="cta-row" style="margin-top: var(--space-4);">
+          <a href="https://factshield.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Live Site</a>
+          <a href="../index.html#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEM ============ -->
+    <section id="problem" class="panel panel-wide" data-path="guest@njb:~/projects/factshield$ cat problem.md">
+      <div class="glass glass-wide">
+        <p class="eyebrow">~/problem</p>
+        <h2>Panic Travels Faster Than Proof</h2>
+        <p class="body-text">
+          Fake news moves at the speed of panic — long before anyone gets the chance to check it.
+          By the time a claim is confirmed false, it's usually already been shared thousands of times over.
+        </p>
+
+        <div class="problem-cards">
+          <div class="problem-card">
+            <h3>Days, Not Seconds</h3>
+            <p>Established fact-checkers like Snopes rely on human review that takes days — an eternity when a claim is already spreading in real time.</p>
+          </div>
+          <div class="problem-card">
+            <h3>Manual Search Fatigue</h3>
+            <p>Verifying a headline yourself means digging through multiple sources mid-scroll — friction most people won't push through before hitting share.</p>
+          </div>
+          <div class="problem-card">
+            <h3>No Tamper-Proof Trail</h3>
+            <p>Even a debunked claim can quietly resurface later — there's no permanent, public record proving what was actually found.</p>
+          </div>
+        </div>
+
+        <div class="stat-callout">
+          <span class="stat-number">6×</span>
+          <p class="stat-callout-text">
+            the estimated speed at which misinformation spreads compared to verified reporting — while human review still takes days to catch up.
+            <cite>Cited by the FactShield team</cite>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OBJECTIVE ============ -->
+    <section id="objective" class="panel" data-path="guest@njb:~/projects/factshield$ cat objective.md">
+      <div class="glass">
+        <p class="eyebrow">~/objective</p>
+        <h2>Truth, Verified in Under 15 Seconds</h2>
+        <p class="body-text">
+          The goal was to design and build a platform that returns a verdict on any claim in under 15
+          seconds — and once that verdict is delivered, it's permanently recorded on the blockchain, so
+          it can never quietly be changed after the fact. The entire system — architecture, backend, and
+          pipeline — came together in 30 days, start to pitch, during CityU's FusionX hackathon.
+        </p>
+
+        <p class="callout-comment">
+          <span>// </span>two-person build:<br />
+          system architecture, full-stack development &amp; feature planning — me. Interface &amp; UX design — my teammate, Shihab Dewan.
+        </p>
+
+        <div class="stats-row">
+          <div class="stat">
+            <span class="stat-number">30</span>
+            <span class="stat-label">Days, Idea to Pitch</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">1st</span>
+            <span class="stat-label">Place · CityU FusionX</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">&lt;15s</span>
+            <span class="stat-label">Claim to Verdict</span>
+          </div>
+        </div>
+
+        <p class="body-text" style="margin-top: var(--space-3);">
+          Judged by a panel of industry cybersecurity professionals, FactShield placed 1st overall.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section id="features" class="panel panel-wide" data-path="guest@njb:~/projects/factshield$ cat features.json">
+      <div class="glass glass-wide">
+        <p class="eyebrow">~/features</p>
+        <h2>How FactShield Verifies a Claim</h2>
+        <p class="body-text">
+          Every submission — pasted text, an article link, or a video URL — moves through the same
+          AI-driven pipeline before a verdict is ever shown.
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Claim-by-Claim Breakdown</h3>
+            <p>Rather than a single true/false stamp, the AI splits an article into individual claims, cross-references each against trusted global sources, and returns a three-tier verdict — Real, Fake, or Suspicious — along with the evidence behind it.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Immutable Blockchain Records</h3>
+            <p>Every verdict is written to the Polygon network, generating a public, tamper-proof transaction hash. Once it's recorded, no one — including the team — can quietly edit or delete it.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Live Misinformation Heatmap</h3>
+            <p>Submissions feed a color-coded global heatmap tracking where specific topics — health, politics, war — are actively spreading, turning a personal verification tool into a public early-warning system.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MILESTONES ============ -->
+    <section id="milestones" class="panel panel-wide" data-path="guest@njb:~/projects/factshield$ ls -la ~/milestones">
+      <div class="glass glass-wide">
+        <p class="eyebrow">~/milestones</p>
+        <h2>1st Place, CityU FusionX Hackathon</h2>
+        <p class="body-text">
+          Photos from the pitch and the win — judged by a panel of industry cybersecurity professionals.
+        </p>
+
+        <h3 class="gallery-subhead">Recognition</h3>
+        <div class="gallery-recognition">
+          <figure class="gallery-photo reveal">
+            <img src="../assets/photo/factshield-champions.jpeg" alt="FactShield team receiving the 1st place award at CityU FusionX Hackathon" style="aspect-ratio: 16/9; object-fit: cover; object-position: center 20%;" />
+            <figcaption class="gallery-caption">
+              <strong>1st Place Champions</strong>
+              Receiving certificates, medals, and the presentation cheque from CityU Dean, Assoc Prof Dr. Nurul Hafeez Ibrahim.
+            </figcaption>
+          </figure>
+          <figure class="gallery-photo reveal">
+            <img src="../assets/photo/factshield-medals.jpeg" alt="FactShield championship medals" style="aspect-ratio: 16/9; object-fit: cover; object-position: center 30%;" />
+            <figcaption class="gallery-caption">
+              <strong>The Hardware</strong>
+              The championship medals earned for FactShield's approach to fighting misinformation.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ARCHITECTURE ============ -->
+    <section id="architecture" class="panel panel-wide" data-path="guest@njb:~/projects/factshield$ cat pipeline.md">
+      <div class="glass glass-wide">
+        <p class="eyebrow">~/architecture</p>
+        <h2>Under the Hood</h2>
+        <p class="body-text">
+          FactShield runs a three-step pipeline: submit content, let AI analyze and score it, then commit
+          the verdict permanently to the blockchain.
+        </p>
+
+        <pre class="ascii-diagram" aria-hidden="true">┌───────────────┐        ┌───────────────┐        ┌───────────────┐
+│    SUBMIT     │  --->  │  AI ANALYSIS  │  --->  │  BLOCKCHAIN   │
+│  Text or URL  │        │Extract & Score│        │Polygon Network│
+│  Claim Input  │  <---  │3-Tier Verdict │  <---  │ tx hash proof │
+└───────────────┘        └───────────────┘        └───────────────┘</pre>
+
+        <p class="body-text">
+          The AI layer extracts and cross-checks every claim against trusted global sources before
+          scoring it; the result is then committed to the Polygon network as a public, immutable
+          transaction — visible to anyone through the platform's own blockchain explorer.
+        </p>
+
+        <div class="stats-row">
+          <div class="stat">
+            <span class="stat-number">12,847</span>
+            <span class="stat-label">Articles Verified</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">10,768</span>
+            <span class="stat-label">Fake Claims Caught</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">8,391</span>
+            <span class="stat-label">Blockchain Records</span>
+          </div>
+        </div>
+
+        <div class="closing-cta">
+          <a href="https://factshield.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Live Site</a>
+          <a href="../index.html#projects" class="btn btn-ghost">← Back to All Projects</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="../js/case-study.js"></script>
+</body>
+</html>

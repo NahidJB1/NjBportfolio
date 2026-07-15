@@ -7,17 +7,17 @@
   
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="stylesheet" href="/assets/css/animations.css" />
+  <link rel="stylesheet" href="/assets/css/factshield.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-
-
   <div id="header-placeholder"></div>
 
   <main class="craft-main">
     
+    <!-- OVERVIEW -->
     <section class="craft-hero">
       <div class="container">
         <a href="/" class="btn btn-ghost" style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem;">← Back to Home</a>
@@ -26,83 +26,190 @@
         <div class="craft-subtitle scroll-reveal delay-1">AI &amp; Blockchain Powered Fact-Checking Platform</div>
         
         <div class="project-tags scroll-reveal delay-2">
-          <span class="ptag" style="color: var(--gold); background: var(--gold-dim); border-color: rgba(240, 180, 41, 0.15);">Hackathon Champion 🏆</span>
+          <span class="ptag" style="color: var(--ink); background: rgba(255, 255, 255, 0.8);">🏆 Hackathon Champion</span>
           <span class="ptag">Full-Stack</span>
           <span class="ptag">Blockchain Integration</span>
         </div>
 
         <div class="craft-meta-grid scroll-reveal delay-3">
           <div class="meta-item">
-            <span class="meta-label">My Role</span>
+            <span class="meta-label">Role</span>
             <span class="meta-value">Full-Stack Dev &amp; Feature Planner</span>
           </div>
           <div class="meta-item">
-            <span class="meta-label">Team Partner</span>
-            <span class="meta-value">Shihab Dewan (UI/UX Design)</span>
+            <span class="meta-label">Timeline</span>
+            <span class="meta-value">30 Days · Idea to Pitch</span>
           </div>
           <div class="meta-item">
-            <span class="meta-label">Timeline</span>
-            <span class="meta-value">30 Days (Idea to Pitch)</span>
+            <span class="meta-label">Status</span>
+            <span class="meta-value">1st Place · CityU FusionX Hackathon</span>
           </div>
           <div class="meta-item">
             <span class="meta-label">Live Link</span>
             <a href="https://factshield.com" target="_blank" class="meta-value" style="color: var(--cyan); text-decoration: underline;">Visit Platform ↗</a>
           </div>
         </div>
+        
+        <div class="project-tags scroll-reveal delay-4" style="margin-top: 2rem;">
+          <span class="ptag" style="background: transparent;">PHP</span>
+          <span class="ptag" style="background: transparent;">MySQL</span>
+          <span class="ptag" style="background: transparent;">JavaScript</span>
+          <span class="ptag" style="background: transparent;">Polygon Blockchain</span>
+          <span class="ptag" style="background: transparent;">Solidity</span>
+          <span class="ptag" style="background: transparent;">AI / LLM API</span>
+        </div>
       </div>
     </section>
 
+    <!-- PROBLEM -->
     <section class="craft-section">
       <div class="container">
-        <h2 class="craft-heading scroll-reveal">The Problem &amp; Objective</h2>
+        <h2 class="craft-heading scroll-reveal">Panic Travels Faster Than Proof</h2>
         <p class="craft-text scroll-reveal">
-          Fake news travels at the speed of panic. Existing fact-checking tools like Snopes require days for human review, and manual Google searches take too much effort in the moment of consumption[cite: 140]. Our objective was clear: design and develop an instant AI-powered fact-checking platform that gives users the truth in under 15 seconds — verified forever on the blockchain[cite: 140].
-        </p>
-        <p class="craft-text scroll-reveal" style="margin-top: -1.5rem;">
-          Conceived and built entirely within a 30-day university hackathon[cite: 140], I led the system architecture, full-stack development, and feature planning, collaborating with my teammate who handled the UI. The platform won 1st place at the CityU FusionX Hackathon, judged by industry cybersecurity professionals[cite: 137, 140].
+          Fake news moves at the speed of panic — long before anyone gets the chance to check it. By the time a claim is confirmed false, it's usually already been shared thousands of times over.
         </p>
 
-        <h2 class="craft-heading scroll-reveal" style="margin-top: 4rem;">System Architecture &amp; Features</h2>
-        <div class="feature-grid">
-          
-          <div class="feature-card scroll-reveal">
-            <h3 class="feature-title">AI Claim-by-Claim Breakdown</h3>
-            <p class="feature-desc">Instead of a simple binary verdict, I engineered the backend to break down articles claim-by-claim using AI[cite: 140]. It assigns a three-tier verdict (Real, Fake, Suspicious) and cross-references data against trusted global sources, showing the exact evidence[cite: 140].</p>
+        <div class="craft-problem-cards">
+          <div class="craft-problem-card scroll-reveal delay-1">
+            <h3>Days, Not Seconds</h3>
+            <p>Established fact-checkers like Snopes rely on human review that takes days — an eternity when a claim is already spreading in real time.</p>
           </div>
-
-          <div class="feature-card scroll-reveal delay-1">
-            <h3 class="feature-title">Immutable Blockchain Records</h3>
-            <p class="feature-desc">To ensure absolute trust and transparency, I integrated blockchain technology. Every verification result is permanently stored on the Polygon network, generating a tamper-proof, public transaction hash that cannot be altered or deleted[cite: 140].</p>
+          <div class="craft-problem-card scroll-reveal delay-2">
+            <h3>Manual Search Fatigue</h3>
+            <p>Verifying a headline yourself means digging through multiple sources mid-scroll — friction most people won't push through before hitting share.</p>
           </div>
-
-          <div class="feature-card scroll-reveal delay-2">
-            <h3 class="feature-title">Live Misinformation Heatmap</h3>
-            <p class="feature-desc">Developed a dynamic, global heatmap that aggregates user submissions to display color-coded live dots[cite: 140]. This tracks where specific fake news topics (Health, Politics, War) are actively spreading, turning a personal tool into a public service[cite: 140].</p>
+          <div class="craft-problem-card scroll-reveal delay-3">
+            <h3>No Tamper-Proof Trail</h3>
+            <p>Even a debunked claim can quietly resurface later — there's no permanent, public record proving what was actually found.</p>
           </div>
+        </div>
 
+        <div class="craft-stat-callout scroll-reveal">
+          <span class="stat-number">6×</span>
+          <div>
+            <p class="stat-text">the estimated speed at which misinformation spreads compared to verified reporting — while human review still takes days to catch up.</p>
+            <cite>Cited by the FactShield team</cite>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- OBJECTIVE -->
     <section class="craft-section" style="background: var(--bg2);">
       <div class="container">
-        <h2 class="craft-heading scroll-reveal">Championship Milestones</h2>
-        <p class="craft-text scroll-reveal">Validating the system architecture and taking home the grand prize at CityU FusionX Hackathon 1.0 (2026).</p>
-        
-        <div class="craft-gallery">
-          
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/hackathonchampdn.jpeg" alt="CityU Hackathon Champions" style="aspect-ratio: 16/9; object-fit: cover; object-position: center 30%;"/>
-            <div class="craft-img-caption"><strong>1st Place Champions:</strong> Receiving our certificates, medals, and cheque from CityU Dean, Assoc Prof Dr. Nurul Hafeez Ibrahim.</div>
-          </div>
-          
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/hackathonchampach.jpeg" alt="Hackathon Medals" style="aspect-ratio: 16/9; object-fit: cover;"/>
-            <div class="craft-img-caption"><strong>The Hardware:</strong> The championship medals earned for FactShield's innovative approach to combating misinformation.</div>
-          </div>
+        <h2 class="craft-heading scroll-reveal">Truth, Verified in Under 15 Seconds</h2>
+        <p class="craft-text scroll-reveal">
+          The goal was to design and build a platform that returns a verdict on any claim in under 15 seconds — and once that verdict is delivered, it's permanently recorded on the blockchain, so it can never quietly be changed after the fact. The entire system — architecture, backend, and pipeline — came together in 30 days, start to pitch, during CityU's FusionX hackathon.
+        </p>
 
+        <div class="craft-callout-comment scroll-reveal delay-1">
+          <span>//</span> two-person build:<br />
+          system architecture, full-stack development &amp; feature planning — me. Interface &amp; UX design — my teammate, Shihab Dewan.
         </div>
 
+        <div class="craft-stats-row scroll-reveal delay-2">
+          <div class="stat">
+            <span class="stat-number">30</span>
+            <span class="stat-label">Days, Idea to Pitch</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">1st</span>
+            <span class="stat-label">Place · CityU FusionX</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">&lt;15s</span>
+            <span class="stat-label">Claim to Verdict</span>
+          </div>
+        </div>
+        
+        <p class="craft-text scroll-reveal delay-3" style="margin-top: 2rem;">
+          Judged by a panel of industry cybersecurity professionals, FactShield placed 1st overall.
+        </p>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="craft-section">
+      <div class="container">
+        <h2 class="craft-heading scroll-reveal">How FactShield Verifies a Claim</h2>
+        <p class="craft-text scroll-reveal">
+          Every submission — pasted text, an article link, or a video URL — moves through the same AI-driven pipeline before a verdict is ever shown.
+        </p>
+        
+        <div class="feature-grid">
+          <div class="feature-card scroll-reveal">
+            <h3 class="feature-title">Claim-by-Claim Breakdown</h3>
+            <p class="feature-desc">Rather than a single true/false stamp, the AI splits an article into individual claims, cross-references each against trusted global sources, and returns a three-tier verdict — Real, Fake, or Suspicious — along with the evidence behind it.</p>
+          </div>
+          <div class="feature-card scroll-reveal delay-1">
+            <h3 class="feature-title">Immutable Blockchain Records</h3>
+            <p class="feature-desc">Every verdict is written to the Polygon network, generating a public, tamper-proof transaction hash. Once it's recorded, no one — including the team — can quietly edit or delete it.</p>
+          </div>
+          <div class="feature-card scroll-reveal delay-2">
+            <h3 class="feature-title">Live Misinformation Heatmap</h3>
+            <p class="feature-desc">Submissions feed a color-coded global heatmap tracking where specific topics — health, politics, war — are actively spreading, turning a personal verification tool into a public early-warning system.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ARCHITECTURE -->
+    <section class="craft-section" style="background: var(--bg2);">
+      <div class="container">
+        <h2 class="craft-heading scroll-reveal">Under the Hood</h2>
+        <p class="craft-text scroll-reveal">
+          FactShield runs a three-step pipeline: submit content, let AI analyze and score it, then commit the verdict permanently to the blockchain.
+        </p>
+
+        <div class="craft-ascii-diagram scroll-reveal delay-1">┌───────────────┐        ┌───────────────┐        ┌───────────────┐
+│    SUBMIT     │  --->  │  AI ANALYSIS  │  --->  │  BLOCKCHAIN   │
+│  Text or URL  │        │Extract & Score│        │Polygon Network│
+│  Claim Input  │  <---  │3-Tier Verdict │  <---  │ tx hash proof │
+└───────────────┘        └───────────────┘        └───────────────┘</div>
+
+        <p class="craft-text scroll-reveal delay-2">
+          The AI layer extracts and cross-checks every claim against trusted global sources before scoring it; the result is then committed to the Polygon network as a public, immutable transaction — visible to anyone through the platform's own blockchain explorer.
+        </p>
+
+        <div class="craft-stats-row scroll-reveal delay-3">
+          <div class="stat">
+            <span class="stat-number">12,847</span>
+            <span class="stat-label">Articles Verified</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">10,768</span>
+            <span class="stat-label">Fake Claims Caught</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">8,391</span>
+            <span class="stat-label">Blockchain Records</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MILESTONES -->
+    <section class="craft-section">
+      <div class="container">
+        <h2 class="craft-heading scroll-reveal">1st Place, CityU FusionX Hackathon</h2>
+        <p class="craft-text scroll-reveal">Photos from the pitch and the win — judged by a panel of industry cybersecurity professionals.</p>
+        
+        <div class="hackathon-gallery">
+          <div class="craft-img-wrapper scroll-reveal">
+            <img src="/assets/photo/hackathonchampdn.jpeg" alt="FactShield team receiving the 1st place award" style="aspect-ratio: 16/9; object-fit: cover; object-position: center 20%;" />
+            <div class="craft-img-caption">
+              <strong>1st Place Champions</strong><br />
+              Receiving certificates, medals, and the presentation cheque from CityU Dean, Assoc Prof Dr. Nurul Hafeez Ibrahim.
+            </div>
+          </div>
+          <div class="craft-img-wrapper scroll-reveal delay-1">
+            <img src="/assets/photo/hackathonchampach.jpeg" alt="FactShield championship medals" style="aspect-ratio: 16/9; object-fit: cover; object-position: center 30%;" />
+            <div class="craft-img-caption">
+              <strong>The Hardware</strong><br />
+              The championship medals earned for FactShield's approach to fighting misinformation.
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

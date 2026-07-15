@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEDeLIFE — Case Study | Nahid Jahan Bhuiyan</title>
+  <meta name="description" content="MEDeLIFE: a multi-role healthcare and community ecosystem built by Nahid Jahan Bhuiyan. Final year project, Hult Prize shortlist." />
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net; base-uri 'self'; form-action 'self'; frame-ancestors 'none';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/case-study.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="rail">
+    <div class="rail-top">
+      <a href="../index.html" class="logo" aria-label="Back to homepage">NJB</a>
+      <a href="../index.html#projects" class="back-link">← Portfolio</a>
+    </div>
+
+    <nav class="rail-nav" aria-label="Case study section navigation">
+      <button class="nav-dot" data-target="hero" aria-label="Go to Overview section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Overview</span>
+      </button>
+      <button class="nav-dot" data-target="problem" aria-label="Go to Problem section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Problem</span>
+      </button>
+      <button class="nav-dot" data-target="solution" aria-label="Go to Solution section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Solution</span>
+      </button>
+      <button class="nav-dot" data-target="features" aria-label="Go to Features section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Features</span>
+      </button>
+      <button class="nav-dot" data-target="gallery" aria-label="Go to Gallery section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Gallery</span>
+      </button>
+      <button class="nav-dot" data-target="architecture" aria-label="Go to Architecture section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Architecture</span>
+      </button>
+    </nav>
+
+    <div class="rail-bottom">
+      <a href="https://github.com/NahidJB1" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
+      <a href="https://www.instagram.com/nahidjahanbhuiyan" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+    </div>
+  </header>
+
+  <div class="terminal-bar" aria-hidden="true">
+    <span class="terminal-path" id="terminal-path">guest@njb:~/projects/medelife$ whoami</span><span class="terminal-cursor">_</span>
+  </div>
+
+  <main id="main" class="content">
+
+    <!-- ============ HERO / OVERVIEW ============ -->
+    <section id="hero" class="panel" data-path="guest@njb:~/projects/medelife$ whoami">
+      <div class="glass hero-glass">
+        <a href="../index.html#projects" class="back-link">← All projects</a>
+        <p class="eyebrow">~/projects/medelife</p>
+        <h1 class="hero-name">MEDeLIFE</h1>
+        <p class="tagline">Multi-Role Healthcare &amp; Community Ecosystem</p>
+
+        <div class="tag-row hero-tags">
+          <span class="tag">Award Winning</span>
+          <span class="tag">Full-Stack</span>
+          <span class="tag">Final Year Project</span>
+        </div>
+
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Solo UI/UX Designer &amp; Full-Stack Dev</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Timeline</span>
+            <span class="meta-value">3 Months</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Status</span>
+            <span class="meta-value">Live · Hult Prize Shortlist</span>
+          </div>
+        </div>
+
+        <div class="tech-pills pill-row">
+          <span class="pill">PHP</span>
+          <span class="pill">MySQL</span>
+          <span class="pill">HTML5</span>
+          <span class="pill">CSS3</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Google Gemini API</span>
+        </div>
+
+        <div class="cta-row" style="margin-top: var(--space-4);">
+          <a href="https://medelife.onestepmy.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Live Site</a>
+          <a href="../index.html#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEM ============ -->
+    <section id="problem" class="panel panel-wide" data-path="guest@njb:~/projects/medelife$ cat problem.md">
+      <div class="glass glass-wide">
+        <p class="eyebrow">~/problem</p>
+        <h2>The Crisis of Fragmentation</h2>
+        <p class="body-text">
+          Physical medical records are the default in most clinics — and they're fragile. When care is
+          scattered across paper files, both patients and providers pay the price.
+        </p>
+
+        <div class="problem-cards">
+          <div class="problem-card">
+            <h3>Bulky &amp; Easily Lost</h3>
+            <p>Paper files are hard to store, hard to carry, and permanently at risk of damage or loss.</p>
+          </div>
+          <div class="problem-card">
+            <h3>Fragmented Handoffs</h3>
+            <p>Switching providers means re-explaining history from scratch — leading to repeated tests, delayed treatment, and higher costs.</p>
+          </div>
+          <div class="problem-card">
+            <h3>Emergency Blind Spots</h3>
+            <p>An unconscious or disoriented patient can't recite allergies or chronic conditions — and that silence can cost time doctors don't have.</p>
+          </div>
+        </div>
+
+        <div class="stat-callout">
+          <span class="stat-number">54.8%</span>
+          <p class="stat-callout-text">
+            of surveyed individuals relied exclusively on physical paper files for their medical records.
+            <cite>Quantitative survey, n = 31</cite>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOLUTION ============ -->
+    <section id="solution" class="panel" data-path="guest@njb:~/projects/medelife$ cat solution.md">
+      <div class="glass">
+        <p class="eyebrow">~/solution</p>
+        <h2>The Solution</h2>
+        <p class="body-text">
+          MEDeLIFE is a centralized, cloud-based medical record system that securely stores a patient's
+          complete history — removing the dependence on physical documents entirely, and closing the gaps
+          that put patients at risk.
+        </p>
+
+        <p class="callout-comment">
+          <span>// </span>the platform's core design principle:<br />
+          the patient is the true Owner of Data.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section id="features" class="panel panel-wide" data-path="guest@njb:~/projects/medelife$ ls roles/">
+      <div class="glass glass-wide">
+        <p class="eyebrow">~/features</p>
+        <h2>Tri-Role Architecture</h2>
+        <p class="body-text">
+          Every account on MEDeLIFE is scoped to exactly what that role needs to see — nothing more.
+        </p>
+
+        <div class="role-cards">
+          <div class="role-card">
+            <span class="role-name">Patient</span>
+            <span class="role-sub">Data Owner</span>
+            <ul>
+              <li>Digital Wallet — access all uploaded reports</li>
+              <li>Personal Health Log — track daily symptoms</li>
+              <li>Community Feed — read blogs, ask questions safely</li>
+            </ul>
+          </div>
+          <div class="role-card">
+            <span class="role-name">Doctor</span>
+            <span class="role-sub">Administrator of Records</span>
+            <ul>
+              <li>Search patients by National ID</li>
+              <li>Upload lab results &amp; prescriptions</li>
+              <li>Trigger AI Clinical Summaries</li>
+            </ul>
+          </div>
+          <div class="role-card">
+            <span class="role-name">Pharmacist</span>
+            <span class="role-sub">Fulfillment</span>
+            <ul>
+              <li>View prescriptions only, by strict RBAC</li>
+              <li>No access to lab results</li>
+              <li>No access to patient notes</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 style="margin-top: var(--space-4);">Signature Features</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>AI Clinical Summarization</h3>
+            <p>Securely integrates the Google Gemini API via the PHP backend. Parses long uploaded medical documents and instantly generates concise clinical summaries for doctors, saved directly to the database.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Angel Protocol</h3>
+            <p>An emergency-access protocol that lets healthcare professionals retrieve essential, life-saving information rapidly when a patient is unconscious.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Verified Medical Community</h3>
+            <p>A social forum built to combat medical misinformation — only verified Doctor accounts can post official answers and publish health articles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section id="gallery" class="panel panel-wide" data-path="guest@njb:~/projects/medelife$ open gallery/">
+      <div class="glass glass-wide">
+        <p class="eyebrow">~/gallery</p>
+        <h2>Recognition &amp; Interface</h2>
+        <p class="body-text">
+          Moments from the Hult Prize journey, and a closer look at the product itself.
+        </p>
+
+        <h3 class="gallery-subhead">Recognition</h3>
+        <div class="gallery-recognition">
+          <figure class="gallery-photo reveal">
+            <img src="../assets/photo/runnerup_hultprize.jpeg" alt="Hult Prize 2025 Runner-up" style="aspect-ratio: 16/9; object-fit: cover; object-position: center 20%;" />
+            <figcaption class="gallery-caption">
+              <strong>Hult Prize 2025 Runner-up</strong>
+              With my teammate Mr. Molla Rayhan after the initial project pitch.
+            </figcaption>
+          </figure>
+          <figure class="gallery-photo reveal">
+            <img src="../assets/photo/hultprize.jpeg" alt="Hult Prize 2026 Shortlist" style="aspect-ratio: 16/9; object-fit: cover; object-position: center 30%;" />
+            <figcaption class="gallery-caption">
+              <strong>Hult Prize 2026 Shortlist (Nationals)</strong>
+              With CityU Dean, Assoc Prof Dr. Nurul Hafeez Ibrahim, and my team after securing our spot in Stage 2.
+            </figcaption>
+          </figure>
+        </div>
+
+        <h3 class="gallery-subhead">Interface</h3>
+        <div class="gallery-screens">
+          <figure class="gallery-photo reveal">
+            <img src="../assets/photo/SS1-ML.png" alt="MEDeLIFE Landing Page" />
+            <figcaption class="gallery-caption">The Landing Architecture: Introducing the Unified Medical Profile</figcaption>
+          </figure>
+          <figure class="gallery-photo reveal">
+            <img src="../assets/photo/SS2-ML.png" alt="MEDeLIFE Patient Dashboard" />
+            <figcaption class="gallery-caption">Patient Dashboard: Quick Actions for Reports, Appointments, and Scheduling</figcaption>
+          </figure>
+          <figure class="gallery-photo reveal">
+            <img src="../assets/photo/SS3-ML.png" alt="MEDeLIFE Doctor Directory" />
+            <figcaption class="gallery-caption">Doctor Directory: Search, Verification Badges, and Booking Interface</figcaption>
+          </figure>
+          <figure class="gallery-photo reveal">
+            <img src="../assets/photo/SS4-ML.png" alt="MEDeLIFE Community Feed" />
+            <figcaption class="gallery-caption">Verified Community Feed: Questions, Opinions, and Doctor-Authored Articles</figcaption>
+          </figure>
+          <figure class="gallery-photo reveal">
+            <img src="../assets/photo/SS5-ML.png" alt="MEDeLIFE Direct Messaging" />
+            <figcaption class="gallery-caption">Direct Messaging System for User Communication</figcaption>
+          </figure>
+          <figure class="gallery-photo reveal">
+            <img src="../assets/photo/SS6-ML.png" alt="MEDeLIFE Angel Protocol" />
+            <figcaption class="gallery-caption">The Angel Protocol: Emergency Contact Assignment for Lifesaving Data Access</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ARCHITECTURE ============ -->
+    <section id="architecture" class="panel panel-wide" data-path="guest@njb:~/projects/medelife$ cat schema.sql">
+      <div class="glass glass-wide">
+        <p class="eyebrow">~/architecture</p>
+        <h2>Under the Hood</h2>
+        <p class="body-text">
+          MEDeLIFE runs on a three-tier client-server architecture, keeping presentation, application logic,
+          and data cleanly separated for security and maintainability.
+        </p>
+
+        <pre class="ascii-diagram" aria-hidden="true">┌───────────────┐        ┌───────────────┐        ┌───────────────┐
+│    CLIENT     │  --->  │    SERVER     │  --->  │   DATABASE    │
+│ HTML/CSS/JS   │        │  PHP + Gemini │        │ MySQL (10 tbl)│
+│  UI / Forms   │  <---  │  API + RBAC   │  <---  │  Normalized   │
+└───────────────┘        └───────────────┘        └───────────────┘</pre>
+
+        <p class="body-text">
+          The data tier is a highly normalized, 10-table MySQL relational database, optimized for query
+          speed and strict RBAC session management.
+        </p>
+
+        <div class="stats-row">
+          <div class="stat">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Architecture Tiers</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">10</span>
+            <span class="stat-label">Normalized Tables</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">RBAC</span>
+            <span class="stat-label">Session Security</span>
+          </div>
+        </div>
+
+        <div class="closing-cta">
+          <a href="https://medelife.onestepmy.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Live Site</a>
+          <a href="../index.html#projects" class="btn btn-ghost">← Back to All Projects</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="../js/case-study.js"></script>
+</body>
+</html>
+
