@@ -1,0 +1,159 @@
+/* ============================================
+   CRAFT PAGES GLOBAL STYLES
+   ============================================ */
+.craft-main {
+  padding-top: 100px;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* Craft Hero */
+.craft-hero {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.craft-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+.craft-subtitle {
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+/* Craft Meta Data Grid */
+.craft-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+}
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.meta-value {
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Craft Content & Features */
+.craft-section { padding: 5rem 0; }
+.craft-heading {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+.craft-text {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text-dim);
+  max-width: 760px;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.feature-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: transform var(--transition), border-color var(--transition);
+}
+.feature-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-hover);
+}
+.feature-title {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.feature-desc {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* Craft Gallery */
+.craft-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+.craft-img-wrapper {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  position: relative;
+}
+.craft-img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.craft-img-caption {
+  padding: 1rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--text-dim);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+/* ===== LIGHTBOX ===== */
+#craft-lightbox {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+#craft-lightbox.open {
+  opacity: 1; pointer-events: auto;
+}
+.craft-lightbox-content {
+  position: relative; max-width: 90vw; max-height: 90vh;
+  display: flex; flex-direction: column; align-items: center;
+}
+#craft-lightbox-img {
+  max-width: 100%; max-height: 80vh; object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+#craft-lightbox-caption {
+  margin-top: 1.5rem; font-family: var(--font-mono); font-size: 0.9rem;
+  color: var(--text-dim); text-align: center; max-width: 800px;
+}
+#craft-lightbox-caption strong { color: var(--text); }
