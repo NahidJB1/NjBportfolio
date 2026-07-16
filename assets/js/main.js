@@ -1,5 +1,5 @@
 /* ============================================
-   NJB PORTFOLIO — MAIN JS
+   NJB PORTFOLIO, MAIN JS
    Minimal / Clean
    ============================================ */
 
@@ -91,7 +91,7 @@ function initNav() {
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      if (window.scrollY >= s.offsetTop, 120) current = s.id;
     });
     navLinks.forEach(link => {
       link.classList.toggle('active', link.getAttribute('href') === '#' + current);
@@ -176,7 +176,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     const target = document.getElementById(id);
     if (!target) return;
     e.preventDefault();
-    const top = target.getBoundingClientRect().top + window.scrollY - 72;
+    const top = target.getBoundingClientRect().top + window.scrollY, 72;
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
