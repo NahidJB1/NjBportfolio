@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 | Lost in Space</title>
+  
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    .not-found-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: var(--bg);
+      text-align: center;
+      padding: 2rem;
+      overflow: hidden;
+    }
+    
+    .photo-wrapper {
+      position: relative;
+      margin-bottom: 2rem;
+      margin-top: 3rem;
+      animation: revealUp 0.8s ease forwards;
+    }
+
+    .photo-wrapper img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .speech-bubble {
+      position: absolute;
+      top: -70px;
+      left: 100px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-lg);
+      font-size: 0.95rem;
+      font-family: var(--font-mono);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+      white-space: nowrap;
+      animation: float 3.5s ease-in-out infinite;
+      z-index: 10;
+    }
+
+    /* Outer triangle (border) */
+    .speech-bubble::before {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 20px;
+      border-width: 12px 12px 0 0;
+      border-style: solid;
+      border-color: var(--border) transparent transparent transparent;
+    }
+
+    /* Inner triangle (background) */
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 21px;
+      border-width: 10px 10px 0 0;
+      border-style: solid;
+      border-color: var(--surface) transparent transparent transparent;
+    }
+
+    .not-found-title {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      line-height: 1;
+      animation: revealUp 1s ease forwards 0.2s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .not-found-desc {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      margin-bottom: 3rem;
+      animation: revealUp 1s ease forwards 0.4s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .btn-wrapper {
+      animation: revealUp 1s ease forwards 0.6s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    
+    @keyframes revealUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .speech-bubble {
+        left: 50%;
+        transform: translateX(-50%) !important;
+        top: -90px;
+        animation: none; /* Disable float on mobile to avoid overlapping issues */
+      }
+      .speech-bubble::before { left: 50%; transform: translateX(-50%); }
+      .speech-bubble::after { left: 50%; transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div class="not-found-container">
+    
+    <div class="photo-wrapper">
+      <div class="speech-bubble">Oops! You got on the wrong page! Hehe :)</div>
+      <img src="/assets/photo/photo.jpg" alt="Nahid Jahan Bhuiyan" />
+    </div>
+
+    <h1 class="not-found-title">404</h1>
+    <p class="not-found-desc">Lost in space? Let's get you back to the portfolio.</p>
+    
+    <div class="btn-wrapper">
+      <a href="/" class="btn btn-primary">Return to Home</a>
+    </div>
+
+  </div>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
