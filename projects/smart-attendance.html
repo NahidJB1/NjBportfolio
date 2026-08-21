@@ -315,6 +315,14 @@
       const galleries = document.querySelectorAll('.feature-image.craft-gallery');
       if (galleries.length === 0) return;
 
+      galleries.forEach(gallery => {
+        // If the user manually touches/swipes the gallery, disable the auto-animation
+        gallery.addEventListener('touchstart', () => {
+          gallery.dataset.manualScroll = 'true';
+          gallery.style.scrollSnapType = ''; // Ensure native snapping is re-enabled
+        }, { passive: true });
+      });
+
       window.addEventListener('scroll', () => {
         // Only run on mobile layouts
         if (window.innerWidth >= 768) return; 
@@ -322,6 +330,9 @@
         const windowHeight = window.innerHeight;
         
         galleries.forEach(gallery => {
+          // Skip if user took manual control
+          if (gallery.dataset.manualScroll === 'true') return;
+
           // Check if gallery actually has horizontal overflow
           const maxScroll = gallery.scrollWidth - gallery.clientWidth;
           if (maxScroll <= 0) return;
