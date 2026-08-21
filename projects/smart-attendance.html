@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Attendance System, Nahid Jahan Bhuiyan</title>
+  
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/projects/project-base.css" />
+  <link rel="stylesheet" href="/assets/css/animations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="craft-main">
+    
+    <section class="craft-hero">
+      <div class="container">
+        <a href="/" class="btn btn-ghost" style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem;">← Back to Home</a>
+        
+        <h1 class="craft-title scroll-reveal">Smart Attendance System</h1>
+        <div class="craft-subtitle scroll-reveal delay-1">Dual-Layer Verification Architecture (SmartTrack)</div>
+        
+        <div class="project-tags scroll-reveal delay-2">
+          <span class="ptag">Android</span>
+          <span class="ptag">Firebase</span>
+          <span class="ptag">Architecture</span>
+        </div>
+
+        <div class="craft-meta-grid scroll-reveal delay-3">
+          <div class="meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Software Engineer</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Completion Date</span>
+            <span class="meta-value">August 2026</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Tech Stack</span>
+            <span class="meta-value">Java, Android Studio, Firebase</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Core Tech</span>
+            <span class="meta-value">GPS Geofencing, Network Validation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="craft-section">
+      <div class="container">
+        <h2 class="craft-heading scroll-reveal">Not Just Another Attendance System</h2>
+        <p class="craft-text scroll-reveal">
+          Many people mistake this project for a basic hotel management system or a simple QR attendance tracker. However, SmartTrack was built differently to solve a critical issue: <strong>proxy attendance (buddy punching)</strong>. Traditional digital systems rely on single-factor verification, meaning a QR code could easily be screenshotted and shared with students not physically present in the classroom.
+        </p>
+        <p class="craft-text scroll-reveal">
+          To combat this, I engineered a rigorous <strong>dual-layer verification pipeline</strong>. For an attendance record to be accepted, the student's device must prove physical proximity to the lecturer's device (under 5 meters using GPS Haversine formulas) <em>and</em> confirm it is actively connected to the specified campus Wi-Fi network (SSID hashing). This multilayered constraint fundamentally blocks remote check-in fraud.
+        </p>
+
+        <h2 class="craft-heading scroll-reveal" style="margin-top: 4rem;">Key Features & Architecture</h2>
+        <div class="feature-grid">
+          
+          <div class="feature-card scroll-reveal">
+            <h3 class="feature-title">Dual-Layer Security Engine</h3>
+            <p class="feature-desc">Combines strict GPS proximity geofencing with real-time Wi-Fi SSID network validation, ensuring the user is truly physically present in the lecture hall.</p>
+          </div>
+
+          <div class="feature-card scroll-reveal delay-1">
+            <h3 class="feature-title">Dynamic Time-Variant QR</h3>
+            <p class="feature-desc">Tokens embedded within the generated QR codes are scoped to specific timestamps and refresh repeatedly throughout the session, rendering shared codes useless.</p>
+          </div>
+
+          <div class="feature-card scroll-reveal delay-2">
+            <h3 class="feature-title">MBaaS Cloud Architecture</h3>
+            <p class="feature-desc">Leverages Firebase Authentication and Realtime Database (NoSQL) for instantaneous cross-device synchronization between the Student and Lecturer dashboards.</p>
+          </div>
+
+          <div class="feature-card scroll-reveal">
+            <h3 class="feature-title">Gamified User Experience</h3>
+            <p class="feature-desc">Incentivizes students with streak calculations, color-coded attendance health metrics, and unlockable profile frames based on milestone achievements.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="craft-section" style="background: var(--bg2);">
+      <div class="container">
+        <h2 class="craft-heading scroll-reveal">System Performance</h2>
+        <p class="craft-text scroll-reveal">
+          The system was subjected to exhaustive unit, integration, and acceptance testing with faculty and students. The dual-layer validation engine successfully rejected 100% of out-of-range scan attempts while maintaining a 98.2% valid scan acceptance rate on the first attempt, proving that robust security doesn't have to compromise user experience.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
