@@ -309,5 +309,104 @@
   <div id="footer-placeholder"></div>
 
   <script src="/assets/js/main.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Only execute auto-scroll on mobile views
+      if (window.innerWidth >= 768) return;
+
+      const galleries = document.querySelectorAll('.feature-image');
+      
+      galleries.forEach(gallery => {
+        const images = gallery.querySelectorAll('.mockup-img');
+        if (images.length <= 1) return; // Nothing to scroll
+
+        let currentIndex = 0;
+        let scrollInterval;
+        let resumeTimeout;
+        let hasFinished = false;
+
+        const scrollNext = () => {
+          if (hasFinished) return;
+          currentIndex++;
+          
+          if (currentIndex >= images.length) {
+            hasFinished = true;
+            clearInterval(scrollInterval);
+            return;
+          }
+
+          const targetImage = images[currentIndex];
+          // Calculate center alignment
+          const scrollPos = targetImage.offsetLeft - (gallery.clientWidth / 2) + (targetImage.clientWidth / 2);
+          
+          gallery.scrollTo({
+            left: scrollPos > 0 ? scrollPos : 0,
+            behavior: 'smooth'
+          });
+          
+          if (currentIndex === images.length - 1) {
+            hasFinished = true;
+            clearInterval(scrollInterval);
+          }
+        };
+
+        const startAutoScroll = () => {
+          if (hasFinished) return;
+          clearInterval(scrollInterval);
+          // Wait 2.5s before moving to the next image
+          scrollInterval = setInterval(scrollNext, 2500);
+        };
+
+        const pauseAutoScroll = () => {
+          if (hasFinished) return;
+          clearInterval(scrollInterval);
+          clearTimeout(resumeTimeout);
+          
+          // Stop auto-scrolling for 10 seconds if touched
+          resumeTimeout = setTimeout(() => {
+            const centerOfGallery = gallery.scrollLeft + gallery.clientWidth / 2;
+            let closestIndex = 0;
+            let minDiff = Infinity;
+            
+            images.forEach((img, idx) => {
+              const centerOfImg = img.offsetLeft + img.clientWidth / 2;
+              const diff = Math.abs(centerOfGallery - centerOfImg);
+              if (diff < minDiff) {
+                minDiff = diff;
+                closestIndex = idx;
+              }
+            });
+            
+            currentIndex = closestIndex;
+            
+            if (currentIndex >= images.length - 1) {
+              hasFinished = true;
+            } else {
+              startAutoScroll();
+            }
+          }, 10000);
+        };
+
+        // Only start auto-scroll when the gallery enters the viewport
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              if (!hasFinished) startAutoScroll();
+            } else {
+              clearInterval(scrollInterval);
+            }
+          });
+        }, { threshold: 0.6 });
+
+        observer.observe(gallery);
+
+        // User interactions pause the auto-scroll
+        gallery.addEventListener('touchstart', pauseAutoScroll, { passive: true });
+        gallery.addEventListener('mousedown', pauseAutoScroll, { passive: true });
+        gallery.addEventListener('scroll', pauseAutoScroll, { passive: true });
+      });
+    });
+  </script>
 </body>
 </html>
