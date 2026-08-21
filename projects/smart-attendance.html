@@ -12,22 +12,69 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    .case-study-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      margin-top: 2rem;
+    /* Custom CSS for Rich UX Layout */
+    .feature-split {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 7rem;
     }
-    @media (min-width: 768px) {
-      .case-study-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    .img-fluid {
+    .feature-text {
+      flex: 1;
       width: 100%;
-      height: auto;
-      display: block;
-      border-bottom: 1px solid var(--border);
+    }
+    .feature-text h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    .feature-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text2);
+      margin-bottom: 1.5rem;
+    }
+    .feature-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+    }
+    .mockup-img {
+      max-width: 280px;
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease;
+    }
+    .mockup-img:hover {
+      transform: translateY(-5px);
+    }
+    .double-img .mockup-img {
+      max-width: 230px;
+    }
+    .triple-img {
+      flex-wrap: wrap;
+    }
+    .triple-img .mockup-img {
+      max-width: 200px;
+    }
+    
+    @media (min-width: 992px) {
+      .feature-split {
+        flex-direction: row;
+        gap: 5rem;
+      }
+      .feature-split.reverse {
+        flex-direction: row-reverse;
+      }
+      .feature-text {
+        padding: 0 2rem;
+      }
     }
   </style>
 </head>
@@ -37,6 +84,7 @@
 
   <main class="craft-main">
     
+    <!-- Hero Section -->
     <section class="craft-hero">
       <div class="container">
         <a href="/" class="btn btn-ghost" style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem;">← Back to Home</a>
@@ -46,7 +94,7 @@
         
         <div class="project-tags scroll-reveal delay-2">
           <span class="ptag">Android</span>
-          <span class="ptag">Firebase</span>
+          <span class="ptag">Firebase MBaaS</span>
           <span class="ptag">UX/UI Case Study</span>
         </div>
 
@@ -74,142 +122,145 @@
     <!-- Overview & Problem -->
     <section class="craft-section">
       <div class="container">
-        <h2 class="craft-heading scroll-reveal">The Problem: Buddy Punching</h2>
+        <h2 class="craft-heading scroll-reveal">The Architecture of Trust</h2>
         <p class="craft-text scroll-reveal">
-          Many universities have transitioned to digital attendance systems (like scanning a static QR code). However, these single-factor verification methods introduced a massive loophole: <strong>proxy attendance</strong>. A student could simply photograph the QR code and send it to an absent friend to scan from their dorm room. 
+          Many universities transition to digital attendance, only to find that single-factor QR codes actually <em>increase</em> proxy attendance (buddy punching). Students simply photograph the QR code and send it to an absent friend. SmartTrack isn't just an attendance logger—it is a fraud-prevention engine. By combining <strong>GPS proximity geofencing</strong> (using Haversine calculations) with <strong>Wi-Fi SSID validation</strong>, the system guarantees physical presence without the high cost or privacy concerns of biometric hardware.
         </p>
-        <p class="craft-text scroll-reveal">
-          We needed a system that definitively proved a student's physical presence in the lecture hall, without the high deployment costs or privacy concerns of biometric facial recognition hardware.
-        </p>
-
-        <h2 class="craft-heading scroll-reveal" style="margin-top: 4rem;">The Solution: A Dual-Layer Approach</h2>
-        <p class="craft-text scroll-reveal">
-          I engineered <strong>SmartTrack</strong>, a Mobile-Backend-as-a-Service (MBaaS) application that intercepts fraud by introducing a rigorous multi-layered validation pipeline.
-        </p>
-        
-        <div class="feature-grid" style="margin-top: 2rem;">
-          <div class="feature-card scroll-reveal">
-            <h3 class="feature-title">1. Dynamic Time-Variant QR</h3>
-            <p class="feature-desc">The QR token refreshes dynamically throughout the session. If a code is shared, it expires before an absent student can scan it.</p>
-          </div>
-          <div class="feature-card scroll-reveal delay-1">
-            <h3 class="feature-title">2. GPS Proximity Geofencing</h3>
-            <p class="feature-desc">Utilizing the Haversine formula, the app calculates the distance between the scanning device and the lecturer. It strictly rejects scans over 5 meters away.</p>
-          </div>
-          <div class="feature-card scroll-reveal delay-2">
-            <h3 class="feature-title">3. Network Validation</h3>
-            <p class="feature-desc">A secondary check ensures the student is connected to the localized campus Wi-Fi SSID, completely locking out remote network scans.</p>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- Faculty Workflows -->
     <section class="craft-section" style="background: var(--bg2);">
       <div class="container">
-        <h2 class="craft-heading scroll-reveal">Faculty & Management Workflows</h2>
-        <p class="craft-text scroll-reveal">
-          For lecturers, the goal was reducing administrative burden. The interface needed to be highly actionable, allowing them to start sessions, generate dynamic QR codes, and monitor attendance metrics instantly.
-        </p>
-        
-        <div class="case-study-grid">
-          
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/SmartTrack/Teacher's_Dashboard.jpeg" alt="Teacher Dashboard" class="img-fluid" />
-            <div class="craft-img-caption"><strong>Teacher's Dashboard:</strong> Central hub for managing subjects, launching sessions, and accessing visual analytics.</div>
-          </div>
-          
-          <div class="craft-img-wrapper scroll-reveal delay-1">
-            <img src="/assets/photo/SmartTrack/Generate_QR.jpeg" alt="Generate Dynamic QR" class="img-fluid" />
-            <div class="craft-img-caption"><strong>Dynamic QR Generator:</strong> Time-scoped (e.g., 5-30 min) tokens mapped with background GPS coordinate binding.</div>
-          </div>
-
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/SmartTrack/Attendance_Analytics_Graph.jpeg" alt="Visual Analytics" class="img-fluid" />
-            <div class="craft-img-caption"><strong>Real-time Analytics:</strong> MPAndroidChart integration visualizing attendance ratios instantly across subjects.</div>
-          </div>
-
-          <div class="craft-img-wrapper scroll-reveal delay-1">
-            <img src="/assets/photo/SmartTrack/Suspicious_Activity_page.jpeg" alt="Suspicious Activity Logs" class="img-fluid" />
-            <div class="craft-img-caption"><strong>Automated Audit Logs:</strong> Tracking failed check-in attempts and their exact GPS distances to monitor fraud attempts.</div>
-          </div>
-
+        <div class="section-header">
+          <h2 class="section-title">Faculty & Management <em>Workflows</em></h2>
         </div>
+        
+        <!-- Dashboard & Settings -->
+        <div class="feature-split scroll-reveal">
+          <div class="feature-text">
+            <h3>Centralized Dashboards</h3>
+            <p>
+              The <strong>Teacher's Dashboard</strong> and <strong>Management Dashboard</strong> provide instant access to the core actions: generating active QRs, reviewing attendance logs, and spotting suspicious activity. The UI is designed to minimize cognitive load so lecturers can start a session in seconds. The <strong>Settings Page</strong> allows deep personalization and notification controls for faculty members.
+            </p>
+          </div>
+          <div class="feature-image double-img">
+            <img src="/assets/photo/SmartTrack/Teacher's_Dashboard.jpeg" alt="Teacher Dashboard" class="mockup-img" />
+            <img src="/assets/photo/SmartTrack/Management_Dashboard.jpeg" alt="Management Dashboard" class="mockup-img" />
+            <img src="/assets/photo/SmartTrack/Setteing_Page.jpeg" alt="Settings Page" class="mockup-img" />
+          </div>
+        </div>
+
+        <!-- Dynamic QR -->
+        <div class="feature-split reverse scroll-reveal">
+          <div class="feature-text">
+            <h3>Dynamic QR Generation</h3>
+            <p>
+              This is the heart of the system. When a lecturer selects a subject to generate a QR code, the app instantly captures the device's precise <strong>GPS coordinates</strong> and binds it to a <strong>time-scoped token</strong> (e.g., 5-30 minutes). The QR code displayed to the students refreshes continuously, immediately rendering screenshots useless for remote absent students.
+            </p>
+          </div>
+          <div class="feature-image double-img">
+            <img src="/assets/photo/SmartTrack/Subject_Detail_page.jpeg" alt="Subject Detail" class="mockup-img" />
+            <img src="/assets/photo/SmartTrack/Generate_QR.jpeg" alt="Generate QR" class="mockup-img" />
+          </div>
+        </div>
+
+        <!-- Analytics & Records -->
+        <div class="feature-split scroll-reveal">
+          <div class="feature-text">
+            <h3>Visual Analytics & Real-Time Tracking</h3>
+            <p>
+              Instead of digging through CSVs, lecturers are greeted with <strong>Visual Analytics</strong> via MPAndroidChart. They can view attendance ratios as dynamic pie/bar charts. The <strong>Attendance Record</strong> and <strong>Teacher Detail Page</strong> provide granular, real-time synchronization so faculty can see who scanned in successfully exactly as it happens.
+            </p>
+          </div>
+          <div class="feature-image double-img">
+            <img src="/assets/photo/SmartTrack/Attendance_record.jpeg" alt="Attendance Record" class="mockup-img" />
+            <img src="/assets/photo/SmartTrack/Attendance_Analytics_Graph.jpeg" alt="Analytics Graph" class="mockup-img" />
+            <img src="/assets/photo/SmartTrack/Teacher's_Detail_Page.jpeg" alt="Teacher Details" class="mockup-img" />
+          </div>
+        </div>
+
+        <!-- Suspicious Activity -->
+        <div class="feature-split reverse scroll-reveal">
+          <div class="feature-text">
+            <h3>Auditing & Suspicious Activity</h3>
+            <p>
+              Fraud prevention is completely transparent. If a student attempts to scan from outside the geofence, the app fails their scan and logs it to the <strong>Suspicious Activity</strong> dashboard. Faculty can see the exact distance mismatch (e.g., 18,000+ meters away). The <strong>Recent Absence</strong> and <strong>Activity Logs</strong> help administrators identify chronic truancy immediately.
+            </p>
+          </div>
+          <div class="feature-image triple-img">
+            <img src="/assets/photo/SmartTrack/Suspicious_Activity_page.jpeg" alt="Suspicious Activity" class="mockup-img" />
+            <img src="/assets/photo/SmartTrack/Recent_absence.jpeg" alt="Recent Absences" class="mockup-img" />
+            <img src="/assets/photo/SmartTrack/Activity_Log_page.jpeg" alt="Activity Logs" class="mockup-img" />
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- Student Experience -->
     <section class="craft-section">
       <div class="container">
-        <h2 class="craft-heading scroll-reveal">Student Experience & Gamification</h2>
-        <p class="craft-text scroll-reveal">
-          The student app was designed to be friction-less for checking in, while providing transparent records and incentivizing good attendance behavior through gamification.
-        </p>
-
-        <div class="case-study-grid">
-          
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/SmartTrack/Student_Dashboard_Schedule_Integration.jpeg" alt="Student Dashboard" class="img-fluid" />
-            <div class="craft-img-caption"><strong>Student Dashboard:</strong> A prominent direct-scan action button coupled with dynamic daily schedule integration.</div>
-          </div>
-
-          <div class="craft-img-wrapper scroll-reveal delay-1">
-            <img src="/assets/photo/SmartTrack/Camera_Scanner_Integration.jpeg" alt="Camera Integration" class="img-fluid" />
-            <div class="craft-img-caption"><strong>CameraX Integration:</strong> Real-time payload decoding and background location capture to execute validation.</div>
-          </div>
-
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/SmartTrack/Attendance_percenatage_page.jpeg" alt="Attendance Percentage" class="img-fluid" />
-            <div class="craft-img-caption"><strong>Health Indicators:</strong> Color-coded progress bars (Green >80%, Yellow 70-79%, Red &le;69%) for immediate feedback.</div>
-          </div>
-
-          <div class="craft-img-wrapper scroll-reveal delay-1">
-            <img src="/assets/photo/SmartTrack/gamification_profile_avatar.jpeg" alt="Gamification Frames" class="img-fluid" />
-            <div class="craft-img-caption"><strong>Gamification Rewards:</strong> Students unlock profile avatar frames based on streak milestones (12, 24, 50 continuous classes).</div>
-          </div>
-
+        <div class="section-header">
+          <h2 class="section-title">The Student <em>Experience</em></h2>
         </div>
+        
+        <!-- Dashboard & Gamification -->
+        <div class="feature-split scroll-reveal">
+          <div class="feature-text">
+            <h3>Dashboard & Gamified Streaks</h3>
+            <p>
+              The <strong>Student Dashboard</strong> is engineered for speed, featuring a prominent 'Scan QR Code' button integrated with their daily schedule. To transform attendance from a chore into a rewarding habit, I introduced <strong>Gamification</strong>. Students build "Streaks" for consecutive attendance and unlock unique <strong>Avatar Frames</strong> (like Silver Sparkle or Diamond Crown) at key milestones.
+            </p>
+          </div>
+          <div class="feature-image double-img">
+            <img src="/assets/photo/SmartTrack/Student_Dashboard_Schedule_Integration.jpeg" alt="Student Dashboard" class="mockup-img" />
+            <img src="/assets/photo/SmartTrack/gamification_profile_avatar.jpeg" alt="Gamification Frames" class="mockup-img" />
+          </div>
+        </div>
+
+        <!-- Health Metrics & Scanning -->
+        <div class="feature-split reverse scroll-reveal">
+          <div class="feature-text">
+            <h3>Health Metrics & Camera Integration</h3>
+            <p>
+              The <strong>Attendance Percentage Page</strong> provides immediate color-coded feedback on their standing (Green for safe, Red for warning). When it's time to check in, the <strong>Camera Scanner</strong> utilizes CameraX and ZXing to quickly capture the dynamic payload, simultaneously initiating the background <strong>GPS & Database Sync</strong> to validate the network and location requirements instantly.
+            </p>
+          </div>
+          <div class="feature-image triple-img">
+            <img src="/assets/photo/SmartTrack/Attendance_percenatage_page.jpeg" alt="Health Metrics" class="mockup-img" />
+            <img src="/assets/photo/SmartTrack/Camera_Scanner_Integration.jpeg" alt="Scanner" class="mockup-img" />
+            <img src="/assets/photo/SmartTrack/GPS_Hardware_Database_Sync.jpeg" alt="Hardware Sync" class="mockup-img" />
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- Security Feedback -->
+    <!-- Security Edge Cases -->
     <section class="craft-section" style="background: var(--bg2);">
       <div class="container">
-        <h2 class="craft-heading scroll-reveal">Security Feedback & Edge Cases</h2>
-        <p class="craft-text scroll-reveal">
-          A security system is only as good as its error handling. I ensured the UX provided clear, actionable feedback when the validation engine intercepted a fraudulent or invalid scan.
-        </p>
-
-        <div class="case-study-grid">
-          
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/SmartTrack/Attendance_failed_for_distance.jpeg" alt="Failed by Distance" class="img-fluid" />
-            <div class="craft-img-caption"><strong>Geofence Interception:</strong> Scan explicitly rejected when the user's distance exceeds the 5-meter threshold.</div>
-          </div>
-
-          <div class="craft-img-wrapper scroll-reveal delay-1">
-            <img src="/assets/photo/SmartTrack/Attendance_failed_for_QR-Expire.jpeg" alt="Failed by Expiry" class="img-fluid" />
-            <div class="craft-img-caption"><strong>Token Expiry Interception:</strong> Attempting to scan a previously photographed QR code prompts an expiration error.</div>
-          </div>
-
+        <div class="section-header">
+          <h2 class="section-title">Security <em>Interceptions</em></h2>
         </div>
-      </div>
-    </section>
 
-    <!-- Conclusion -->
-    <section class="craft-section">
-      <div class="container">
-        <h2 class="craft-heading scroll-reveal">System Performance & Impact</h2>
-        <p class="craft-text scroll-reveal">
-          Extensive User Acceptance Testing (UAT) was conducted across 6 trial lecture sessions. The results validated the system's effectiveness:
-        </p>
+        <div class="feature-split scroll-reveal">
+          <div class="feature-text">
+            <h3>Instant Validation Feedback</h3>
+            <p>
+              A robust system must communicate errors gracefully. When the dual-layer validation succeeds, the student sees a bright, confirmed <strong>Attendance Submitted</strong> screen. 
+            </p>
+            <p>
+              However, if they attempt to scan an old photograph of a QR code, the system throws a strict <strong>QR Expired</strong> error. If they scan a valid live code sent via WhatsApp but are not physically in the room, the GPS geofence catches them and throws an <strong>Out of Bounds (Distance)</strong> error. This ensures a 100% interception rate for fraudulent check-ins.
+            </p>
+          </div>
+          <div class="feature-image triple-img">
+            <img src="/assets/photo/SmartTrack/Attendance_Sumited.jpeg" alt="Success" class="mockup-img" style="border: 2px solid #28a745;" />
+            <img src="/assets/photo/SmartTrack/Attendance_failed_for_distance.jpeg" alt="Distance Fail" class="mockup-img" style="border: 2px solid #dc3545;" />
+            <img src="/assets/photo/SmartTrack/Attendance_failed_for_QR-Expire.jpeg" alt="Expiry Fail" class="mockup-img" style="border: 2px solid #dc3545;" />
+          </div>
+        </div>
         
-        <ul style="color: var(--text2); line-height: 1.8; margin-top: 1.5rem; padding-left: 1.5rem;">
-          <li class="scroll-reveal"><strong>100% Interception Rate:</strong> The geofence and token engine successfully blocked all out-of-bounds proxy attempts.</li>
-          <li class="scroll-reveal"><strong>98.2% Seamless Accuracy:</strong> For legitimate scans within the classroom, the system verified attendance on the very first attempt.</li>
-          <li class="scroll-reveal"><strong>Behavioral Shift:</strong> The introduction of streak calculations and profile frames shifted attendance from a mandatory chore to an engaging habit.</li>
-        </ul>
-
       </div>
     </section>
 
