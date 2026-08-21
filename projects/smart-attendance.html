@@ -45,31 +45,54 @@
     .feature-image {
       flex: 1;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       gap: 1.5rem;
       width: 100%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 1rem 0;
+      /* Hide scrollbars for cleaner mobile UX */
+      scrollbar-width: none; 
+      -ms-overflow-style: none;
     }
+    .feature-image::-webkit-scrollbar {
+      display: none; 
+    }
+
     .mockup-img {
+      scroll-snap-align: center;
+      flex: 0 0 75%; /* Default to 75% viewport width on mobile */
       max-width: 280px;
       width: 100%;
       border-radius: 24px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.2);
       border: 1px solid var(--border);
       transition: transform 0.3s ease;
-      cursor: zoom-in; /* Indicate it's clickable */
+      cursor: zoom-in;
     }
     .mockup-img:hover {
       transform: translateY(-5px);
     }
-    .double-img .mockup-img {
-      max-width: 240px;
-    }
-    .triple-img {
-      flex-wrap: nowrap;
-    }
-    .triple-img .mockup-img {
-      max-width: 210px;
+    
+    @media (min-width: 768px) {
+      .feature-image {
+        justify-content: center;
+        overflow-x: visible;
+        flex-wrap: wrap;
+      }
+      .mockup-img {
+        flex: 0 1 auto;
+      }
+      .double-img .mockup-img {
+        max-width: 240px;
+      }
+      .triple-img {
+        flex-wrap: nowrap;
+      }
+      .triple-img .mockup-img {
+        max-width: 210px;
+      }
     }
     
     @media (min-width: 1200px) {
