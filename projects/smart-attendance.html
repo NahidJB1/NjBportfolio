@@ -21,7 +21,7 @@
       margin-bottom: 7rem;
     }
     .feature-text {
-      flex: 1;
+      flex: 1 1 100%;
       width: 100%;
     }
     .feature-text h3 {
@@ -36,44 +36,56 @@
       margin-bottom: 1.5rem;
     }
     .feature-image {
-      flex: 1;
+      flex: 1 1 100%;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       gap: 1.5rem;
       width: 100%;
     }
+    .craft-img-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     .mockup-img {
-      max-width: 280px;
+      max-width: 250px;
       width: 100%;
       border-radius: 24px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.2);
       border: 1px solid var(--border);
       transition: transform 0.3s ease;
+      cursor: zoom-in;
     }
     .mockup-img:hover {
       transform: translateY(-5px);
     }
     .double-img .mockup-img {
-      max-width: 230px;
+      max-width: 220px;
     }
     .triple-img {
       flex-wrap: wrap;
     }
     .triple-img .mockup-img {
-      max-width: 200px;
+      max-width: 180px;
     }
     
     @media (min-width: 992px) {
       .feature-split {
         flex-direction: row;
-        gap: 5rem;
+        gap: 4rem;
+        align-items: flex-start;
       }
       .feature-split.reverse {
         flex-direction: row-reverse;
       }
       .feature-text {
-        padding: 0 2rem;
+        flex: 0 0 45%;
+        padding: 0 1rem;
+      }
+      .feature-image {
+        flex: 1 1 50%;
       }
     }
   </style>
@@ -87,7 +99,7 @@
     <!-- Hero Section -->
     <section class="craft-hero">
       <div class="container">
-        <a href="/" class="btn btn-ghost" style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem;">← Back to Home</a>
+        <a href="/" class="btn btn-ghost" style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem;">â† Back to Home</a>
         
         <h1 class="craft-title scroll-reveal">Smart Attendance System</h1>
         <div class="craft-subtitle scroll-reveal delay-1">Dual-Layer Verification Architecture (SmartTrack)</div>
@@ -124,7 +136,7 @@
       <div class="container">
         <h2 class="craft-heading scroll-reveal">The Architecture of Trust</h2>
         <p class="craft-text scroll-reveal">
-          Many universities transition to digital attendance, only to find that single-factor QR codes actually <em>increase</em> proxy attendance (buddy punching). Students simply photograph the QR code and send it to an absent friend. SmartTrack isn't just an attendance logger—it is a fraud-prevention engine. By combining <strong>GPS proximity geofencing</strong> (using Haversine calculations) with <strong>Wi-Fi SSID validation</strong>, the system guarantees physical presence without the high cost or privacy concerns of biometric hardware.
+          Many universities transition to digital attendance, only to find that single-factor QR codes actually <em>increase</em> proxy attendance (buddy punching). Students simply photograph the QR code and send it to an absent friend. SmartTrack isn't just an attendance loggerâ€”it is a fraud-prevention engine. By combining <strong>GPS proximity geofencing</strong> (using Haversine calculations) with <strong>Wi-Fi SSID validation</strong>, the system guarantees physical presence without the high cost or privacy concerns of biometric hardware.
         </p>
       </div>
     </section>
@@ -144,10 +156,10 @@
               The <strong>Teacher's Dashboard</strong> and <strong>Management Dashboard</strong> provide instant access to the core actions: generating active QRs, reviewing attendance logs, and spotting suspicious activity. The UI is designed to minimize cognitive load so lecturers can start a session in seconds. The <strong>Settings Page</strong> allows deep personalization and notification controls for faculty members.
             </p>
           </div>
-          <div class="feature-image double-img">
-            <img src="/assets/photo/SmartTrack/Teacher's_Dashboard.jpeg" alt="Teacher Dashboard" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Management_Dashboard.jpeg" alt="Management Dashboard" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Setteing_Page.jpeg" alt="Settings Page" class="mockup-img" />
+          <div class="feature-image double-img craft-gallery">
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Teacher's_Dashboard.jpeg" alt="Teacher Dashboard" class="mockup-img" /></div>
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Management_Dashboard.jpeg" alt="Management Dashboard" class="mockup-img" /></div>
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Setteing_Page.jpeg" alt="Settings Page" class="mockup-img" /></div>
           </div>
         </div>
 
@@ -159,9 +171,9 @@
               This is the heart of the system. When a lecturer selects a subject to generate a QR code, the app instantly captures the device's precise <strong>GPS coordinates</strong> and binds it to a <strong>time-scoped token</strong> (e.g., 5-30 minutes). The QR code displayed to the students refreshes continuously, immediately rendering screenshots useless for remote absent students.
             </p>
           </div>
-          <div class="feature-image double-img">
-            <img src="/assets/photo/SmartTrack/Subject_Detail_page.jpeg" alt="Subject Detail" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Generate_QR.jpeg" alt="Generate QR" class="mockup-img" />
+          <div class="feature-image double-img craft-gallery">
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Subject_Detail_page.jpeg" alt="Subject Detail" class="mockup-img" /></div>
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Generate_QR.jpeg" alt="Generate QR" class="mockup-img" /></div>
           </div>
         </div>
 
@@ -173,10 +185,10 @@
               Instead of digging through CSVs, lecturers are greeted with <strong>Visual Analytics</strong> via MPAndroidChart. They can view attendance ratios as dynamic pie/bar charts. The <strong>Attendance Record</strong> and <strong>Teacher Detail Page</strong> provide granular, real-time synchronization so faculty can see who scanned in successfully exactly as it happens.
             </p>
           </div>
-          <div class="feature-image double-img">
-            <img src="/assets/photo/SmartTrack/Attendance_record.jpeg" alt="Attendance Record" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Attendance_Analytics_Graph.jpeg" alt="Analytics Graph" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Teacher's_Detail_Page.jpeg" alt="Teacher Details" class="mockup-img" />
+          <div class="feature-image double-img craft-gallery">
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Attendance_record.jpeg" alt="Attendance Record" class="mockup-img" /></div>
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Attendance_Analytics_Graph.jpeg" alt="Analytics Graph" class="mockup-img" /></div>
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Teacher's_Detail_Page.jpeg" alt="Teacher Details" class="mockup-img" /></div>
           </div>
         </div>
 
@@ -188,10 +200,10 @@
               Fraud prevention is completely transparent. If a student attempts to scan from outside the geofence, the app fails their scan and logs it to the <strong>Suspicious Activity</strong> dashboard. Faculty can see the exact distance mismatch (e.g., 18,000+ meters away). The <strong>Recent Absence</strong> and <strong>Activity Logs</strong> help administrators identify chronic truancy immediately.
             </p>
           </div>
-          <div class="feature-image triple-img">
-            <img src="/assets/photo/SmartTrack/Suspicious_Activity_page.jpeg" alt="Suspicious Activity" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Recent_absence.jpeg" alt="Recent Absences" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Activity_Log_page.jpeg" alt="Activity Logs" class="mockup-img" />
+          <div class="feature-image triple-img craft-gallery">
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Suspicious_Activity_page.jpeg" alt="Suspicious Activity" class="mockup-img" /></div>
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Recent_absence.jpeg" alt="Recent Absences" class="mockup-img" /></div>
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Activity_Log_page.jpeg" alt="Activity Logs" class="mockup-img" /></div>
           </div>
         </div>
 
@@ -213,9 +225,9 @@
               The <strong>Student Dashboard</strong> is engineered for speed, featuring a prominent 'Scan QR Code' button integrated with their daily schedule. To transform attendance from a chore into a rewarding habit, I introduced <strong>Gamification</strong>. Students build "Streaks" for consecutive attendance and unlock unique <strong>Avatar Frames</strong> (like Silver Sparkle or Diamond Crown) at key milestones.
             </p>
           </div>
-          <div class="feature-image double-img">
-            <img src="/assets/photo/SmartTrack/Student_Dashboard_Schedule_Integration.jpeg" alt="Student Dashboard" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/gamification_profile_avatar.jpeg" alt="Gamification Frames" class="mockup-img" />
+          <div class="feature-image double-img craft-gallery">
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Student_Dashboard_Schedule_Integration.jpeg" alt="Student Dashboard" class="mockup-img" /></div>
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/gamification_profile_avatar.jpeg" alt="Gamification Frames" class="mockup-img" /></div>
           </div>
         </div>
 
@@ -227,10 +239,10 @@
               The <strong>Attendance Percentage Page</strong> provides immediate color-coded feedback on their standing (Green for safe, Red for warning). When it's time to check in, the <strong>Camera Scanner</strong> utilizes CameraX and ZXing to quickly capture the dynamic payload, simultaneously initiating the background <strong>GPS & Database Sync</strong> to validate the network and location requirements instantly.
             </p>
           </div>
-          <div class="feature-image triple-img">
-            <img src="/assets/photo/SmartTrack/Attendance_percenatage_page.jpeg" alt="Health Metrics" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Camera_Scanner_Integration.jpeg" alt="Scanner" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/GPS_Hardware_Database_Sync.jpeg" alt="Hardware Sync" class="mockup-img" />
+          <div class="feature-image triple-img craft-gallery">
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Attendance_percenatage_page.jpeg" alt="Health Metrics" class="mockup-img" /></div>
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Camera_Scanner_Integration.jpeg" alt="Scanner" class="mockup-img" /></div>
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/GPS_Hardware_Database_Sync.jpeg" alt="Hardware Sync" class="mockup-img" /></div>
           </div>
         </div>
 
@@ -254,10 +266,10 @@
               However, if they attempt to scan an old photograph of a QR code, the system throws a strict <strong>QR Expired</strong> error. If they scan a valid live code sent via WhatsApp but are not physically in the room, the GPS geofence catches them and throws an <strong>Out of Bounds (Distance)</strong> error. This ensures a 100% interception rate for fraudulent check-ins.
             </p>
           </div>
-          <div class="feature-image triple-img">
-            <img src="/assets/photo/SmartTrack/Attendance_Sumited.jpeg" alt="Success" class="mockup-img" style="border: 2px solid #28a745;" />
-            <img src="/assets/photo/SmartTrack/Attendance_failed_for_distance.jpeg" alt="Distance Fail" class="mockup-img" style="border: 2px solid #dc3545;" />
-            <img src="/assets/photo/SmartTrack/Attendance_failed_for_QR-Expire.jpeg" alt="Expiry Fail" class="mockup-img" style="border: 2px solid #dc3545;" />
+          <div class="feature-image triple-img craft-gallery">
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Attendance_Sumited.jpeg" alt="Success" class="mockup-img" style="border: 2px solid #28a745;" /></div>
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Attendance_failed_for_distance.jpeg" alt="Distance Fail" class="mockup-img" style="border: 2px solid #dc3545;" /></div>
+            <div class="craft-img-wrapper"><img src="/assets/photo/SmartTrack/Attendance_failed_for_QR-Expire.jpeg" alt="Expiry Fail" class="mockup-img" style="border: 2px solid #dc3545;" /></div>
           </div>
         </div>
         
