@@ -5,25 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kerja-Kad, Nahid Jahan Bhuiyan</title>
   
-  <!-- Main Styles -->
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="stylesheet" href="/assets/css/projects/project-base.css" />
-  <!-- Project Specific Styles -->
-  <link rel="stylesheet" href="/assets/css/projects/kerja-kad.css" />
   <link rel="stylesheet" href="/assets/css/animations.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Expand container width specifically for this dense layout */
+    .wide-container {
+      max-width: 1400px !important;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Custom CSS for Rich UX Layout */
+    .feature-split {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 7rem;
+    }
+    .feature-text {
+      flex: 1;
+      width: 100%;
+    }
+    .feature-text h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    .feature-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text2);
+      margin-bottom: 1.5rem;
+    }
+    .feature-image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 1rem 0;
+      /* Hide scrollbars for cleaner mobile UX */
+      scrollbar-width: none; 
+      -ms-overflow-style: none;
+    }
+    .feature-image::-webkit-scrollbar {
+      display: none; 
+    }
+
+    .mockup-img {
+      scroll-snap-align: center;
+      flex: 0 0 75%; /* Default to 75% viewport width on mobile */
+      max-width: 280px;
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease;
+      cursor: zoom-in;
+    }
+    .mockup-img:hover {
+      transform: translateY(-5px);
+    }
+    
+    @media (min-width: 768px) {
+      .feature-image {
+        justify-content: center;
+        overflow-x: visible;
+        flex-wrap: wrap;
+      }
+      .mockup-img {
+        flex: 0 1 auto;
+      }
+      .double-img .mockup-img {
+        max-width: 240px;
+      }
+      .triple-img {
+        flex-wrap: nowrap;
+      }
+      .triple-img .mockup-img {
+        max-width: 210px;
+      }
+    }
+    
+    @media (min-width: 1200px) {
+      .feature-split {
+        flex-direction: row;
+        gap: 4rem;
+        align-items: flex-start;
+      }
+      .feature-split.reverse {
+        flex-direction: row-reverse;
+      }
+      .feature-text {
+        flex: 0 0 35%; /* Restrict text width, push to edge */
+        padding: 0;
+      }
+      .feature-image {
+        flex: 0 0 60%;
+        justify-content: flex-start;
+      }
+      .feature-split.reverse .feature-image {
+        justify-content: flex-end;
+      }
+    }
+  </style>
 </head>
 <body>
-
-
 
   <div id="header-placeholder"></div>
 
   <main class="craft-main">
     
+    <!-- Hero Section -->
     <section class="craft-hero">
-      <div class="container">
+      <div class="container wide-container">
         <a href="/" class="btn btn-ghost" style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem;">← Back to Home</a>
         
         <h1 class="craft-title scroll-reveal">Kerja-Kad</h1>
@@ -32,7 +135,7 @@
         <div class="project-tags scroll-reveal delay-2">
           <span class="ptag" style="color: var(--gold); background: var(--gold-dim); border-color: rgba(255, 215, 0, 0.15);">Hackathon Finalist</span>
           <span class="ptag">System Architecture</span>
-          <span class="ptag">Prototyping</span>
+          <span class="ptag">UX Case Study</span>
         </div>
 
         <div class="craft-meta-grid scroll-reveal delay-3">
@@ -56,16 +159,18 @@
       </div>
     </section>
 
+    <!-- Overview & The Problem -->
     <section class="craft-section">
-      <div class="container">
-        <h2 class="craft-heading scroll-reveal">Overview &amp; The Problem</h2>
+      <div class="container wide-container">
+        <h2 class="craft-heading scroll-reveal">A System Born from Crisis</h2>
         <p class="craft-text scroll-reveal">
-          Kerja-Kad is a digital identity and verification system designed for all foreign workers in Malaysia, regardless of nationality. It consists of two mobile applications paired with a physical NFC-enabled card that allows instant identity verification without requiring a passport.
+          Kerja-Kad is a digital identity and verification system designed for all foreign workers in Malaysia, regardless of nationality. The system was born from a real crisis: thousands of legal foreign workers face detention, harassment, and denial of basic services because they cannot prove their legal status in the moment it matters. Legal workers are frequently treated like criminals simply because their passports are held by employers. 
         </p>
-        <p class="craft-text scroll-reveal" style="margin-top: -1.5rem;">
-          The system was born from a real crisis: thousands of legal foreign workers face detention, harassment, and denial of basic services because they cannot prove their legal status in the moment it matters. Legal workers are frequently treated like criminals simply because their passports are held by employers. Kerja-Kad solves this with a virtual card, an NFC physical card, and a real-time verification system.
+        <p class="craft-text scroll-reveal">
+          Kerja-Kad solves this with a robust dual-application framework: a virtual card, an NFC physical card, and a real-time verification portal.
         </p>
 
+        <!-- Hard Data -->
         <h2 class="craft-heading scroll-reveal" style="margin-top: 4rem;">Field Research &amp; Hard Data</h2>
         <div class="craft-meta-grid scroll-reveal delay-1" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
           <div class="meta-item">
@@ -85,61 +190,64 @@
             <span class="meta-value">Knew They Could Request Their i-Kad</span>
           </div>
         </div>
-
-        <h2 class="craft-heading scroll-reveal" style="margin-top: 4rem;">System Prototype &amp; UX Psychology</h2>
-        <div class="feature-grid">
-          
-          <div class="feature-card scroll-reveal">
-            <h3 class="feature-title">Stress &amp; Cognitive Impairment</h3>
-            <p class="feature-desc">Research on decision-making under stress shows that people under threat revert to the simplest possible actions. I architected every critical flow in the worker app prototype for a maximum of 3 taps, because a worker being questioned by immigration does not have the cognitive bandwidth for complex navigation.</p>
-          </div>
-
-          <div class="feature-card scroll-reveal delay-1">
-            <h3 class="feature-title">Autonomy Bias</h3>
-            <p class="feature-desc">The virtual card feature gives workers something they've never had: direct access to their own legal record without employer involvement. Restoring a sense of control and autonomy was just as important to the system architecture as the functional verification.</p>
-          </div>
-
-          <div class="feature-card scroll-reveal delay-2">
-            <h3 class="feature-title">Trust Calibration</h3>
-            <p class="feature-desc">The NFC tap-and-verify flow for immigration officers was programmed to feel instantaneous and definitive, utilizing a green/amber/red status system with zero ambiguity. Officers under pressure make faster, fairer decisions when the system gives clear signals rather than complex data sets.</p>
-          </div>
-
-        </div>
       </div>
     </section>
 
+    <!-- Prototype & UX Workflows -->
     <section class="craft-section" style="background: var(--bg2);">
-      <div class="container">
-        <h2 class="craft-heading scroll-reveal">The Interface &amp; Verification Flow</h2>
-        <p class="craft-text scroll-reveal">A closer look at the dual-application system and identity verification screens.</p>
+      <div class="container wide-container">
+        <div class="section-header">
+          <h2 class="section-title">System Prototype &amp; <em>UX Psychology</em></h2>
+        </div>
         
-        <div class="craft-gallery mobile-showcase">
-          
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/KC/SS1-KC.png" alt="Kerja-Kad Physical Card" />
-            <div class="craft-img-caption">The physical card</div>
+        <!-- Virtual ID & Autonomy Bias -->
+        <div class="feature-split scroll-reveal">
+          <div class="feature-text">
+            <h3>Virtual Identity &amp; Autonomy Bias</h3>
+            <p>
+              The virtual card feature gives workers something they've never had: direct access to their own legal record without employer involvement. Restoring a sense of control and autonomy was just as important to the system architecture as the functional verification. 
+            </p>
+            <p>
+              By displaying their name, work permit number, employer, and real-time permit status prominently on the <strong>Home Screen</strong>, the worker feels empowered. Research on decision-making under stress shows that people under threat revert to the simplest possible actions—we architected the app to be fully usable within a maximum of 3 taps.
+            </p>
           </div>
+          <div class="feature-image double-img craft-gallery">
+            <img src="/assets/photo/KC/SS3-KC.png" alt="Home Screen Virtual ID" class="mockup-img" />
+            <img src="/assets/photo/KC/SS4-KC.png" alt="Real-Time Status" class="mockup-img" />
+          </div>
+        </div>
 
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/KC/SS2-KC.png" alt="Kerja-Kad Link Card Interface" />
-            <div class="craft-img-caption">Get / Link Your Card</div>
+        <!-- Physical NFC & Trust Calibration -->
+        <div class="feature-split reverse scroll-reveal">
+          <div class="feature-text">
+            <h3>NFC Bridge &amp; Trust Calibration</h3>
+            <p>
+              A purely digital app often faces skepticism from ground-level authorities. We designed a physical NFC card to act as a tangible bridge. The worker easily links this physical card to their profile via the <strong>Link Card Interface</strong>. 
+            </p>
+            <p>
+              When an immigration officer scans the card, the tap-and-verify flow feels instantaneous and definitive. We programmed the output using a strict green/amber/red status system with zero ambiguity. Officers under pressure make faster, fairer decisions when the system gives clear visual signals rather than complex data sets.
+            </p>
           </div>
+          <div class="feature-image double-img craft-gallery">
+            <img src="/assets/photo/KC/SS1-KC.png" alt="Physical NFC Card" class="mockup-img" />
+            <img src="/assets/photo/KC/SS2-KC.png" alt="Link Card Interface" class="mockup-img" />
+          </div>
+        </div>
 
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/KC/SS3-KC.png" alt="Kerja-Kad Home Screen Virtual ID" />
-            <div class="craft-img-caption">Home Screen, virtual card display with name, work permit number, employer, and status.</div>
+        <!-- Emergency Support -->
+        <div class="feature-split scroll-reveal">
+          <div class="feature-text">
+            <h3>Emergency Support Ecosystem</h3>
+            <p>
+              Beyond verification, the system protects vulnerable workers. The <strong>Help and Resources</strong> screen provides a live GPS map showing the nearest police stations, hospitals, and immigration offices.
+            </p>
+            <p>
+              More critically, it features one-tap emergency contacts tailored to the worker's specific embassy and language, establishing an immediate lifeline during crises.
+            </p>
           </div>
-
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/KC/SS4-KC.png" alt="Kerja-Kad Real-Time Status" />
-            <div class="craft-img-caption">Status screen, real-time permit status: active, expiring soon expired, under renewal.</div>
+          <div class="feature-image craft-gallery">
+            <img src="/assets/photo/KC/SS5-KC.png" alt="Emergency Map and Resources" class="mockup-img" />
           </div>
-          
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/KC/SS5-KC.png" alt="Kerja-Kad Emergency Map and Resources" />
-            <div class="craft-img-caption">Help and Resources, Live GPS map showing nearest police stations, hospitals, immigration offices, and one-tap embassy emergency contacts.</div>
-          </div>
-
         </div>
 
       </div>
@@ -150,5 +258,58 @@
   <div id="footer-placeholder"></div>
 
   <script src="/assets/js/main.js"></script>
+  <script>
+    // Parallax Horizontal Scroll for Mobile
+    (function initMobileHorizontalScroll() {
+      const galleries = document.querySelectorAll('.feature-image.craft-gallery');
+      if (galleries.length === 0) return;
+
+      galleries.forEach(gallery => {
+        // If the user manually touches/swipes the gallery, disable the auto-animation
+        gallery.addEventListener('touchstart', () => {
+          gallery.dataset.manualScroll = 'true';
+          gallery.style.scrollSnapType = ''; // Ensure native snapping is re-enabled
+        }, { passive: true });
+      });
+
+      window.addEventListener('scroll', () => {
+        // Only run on mobile layouts
+        if (window.innerWidth >= 768) return; 
+        
+        const windowHeight = window.innerHeight;
+        
+        galleries.forEach(gallery => {
+          // Skip if user took manual control
+          if (gallery.dataset.manualScroll === 'true') return;
+
+          // Check if gallery actually has horizontal overflow
+          const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+          if (maxScroll <= 0) return;
+          
+          const rect = gallery.getBoundingClientRect();
+          
+          // Start horizontal scroll when gallery is near the bottom of the screen
+          const startY = windowHeight * 0.85; 
+          // Finish horizontal scroll when it reaches the middle/top-ish
+          const endY = windowHeight * 0.35;
+          
+          let progress = (startY - rect.top) / (startY - endY);
+          
+          // Clamp between 0 and 1
+          if (progress < 0) progress = 0;
+          if (progress > 1) progress = 1;
+          
+          // Disable CSS scroll snapping during JS scroll to avoid jerky fighting
+          gallery.style.scrollSnapType = 'none';
+          gallery.scrollLeft = progress * maxScroll;
+          
+          // Re-enable snapping if they are fully past it so manual swipe works again
+          if (progress <= 0 || progress >= 1) {
+            gallery.style.scrollSnapType = '';
+          }
+        });
+      }, { passive: true });
+    })();
+  </script>
 </body>
 </html>
