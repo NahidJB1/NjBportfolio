@@ -1,226 +1,503 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FactShield, Nahid Jahan Bhuiyan</title>
-  
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  <link rel="stylesheet" href="/assets/css/projects/project-base.css" />
-  <link rel="stylesheet" href="/assets/css/animations.css" />
-  <link rel="stylesheet" href="/assets/css/projects/factshield.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/favicon.png" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FactShield, Nahid Jahan Bhuiyan</title>
 
-  <div id="header-placeholder"></div>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/projects/project-base.css" />
+    <link rel="stylesheet" href="/assets/css/animations.css" />
+    <link rel="stylesheet" href="/assets/css/projects/factshield.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta
+      name="description"
+      content="FactShield case study by Nahid Jahan Bhuiyan. System architecture, full-stack development, and feature planning. Interface and UX design by teammate Shihab Dewan."
+    />
+    <meta name="theme-color" content="#f7f7f2" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/assets/css/projects/editorial.css" />
+  </head>
+  <body>
+    <!-- site-header -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <noscript
+      ><style>
+        @media (max-width: 760px) {
+          .nav-hamburger {
+            display: none !important;
+          }
+          #mobileMenu[hidden] {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 24px;
+          }
+        }
+      </style></noscript
+    >
+    <header class="site-header" id="nav">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="wordmark" href="/" aria-label="Nahid Jahan Bhuiyan, home"
+          >njb<span>.</span></a
+        >
+        <div class="nav-links" id="navLinks">
+          <a class="nav-link" href="/index.html#projects">Work</a
+          ><a class="nav-link" href="/index.html#about">About</a
+          ><a class="nav-link" href="/index.html#community">Recognition</a>
+        </div>
+        <div class="nav-actions">
+          <a
+            class="resume-link"
+            href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
+            target="_blank"
+            rel="noopener"
+            >Résumé <span aria-hidden="true">↗</span
+            ><span class="sr-only"> (PDF, opens in a new tab)</span></a
+          ><a class="nav-contact" href="/index.html#contact"
+            >Let’s talk <span aria-hidden="true">↗</span></a
+          ><button
+            class="nav-hamburger"
+            id="hamburger"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <span></span><span></span>
+          </button>
+        </div>
+      </nav>
+      <nav
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-label="Mobile navigation"
+        hidden
+      >
+        <a href="/index.html#projects">Work <span aria-hidden="true">↗</span></a
+        ><a href="/index.html#about">About <span aria-hidden="true">↗</span></a
+        ><a href="/index.html#community"
+          >Recognition <span aria-hidden="true">↗</span></a
+        ><a
+          href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
+          target="_blank"
+          rel="noopener"
+          >Résumé <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+    <!-- /site-header -->
 
-  <main class="craft-main">
-    
-    <!-- OVERVIEW -->
-    <section class="craft-hero">
+    <main class="craft-main" id="main-content">
+      <!-- OVERVIEW -->
+      <section class="craft-hero">
+        <div class="container">
+          <a
+            href="/index.html#projects"
+            class="btn btn-ghost"
+            style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem"
+            >← All projects</a
+          >
+
+          <h1 class="craft-title scroll-reveal">FactShield</h1>
+          <div class="craft-subtitle scroll-reveal delay-1">
+            AI &amp; Blockchain Powered Fact-Checking Platform
+          </div>
+
+          <div class="project-tags scroll-reveal delay-2">
+            <span
+              class="ptag"
+              style="color: var(--bg); background: rgba(255, 255, 255, 0.8)"
+              >🏆 Hackathon Champion</span
+            >
+            <span class="ptag">Full-Stack</span>
+            <span class="ptag">Blockchain Integration</span>
+          </div>
+
+          <div class="craft-meta-grid scroll-reveal delay-3">
+            <div class="meta-item">
+              <span class="meta-label">Role</span>
+              <span class="meta-value"
+                >Full-Stack Dev &amp; Feature Planner</span
+              >
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Timeline</span>
+              <span class="meta-value">30 Days · Idea to Pitch</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Status</span>
+              <span class="meta-value"
+                >1st Place · CityU FusionX Hackathon</span
+              >
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Live Link</span>
+              <a
+                href="https://facktshield.percentagemy.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="meta-value"
+                style="color: var(--cyan); text-decoration: underline"
+                >Visit Platform ↗</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="project-tags scroll-reveal delay-4"
+            style="margin-top: 2rem"
+          >
+            <span class="ptag" style="background: transparent">PHP</span>
+            <span class="ptag" style="background: transparent">MySQL</span>
+            <span class="ptag" style="background: transparent">JavaScript</span>
+            <span class="ptag" style="background: transparent"
+              >Polygon Blockchain</span
+            >
+            <span class="ptag" style="background: transparent">Solidity</span>
+            <span class="ptag" style="background: transparent"
+              >AI / LLM API</span
+            >
+          </div>
+        </div>
+      </section>
       <div class="container">
-        <a href="/" class="btn btn-ghost" style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem;">← Back to Home</a>
-        
-        <h1 class="craft-title scroll-reveal">FactShield</h1>
-        <div class="craft-subtitle scroll-reveal delay-1">AI &amp; Blockchain Powered Fact-Checking Platform</div>
-        
-        <div class="project-tags scroll-reveal delay-2">
-          <span class="ptag" style="color: var(--bg); background: rgba(255, 255, 255, 0.8);">🏆 Hackathon Champion</span>
-          <span class="ptag">Full-Stack</span>
-          <span class="ptag">Blockchain Integration</span>
-        </div>
-
-        <div class="craft-meta-grid scroll-reveal delay-3">
-          <div class="meta-item">
-            <span class="meta-label">Role</span>
-            <span class="meta-value">Full-Stack Dev &amp; Feature Planner</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Timeline</span>
-            <span class="meta-value">30 Days · Idea to Pitch</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Status</span>
-            <span class="meta-value">1st Place · CityU FusionX Hackathon</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Live Link</span>
-            <a href="https://facktshield.percentagemy.com/" target="_blank" class="meta-value" style="color: var(--cyan); text-decoration: underline;">Visit Platform ↗</a>
-          </div>
-        </div>
-        
-        <div class="project-tags scroll-reveal delay-4" style="margin-top: 2rem;">
-          <span class="ptag" style="background: transparent;">PHP</span>
-          <span class="ptag" style="background: transparent;">MySQL</span>
-          <span class="ptag" style="background: transparent;">JavaScript</span>
-          <span class="ptag" style="background: transparent;">Polygon Blockchain</span>
-          <span class="ptag" style="background: transparent;">Solidity</span>
-          <span class="ptag" style="background: transparent;">AI / LLM API</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROBLEM -->
-    <section class="craft-section">
-      <div class="container">
-        <h2 class="craft-heading scroll-reveal">Panic Travels Faster Than Proof</h2>
-        <p class="craft-text scroll-reveal">
-          Fake news moves at the speed of panic, long before anyone gets the chance to check it. By the time a claim is confirmed false, it's usually already been shared thousands of times over.
-        </p>
-
-        <div class="craft-problem-cards">
-          <div class="craft-problem-card scroll-reveal delay-1">
-            <h3>Days, Not Seconds</h3>
-            <p>Established fact-checkers like Snopes rely on human review that takes days, an eternity when a claim is already spreading in real time.</p>
-          </div>
-          <div class="craft-problem-card scroll-reveal delay-2">
-            <h3>Manual Search Fatigue</h3>
-            <p>Verifying a headline yourself means digging through multiple sources mid-scroll, friction most people won't push through before hitting share.</p>
-          </div>
-          <div class="craft-problem-card scroll-reveal delay-3">
-            <h3>No Tamper-Proof Trail</h3>
-            <p>Even a debunked claim can quietly resurface later, there's no permanent, public record proving what was actually found.</p>
-          </div>
-        </div>
-
-        <div class="craft-stat-callout scroll-reveal">
-          <span class="stat-number">6×</span>
+        <figure class="case-preview case-photo">
+          <figcaption class="case-preview-label">
+            <span>THE TEAM / THE MILESTONE</span
+            ><span>SELECT AN IMAGE TO EXPLORE ↗</span>
+          </figcaption>
+          <img
+            src="/assets/images/championship.webp"
+            alt="FactShield team receiving the CityU hackathon championship"
+            fetchpriority="high"
+            width="1080"
+            height="877"
+          />
+        </figure>
+        <div class="case-summary" aria-label="Project at a glance">
           <div>
-            <p class="stat-text">the estimated speed at which misinformation spreads compared to verified reporting, while human review still takes days to catch up.</p>
-            <cite>Cited by the FactShield team</cite>
+            <h2>The challenge</h2>
+            <p>
+              People need an easier way to check online claims and understand
+              the evidence behind a verdict.
+            </p>
+          </div>
+          <div>
+            <h2>My contribution</h2>
+            <p>
+              System architecture, full-stack development, and feature planning.
+              Interface and UX design by teammate Shihab Dewan.
+            </p>
+          </div>
+          <div>
+            <h2>The outcome</h2>
+            <p>
+              Built by a two-person team in 30 days. First place at the CityU
+              FusionX Hackathon.
+            </p>
           </div>
         </div>
+        <nav class="case-toc" aria-label="Case study sections">
+          <a href="#project-story"
+            >The story <span aria-hidden="true">↓</span></a
+          ><a href="#project-visuals"
+            >The achievement <span aria-hidden="true">↓</span></a
+          ><a href="/index.html#contact"
+            >Discuss a similar project <span aria-hidden="true">↗</span></a
+          >
+        </nav>
       </div>
-    </section>
 
-    <!-- OBJECTIVE -->
-    <section class="craft-section" style="background: var(--bg2);">
-      <div class="container">
-        <h2 class="craft-heading scroll-reveal">Truth, Verified in Under 15 Seconds</h2>
-        <p class="craft-text scroll-reveal">
-          The goal was to design and build a platform that returns a verdict on any claim in under 15 seconds, and once that verdict is delivered, it's permanently recorded on the blockchain, so it can never quietly be changed after the fact. The entire system, architecture, backend, and pipeline, came together in 30 days, start to pitch, during CityU's FusionX hackathon.
-        </p>
+      <!-- PROBLEM -->
+      <section class="craft-section" id="project-story">
+        <div class="container">
+          <h2 class="craft-heading scroll-reveal">
+            Panic Travels Faster Than Proof
+          </h2>
+          <p class="craft-text scroll-reveal">
+            Fake news moves at the speed of panic, long before anyone gets the
+            chance to check it. By the time a claim is confirmed false, it's
+            usually already been shared thousands of times over.
+          </p>
 
-        <div class="craft-callout-comment scroll-reveal delay-1">
-          <span>//</span> two-person build:<br />
-          system architecture, full-stack development &amp; feature planning, me. Interface &amp; UX design, my teammate, Shihab Dewan.
-        </div>
-
-        <div class="craft-stats-row scroll-reveal delay-2">
-          <div class="stat">
-            <span class="stat-number">30</span>
-            <span class="stat-label">Days, Idea to Pitch</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">1st</span>
-            <span class="stat-label">Place · CityU FusionX</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">&lt;15s</span>
-            <span class="stat-label">Claim to Verdict</span>
-          </div>
-        </div>
-        
-        <p class="craft-text scroll-reveal delay-3" style="margin-top: 2rem;">
-          Judged by a panel of industry cybersecurity professionals, FactShield placed 1st overall.
-        </p>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="craft-section">
-      <div class="container">
-        <h2 class="craft-heading scroll-reveal">How FactShield Verifies a Claim</h2>
-        <p class="craft-text scroll-reveal">
-          Every submission, pasted text, an article link, or a video URL, moves through the same AI-driven pipeline before a verdict is ever shown.
-        </p>
-        
-        <div class="feature-grid">
-          <div class="feature-card scroll-reveal">
-            <h3 class="feature-title">Claim-by-Claim Breakdown</h3>
-            <p class="feature-desc">Rather than a single true/false stamp, the AI splits an article into individual claims, cross-references each against trusted global sources, and returns a three-tier verdict, Real, Fake, or Suspicious, along with the evidence behind it.</p>
-          </div>
-          <div class="feature-card scroll-reveal delay-1">
-            <h3 class="feature-title">Immutable Blockchain Records</h3>
-            <p class="feature-desc">Every verdict is written to the Polygon network, generating a public, tamper-proof transaction hash. Once it's recorded, no one, including the team, can quietly edit or delete it.</p>
-          </div>
-          <div class="feature-card scroll-reveal delay-2">
-            <h3 class="feature-title">Live Misinformation Heatmap</h3>
-            <p class="feature-desc">Submissions feed a color-coded global heatmap tracking where specific topics, health, politics, war, are actively spreading, turning a personal verification tool into a public early-warning system.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- ARCHITECTURE -->
-    <section class="craft-section" style="background: var(--bg2);">
-      <div class="container">
-        <h2 class="craft-heading scroll-reveal">Under the Hood</h2>
-        <p class="craft-text scroll-reveal">
-          FactShield runs a three-step pipeline: submit content, let AI analyze and score it, then commit the verdict permanently to the blockchain.
-        </p>
-
-        <div class="craft-ascii-diagram scroll-reveal delay-1">┌───────────────┐        ┌───────────────┐        ┌───────────────┐
-│    SUBMIT     │  --->  │  AI ANALYSIS  │  --->  │  BLOCKCHAIN   │
-│  Text or URL  │        │Extract & Score│        │Polygon Network│
-│  Claim Input  │  <---  │3-Tier Verdict │  <---  │ tx hash proof │
-└───────────────┘        └───────────────┘        └───────────────┘</div>
-
-        <p class="craft-text scroll-reveal delay-2">
-          The AI layer extracts and cross-checks every claim against trusted global sources before scoring it; the result is then committed to the Polygon network as a public, immutable transaction, visible to anyone through the platform's own blockchain explorer.
-        </p>
-
-        <div class="craft-stats-row scroll-reveal delay-3">
-          <div class="stat">
-            <span class="stat-number">12,847</span>
-            <span class="stat-label">Articles Verified</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">10,768</span>
-            <span class="stat-label">Fake Claims Caught</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">8,391</span>
-            <span class="stat-label">Blockchain Records</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MILESTONES -->
-    <section class="craft-section">
-      <div class="container">
-        <h2 class="craft-heading scroll-reveal">1st Place, CityU FusionX Hackathon</h2>
-        <p class="craft-text scroll-reveal">Photos from the pitch and the win, judged by a panel of industry cybersecurity professionals.</p>
-        
-        <div class="hackathon-gallery">
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/hackathonchampdn.jpeg" alt="FactShield team receiving the 1st place award" style="aspect-ratio: 16/9; object-fit: cover; object-position: center 20%;" />
-            <div class="craft-img-caption">
-              <strong>1st Place Champions</strong><br />
-              Receiving certificates, medals, and the presentation cheque from CityU Dean, Assoc Prof Dr. Nurul Hafeez Ibrahim.
+          <div class="craft-problem-cards">
+            <div class="craft-problem-card scroll-reveal delay-1">
+              <h3>Days, Not Seconds</h3>
+              <p>
+                Established fact-checkers like Snopes rely on human review that
+                takes days, an eternity when a claim is already spreading in
+                real time.
+              </p>
+            </div>
+            <div class="craft-problem-card scroll-reveal delay-2">
+              <h3>Manual Search Fatigue</h3>
+              <p>
+                Verifying a headline yourself means digging through multiple
+                sources mid-scroll, friction most people won't push through
+                before hitting share.
+              </p>
+            </div>
+            <div class="craft-problem-card scroll-reveal delay-3">
+              <h3>No Tamper-Proof Trail</h3>
+              <p>
+                Even a debunked claim can quietly resurface later, there's no
+                permanent, public record proving what was actually found.
+              </p>
             </div>
           </div>
-          <div class="craft-img-wrapper scroll-reveal delay-1">
-            <img src="/assets/photo/hackathonchampach.jpeg" alt="FactShield championship medals" style="aspect-ratio: 16/9; object-fit: cover; object-position: center 30%;" />
-            <div class="craft-img-caption">
-              <strong>The Hardware</strong><br />
-              The championship medals earned for FactShield's approach to fighting misinformation.
+
+          <div class="craft-stat-callout scroll-reveal">
+            <span class="stat-number">6×</span>
+            <div>
+              <p class="stat-text">
+                the estimated speed at which misinformation spreads compared to
+                verified reporting, while human review still takes days to catch
+                up.
+              </p>
+              <cite>Cited by the FactShield team</cite>
             </div>
           </div>
         </div>
+      </section>
+
+      <!-- OBJECTIVE -->
+      <section class="craft-section" style="background: var(--bg2)">
+        <div class="container">
+          <h2 class="craft-heading scroll-reveal">
+            Truth, Verified in Under 15 Seconds
+          </h2>
+          <p class="craft-text scroll-reveal">
+            The goal was to design and build a platform that returns a verdict
+            on any claim in under 15 seconds, and once that verdict is
+            delivered, it's permanently recorded on the blockchain, so it can
+            never quietly be changed after the fact. The entire system,
+            architecture, backend, and pipeline, came together in 30 days, start
+            to pitch, during CityU's FusionX hackathon.
+          </p>
+
+          <div class="craft-callout-comment scroll-reveal delay-1">
+            <span>//</span> two-person build:<br />
+            system architecture, full-stack development &amp; feature planning,
+            me. Interface &amp; UX design, my teammate, Shihab Dewan.
+          </div>
+
+          <div class="craft-stats-row scroll-reveal delay-2">
+            <div class="stat">
+              <span class="stat-number">30</span>
+              <span class="stat-label">Days, Idea to Pitch</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">1st</span>
+              <span class="stat-label">Place · CityU FusionX</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">&lt;15s</span>
+              <span class="stat-label">Claim to Verdict</span>
+            </div>
+          </div>
+
+          <p class="craft-text scroll-reveal delay-3" style="margin-top: 2rem">
+            Judged by a panel of industry cybersecurity professionals,
+            FactShield placed 1st overall.
+          </p>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="craft-section">
+        <div class="container">
+          <h2 class="craft-heading scroll-reveal">
+            How FactShield Verifies a Claim
+          </h2>
+          <p class="craft-text scroll-reveal">
+            Every submission, pasted text, an article link, or a video URL,
+            moves through the same AI-driven pipeline before a verdict is ever
+            shown.
+          </p>
+
+          <div class="feature-grid">
+            <div class="feature-card scroll-reveal">
+              <h3 class="feature-title">Claim-by-Claim Breakdown</h3>
+              <p class="feature-desc">
+                Rather than a single true/false stamp, the AI splits an article
+                into individual claims, cross-references each against trusted
+                global sources, and returns a three-tier verdict, Real, Fake, or
+                Suspicious, along with the evidence behind it.
+              </p>
+            </div>
+            <div class="feature-card scroll-reveal delay-1">
+              <h3 class="feature-title">Immutable Blockchain Records</h3>
+              <p class="feature-desc">
+                Every verdict is written to the Polygon network, generating a
+                public, tamper-proof transaction hash. Once it's recorded, no
+                one, including the team, can quietly edit or delete it.
+              </p>
+            </div>
+            <div class="feature-card scroll-reveal delay-2">
+              <h3 class="feature-title">Live Misinformation Heatmap</h3>
+              <p class="feature-desc">
+                Submissions feed a color-coded global heatmap tracking where
+                specific topics, health, politics, war, are actively spreading,
+                turning a personal verification tool into a public early-warning
+                system.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARCHITECTURE -->
+      <section class="craft-section" style="background: var(--bg2)">
+        <div class="container">
+          <h2 class="craft-heading scroll-reveal">Under the Hood</h2>
+          <p class="craft-text scroll-reveal">
+            FactShield runs a three-step pipeline: submit content, let AI
+            analyze and score it, then commit the verdict permanently to the
+            blockchain.
+          </p>
+
+          <figure class="architecture-diagram">
+            <figcaption>From a claim to a verifiable record</figcaption>
+            <ol class="architecture-steps">
+              <li>
+                <span class="diagram-number">01</span
+                ><strong>Submit a claim</strong
+                ><span>Paste text or an article URL.</span>
+              </li>
+              <li>
+                <span class="diagram-number">02</span
+                ><strong>Analyze the evidence</strong
+                ><span
+                  >Extract claims, check sources, and return a verdict.</span
+                >
+              </li>
+              <li>
+                <span class="diagram-number">03</span
+                ><strong>Record the result</strong
+                ><span
+                  >Store proof on Polygon with a public transaction hash.</span
+                >
+              </li>
+            </ol>
+          </figure>
+
+          <p class="craft-text scroll-reveal delay-2">
+            The AI layer extracts and cross-checks every claim against trusted
+            global sources before scoring it; the result is then committed to
+            the Polygon network as a public, immutable transaction, visible to
+            anyone through the platform's own blockchain explorer.
+          </p>
+
+          <div class="craft-stats-row scroll-reveal delay-3">
+            <div class="stat">
+              <span class="stat-number">12,847</span>
+              <span class="stat-label">Articles Verified</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">10,768</span>
+              <span class="stat-label">Fake Claims Caught</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">8,391</span>
+              <span class="stat-label">Blockchain Records</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MILESTONES -->
+      <section class="craft-section">
+        <div class="container">
+          <h2 class="craft-heading scroll-reveal">
+            1st Place, CityU FusionX Hackathon
+          </h2>
+          <p class="craft-text scroll-reveal">
+            Photos from the pitch and the win, judged by a panel of industry
+            cybersecurity professionals.
+          </p>
+
+          <div class="hackathon-gallery" id="project-visuals">
+            <div class="craft-img-wrapper scroll-reveal">
+              <img
+                loading="lazy"
+                src="/assets/photo/hackathonchampdn.jpeg"
+                alt="FactShield team receiving the 1st place award"
+                style="
+                  aspect-ratio: 16/9;
+                  object-fit: cover;
+                  object-position: center 20%;
+                "
+                width="1080"
+                height="877"
+              />
+              <div class="craft-img-caption">
+                <strong>1st Place Champions</strong><br />
+                Receiving certificates, medals, and the presentation cheque from
+                CityU Dean, Assoc Prof Dr. Nurul Hafeez Ibrahim.
+              </div>
+            </div>
+            <div class="craft-img-wrapper scroll-reveal delay-1">
+              <img
+                loading="lazy"
+                src="/assets/photo/hackathonchampach.jpeg"
+                alt="FactShield championship medals"
+                style="
+                  aspect-ratio: 16/9;
+                  object-fit: cover;
+                  object-position: center 30%;
+                "
+                width="1080"
+                height="627"
+              />
+              <div class="craft-img-caption">
+                <strong>The Hardware</strong><br />
+                The championship medals earned for FactShield's approach to
+                fighting misinformation.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="next-project" aria-label="Next project">
+        <div class="container">
+          <div>
+            <p class="eyebrow">KEEP EXPLORING</p>
+            <h2>Percentage</h2>
+          </div>
+          <a class="btn btn-ghost" href="/projects/percentage.html"
+            >Next case study <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </aside>
+    </main>
+
+    <!-- site-footer -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <a class="wordmark" href="/" aria-label="Nahid Jahan Bhuiyan, home"
+          >njb<span>.</span></a
+        ><span>© 2026 Nahid Jahan Bhuiyan</span
+        ><span class="footer-credit"
+          >Thoughtfully designed. Personally built.</span
+        ><a class="back-top" href="#main-content"
+          >Back to top <span aria-hidden="true">↑</span></a
+        >
       </div>
-    </section>
+    </footer>
+    <!-- /site-footer -->
 
-  </main>
-
-  <div id="footer-placeholder"></div>
-
-  <script src="/assets/js/main.js"></script>
-</body>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>

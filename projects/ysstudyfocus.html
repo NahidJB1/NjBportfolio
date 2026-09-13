@@ -1,125 +1,346 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YSStudyFocus, Nahid Jahan Bhuiyan</title>
-  
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  <link rel="stylesheet" href="/assets/css/projects/project-base.css" />
-  <link rel="stylesheet" href="/assets/css/projects/ysstudyfocus.css" />
-  <link rel="stylesheet" href="/assets/css/animations.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/favicon.png" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YSStudyFocus, Nahid Jahan Bhuiyan</title>
 
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/projects/project-base.css" />
+    <link rel="stylesheet" href="/assets/css/projects/ysstudyfocus.css" />
+    <link rel="stylesheet" href="/assets/css/animations.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta
+      name="description"
+      content="YS Study Focus case study by Nahid Jahan Bhuiyan. UI/UX design, frontend development, and backend integration. My first professional client website."
+    />
+    <meta name="theme-color" content="#f7f7f2" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/assets/css/projects/editorial.css" />
+  </head>
+  <body>
+    <!-- site-header -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <noscript
+      ><style>
+        @media (max-width: 760px) {
+          .nav-hamburger {
+            display: none !important;
+          }
+          #mobileMenu[hidden] {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 24px;
+          }
+        }
+      </style></noscript
+    >
+    <header class="site-header" id="nav">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="wordmark" href="/" aria-label="Nahid Jahan Bhuiyan, home"
+          >njb<span>.</span></a
+        >
+        <div class="nav-links" id="navLinks">
+          <a class="nav-link" href="/index.html#projects">Work</a
+          ><a class="nav-link" href="/index.html#about">About</a
+          ><a class="nav-link" href="/index.html#community">Recognition</a>
+        </div>
+        <div class="nav-actions">
+          <a
+            class="resume-link"
+            href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
+            target="_blank"
+            rel="noopener"
+            >Résumé <span aria-hidden="true">↗</span
+            ><span class="sr-only"> (PDF, opens in a new tab)</span></a
+          ><a class="nav-contact" href="/index.html#contact"
+            >Let’s talk <span aria-hidden="true">↗</span></a
+          ><button
+            class="nav-hamburger"
+            id="hamburger"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <span></span><span></span>
+          </button>
+        </div>
+      </nav>
+      <nav
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-label="Mobile navigation"
+        hidden
+      >
+        <a href="/index.html#projects">Work <span aria-hidden="true">↗</span></a
+        ><a href="/index.html#about">About <span aria-hidden="true">↗</span></a
+        ><a href="/index.html#community"
+          >Recognition <span aria-hidden="true">↗</span></a
+        ><a
+          href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
+          target="_blank"
+          rel="noopener"
+          >Résumé <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+    <!-- /site-header -->
 
+    <main class="craft-main" id="main-content">
+      <section class="craft-hero">
+        <div class="container">
+          <a
+            href="/index.html#projects"
+            class="btn btn-ghost"
+            style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem"
+            >← All projects</a
+          >
 
-  <div id="header-placeholder"></div>
+          <h1 class="craft-title scroll-reveal">YSStudyFocus</h1>
+          <div class="craft-subtitle scroll-reveal delay-1">
+            Student Recruitment Agency Platform
+          </div>
 
-  <main class="craft-main">
-    
-    <section class="craft-hero">
+          <div class="project-tags scroll-reveal delay-2">
+            <span class="ptag">Design</span>
+            <span class="ptag">Full-Stack</span>
+            <span class="ptag">Live & Active</span>
+          </div>
+
+          <div class="craft-meta-grid scroll-reveal delay-3">
+            <div class="meta-item">
+              <span class="meta-label">Role</span>
+              <span class="meta-value"
+                >UI/UX Designer &amp; Full-Stack Dev</span
+              >
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Completion Date</span>
+              <span class="meta-value">January 2026</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Tech Stack</span>
+              <span class="meta-value">HTML, CSS, JS, Backend Integration</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Live Link</span>
+              <a
+                href="https://ysstudyfocus.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="meta-value"
+                style="color: var(--cyan); text-decoration: underline"
+                >Visit Platform ↗</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
       <div class="container">
-        <a href="/" class="btn btn-ghost" style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem;">← Back to Home</a>
-        
-        <h1 class="craft-title scroll-reveal">YSStudyFocus</h1>
-        <div class="craft-subtitle scroll-reveal delay-1">Student Recruitment Agency Platform</div>
-        
-        <div class="project-tags scroll-reveal delay-2">
-          <span class="ptag">Design</span>
-          <span class="ptag">Full-Stack</span>
-          <span class="ptag">Live & Active</span>
+        <figure class="case-preview">
+          <figcaption class="case-preview-label">
+            <span>A LOOK AT THE PRODUCT</span
+            ><span>SELECT AN IMAGE TO EXPLORE ↗</span>
+          </figcaption>
+          <img
+            src="/assets/photo/YSSF/SS3-YSSF.png"
+            alt="YS Study Focus campus directory and university information"
+            fetchpriority="high"
+            width="798"
+            height="533"
+          />
+        </figure>
+        <div class="case-summary" aria-label="Project at a glance">
+          <div>
+            <h2>The challenge</h2>
+            <p>
+              An education agency needed a clear, credible website to help
+              international students explore their options in Malaysia.
+            </p>
+          </div>
+          <div>
+            <h2>My contribution</h2>
+            <p>
+              UI/UX design, frontend development, and backend integration. My
+              first professional client website.
+            </p>
+          </div>
+          <div>
+            <h2>The outcome</h2>
+            <p>
+              Launched in January 2026 with university directories, student
+              stories, and enquiry routes. Actively maintained.
+            </p>
+          </div>
         </div>
-
-        <div class="craft-meta-grid scroll-reveal delay-3">
-          <div class="meta-item">
-            <span class="meta-label">Role</span>
-            <span class="meta-value">UI/UX Designer &amp; Full-Stack Dev</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Completion Date</span>
-            <span class="meta-value">January 2026</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Tech Stack</span>
-            <span class="meta-value">HTML, CSS, JS, Backend Integration</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Live Link</span>
-            <a href="https://ysstudyfocus.com" target="_blank" class="meta-value" style="color: var(--cyan); text-decoration: underline;">Visit Platform ↗</a>
-          </div>
-        </div>
+        <nav class="case-toc" aria-label="Case study sections">
+          <a href="#project-story"
+            >The story <span aria-hidden="true">↓</span></a
+          ><a href="#project-visuals"
+            >Explore the visuals <span aria-hidden="true">↓</span></a
+          ><a href="/index.html#contact"
+            >Discuss a similar project <span aria-hidden="true">↗</span></a
+          >
+        </nav>
       </div>
-    </section>
 
-    <section class="craft-section">
-      <div class="container">
-        <h2 class="craft-heading scroll-reveal">The Objective</h2>
-        <p class="craft-text scroll-reveal">
-          YSStudyFocus was my very first professional project. The primary objective was to build a comprehensive, high-converting digital presence for an education agency facilitating international student recruitment in Malaysia. It required bridging the gap between an authoritative corporate aesthetic and an accessible, user-friendly interface for prospective students.
-        </p>
+      <section class="craft-section" id="project-story">
+        <div class="container">
+          <h2 class="craft-heading scroll-reveal">The Objective</h2>
+          <p class="craft-text scroll-reveal">
+            YSStudyFocus was my very first professional project. The primary
+            objective was to build a comprehensive, high-converting digital
+            presence for an education agency facilitating international student
+            recruitment in Malaysia. It required bridging the gap between an
+            authoritative corporate aesthetic and an accessible, user-friendly
+            interface for prospective students.
+          </p>
 
-        <h2 class="craft-heading scroll-reveal" style="margin-top: 4rem;">Key Features & Architecture</h2>
-        <div class="feature-grid">
-          
-          <div class="feature-card scroll-reveal">
-            <h3 class="feature-title">Modern Glassmorphism UI</h3>
-            <p class="feature-desc">Engineered a highly visual frontend using glassmorphism principles to provide depth and hierarchy, moving away from flat, lifeless corporate templates.</p>
+          <h2 class="craft-heading scroll-reveal" style="margin-top: 4rem">
+            Key Features & Architecture
+          </h2>
+          <div class="feature-grid">
+            <div class="feature-card scroll-reveal">
+              <h3 class="feature-title">Modern Glassmorphism UI</h3>
+              <p class="feature-desc">
+                Engineered a highly visual frontend using glassmorphism
+                principles to provide depth and hierarchy, moving away from
+                flat, lifeless corporate templates.
+              </p>
+            </div>
+
+            <div class="feature-card scroll-reveal delay-1">
+              <h3 class="feature-title">End-to-End Recruitment Funnel</h3>
+              <p class="feature-desc">
+                Integrated clear call-to-actions and lead capture systems
+                allowing the agency to streamline student inquiries effortlessly
+                without intrusive barriers.
+              </p>
+            </div>
+
+            <div class="feature-card scroll-reveal delay-2">
+              <h3 class="feature-title">Responsive & Performant</h3>
+              <p class="feature-desc">
+                Optimized for mobile-first indexing, ensuring students browsing
+                from various global regions and network speeds experience smooth
+                animations without lag.
+              </p>
+            </div>
           </div>
-
-          <div class="feature-card scroll-reveal delay-1">
-            <h3 class="feature-title">End-to-End Recruitment Funnel</h3>
-            <p class="feature-desc">Integrated clear call-to-actions and lead capture systems allowing the agency to streamline student inquiries effortlessly without intrusive barriers.</p>
-          </div>
-
-          <div class="feature-card scroll-reveal delay-2">
-            <h3 class="feature-title">Responsive & Performant</h3>
-            <p class="feature-desc">Optimized for mobile-first indexing, ensuring students browsing from various global regions and network speeds experience smooth animations without lag.</p>
-          </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="craft-section" style="background: var(--bg2);">
-      <div class="container">
-        <h2 class="craft-heading scroll-reveal">Visuals & Interface</h2>
-        <p class="craft-text scroll-reveal">A closer look at the deployed interfaces and layout structures.</p>
-        
-        <div class="craft-gallery">
-          
-          <!-- Screenshot 1: Campuses -->
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/YSSF/SS3-YSSF.png" alt="City U Malaysia Campuses Interface" style="width: 100%; height: auto; display: block; border-bottom: 1px solid var(--border);" />
-            <div class="craft-img-caption">Campus Showcase &amp; Facility Information Dashboard</div>
+      <section class="craft-section" style="background: var(--bg2)">
+        <div class="container">
+          <h2 class="craft-heading scroll-reveal">Visuals & Interface</h2>
+          <p class="craft-text scroll-reveal">
+            A closer look at the deployed interfaces and layout structures.
+          </p>
+
+          <div class="craft-gallery" id="project-visuals">
+            <!-- Screenshot 1: Campuses -->
+            <div class="craft-img-wrapper scroll-reveal">
+              <img
+                loading="lazy"
+                src="/assets/photo/YSSF/SS3-YSSF.png"
+                alt="City U Malaysia Campuses Interface"
+                style="
+                  width: 100%;
+                  height: auto;
+                  display: block;
+                  border-bottom: 1px solid var(--border);
+                "
+                width="798"
+                height="533"
+              />
+              <div class="craft-img-caption">
+                Campus Showcase &amp; Facility Information Dashboard
+              </div>
+            </div>
+
+            <!-- Screenshot 2: University Grid -->
+            <div class="craft-img-wrapper scroll-reveal">
+              <img
+                loading="lazy"
+                src="/assets/photo/YSSF/SS2-YSSF.png"
+                alt="Partner University Directory"
+                style="
+                  width: 100%;
+                  height: auto;
+                  display: block;
+                  border-bottom: 1px solid var(--border);
+                "
+                width="821"
+                height="566"
+              />
+              <div class="craft-img-caption">
+                Partner University Directory &amp; Navigation Cards
+              </div>
+            </div>
+
+            <!-- Screenshot 3: Success Stories -->
+            <div class="craft-img-wrapper scroll-reveal">
+              <img
+                loading="lazy"
+                src="/assets/photo/YSSF/SS1-YSSF.png"
+                alt="Student Success Stories"
+                style="
+                  width: 100%;
+                  height: auto;
+                  display: block;
+                  border-bottom: 1px solid var(--border);
+                "
+                width="1343"
+                height="420"
+              />
+              <div class="craft-img-caption">
+                Dynamic Student Success Stories &amp; Testimonials Section
+              </div>
+            </div>
           </div>
-
-          <!-- Screenshot 2: University Grid -->
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/YSSF/SS2-YSSF.png" alt="Partner University Directory" style="width: 100%; height: auto; display: block; border-bottom: 1px solid var(--border);" />
-            <div class="craft-img-caption">Partner University Directory &amp; Navigation Cards</div>
-          </div>
-
-          <!-- Screenshot 3: Success Stories -->
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/YSSF/SS1-YSSF.png" alt="Student Success Stories" style="width: 100%; height: auto; display: block; border-bottom: 1px solid var(--border);" />
-            <div class="craft-img-caption">Dynamic Student Success Stories &amp; Testimonials Section</div>
-          </div>
-
         </div>
+      </section>
 
+      <aside class="next-project" aria-label="Next project">
+        <div class="container">
+          <div>
+            <p class="eyebrow">KEEP EXPLORING</p>
+            <h2>OneStepMY</h2>
+          </div>
+          <a class="btn btn-ghost" href="/projects/onestepmy.html"
+            >Next case study <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </aside>
+    </main>
+
+    <!-- site-footer -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <a class="wordmark" href="/" aria-label="Nahid Jahan Bhuiyan, home"
+          >njb<span>.</span></a
+        ><span>© 2026 Nahid Jahan Bhuiyan</span
+        ><span class="footer-credit"
+          >Thoughtfully designed. Personally built.</span
+        ><a class="back-top" href="#main-content"
+          >Back to top <span aria-hidden="true">↑</span></a
+        >
       </div>
-    </section>
+    </footer>
+    <!-- /site-footer -->
 
-  </main>
-
-  <div id="footer-placeholder"></div>
-
-  <script src="/assets/js/main.js"></script>
-</body>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>

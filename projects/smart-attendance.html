@@ -1,369 +1,727 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart Attendance System, Nahid Jahan Bhuiyan</title>
-  
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  <link rel="stylesheet" href="/assets/css/projects/project-base.css" />
-  <link rel="stylesheet" href="/assets/css/animations.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Attendance System, Nahid Jahan Bhuiyan</title>
 
-  <style>
-    /* Expand container width specifically for this dense layout */
-    .wide-container {
-      max-width: 1400px !important;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/projects/project-base.css" />
+    <link rel="stylesheet" href="/assets/css/animations.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    /* Custom CSS for Rich UX Layout */
-    .feature-split {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-      align-items: center;
-      margin-bottom: 7rem;
-    }
-    .feature-text {
-      flex: 1;
-      width: 100%;
-    }
-    .feature-text h3 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--text);
-    }
-    .feature-text p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: var(--text2);
-      margin-bottom: 1.5rem;
-    }
-    .feature-image {
-      flex: 1;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 1.5rem;
-      width: 100%;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding: 1rem 0;
-      /* Hide scrollbars for cleaner mobile UX */
-      scrollbar-width: none; 
-      -ms-overflow-style: none;
-    }
-    .feature-image::-webkit-scrollbar {
-      display: none; 
-    }
+    <style>
+      /* Expand container width specifically for this dense layout */
+      .wide-container {
+        max-width: 1400px !important;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
 
-    .mockup-img {
-      scroll-snap-align: center;
-      flex: 0 0 75%; /* Default to 75% viewport width on mobile */
-      max-width: 280px;
-      width: 100%;
-      border-radius: 24px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-      border: 1px solid var(--border);
-      transition: transform 0.3s ease;
-      cursor: zoom-in;
-    }
-    .mockup-img:hover {
-      transform: translateY(-5px);
-    }
-    
-    @media (min-width: 768px) {
-      .feature-image {
-        justify-content: center;
-        overflow-x: visible;
-        flex-wrap: wrap;
-      }
-      .mockup-img {
-        flex: 0 1 auto;
-      }
-      .double-img .mockup-img {
-        max-width: 240px;
-      }
-      .triple-img {
-        flex-wrap: nowrap;
-      }
-      .triple-img .mockup-img {
-        max-width: 210px;
-      }
-    }
-    
-    @media (min-width: 1200px) {
+      /* Custom CSS for Rich UX Layout */
       .feature-split {
-        flex-direction: row;
-        gap: 4rem;
-        align-items: flex-start;
-      }
-      .feature-split.reverse {
-        flex-direction: row-reverse;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+        margin-bottom: 7rem;
       }
       .feature-text {
-        flex: 0 0 35%; /* Restrict text width, push to edge */
-        padding: 0;
+        flex: 1;
+        width: 100%;
+      }
+      .feature-text h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--text);
+      }
+      .feature-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text2);
+        margin-bottom: 1.5rem;
       }
       .feature-image {
-        flex: 0 0 60%;
+        flex: 1;
+        display: flex;
         justify-content: flex-start;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 1rem 0;
+        /* Hide scrollbars for cleaner mobile UX */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
       }
-      .feature-split.reverse .feature-image {
-        justify-content: flex-end;
+      .feature-image::-webkit-scrollbar {
+        display: none;
       }
-    }
-  </style>
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/favicon.png" />
-</head>
-<body>
 
-  <div id="header-placeholder"></div>
+      .mockup-img {
+        scroll-snap-align: center;
+        flex: 0 0 75%; /* Default to 75% viewport width on mobile */
+        max-width: 280px;
+        width: 100%;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--border);
+        transition: transform 0.3s ease;
+        cursor: zoom-in;
+      }
+      .mockup-img:hover {
+        transform: translateY(-5px);
+      }
 
-  <main class="craft-main">
-    
-    <!-- Hero Section -->
-    <section class="craft-hero">
-      <div class="container wide-container">
-        <a href="/" class="btn btn-ghost" style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem;">← Back to Home</a>
-        
-        <h1 class="craft-title scroll-reveal">Smart Attendance System</h1>
-        <div class="craft-subtitle scroll-reveal delay-1">Dual-Layer Verification Architecture (SmartTrack)</div>
-        
-        <div class="project-tags scroll-reveal delay-2">
-          <span class="ptag">Android</span>
-          <span class="ptag">Firebase MBaaS</span>
-          <span class="ptag">UX/UI Case Study</span>
-        </div>
+      @media (min-width: 768px) {
+        .feature-image {
+          justify-content: center;
+          overflow-x: visible;
+          flex-wrap: wrap;
+        }
+        .mockup-img {
+          flex: 0 1 auto;
+        }
+        .double-img .mockup-img {
+          max-width: 240px;
+        }
+        .triple-img {
+          flex-wrap: nowrap;
+        }
+        .triple-img .mockup-img {
+          max-width: 210px;
+        }
+      }
 
-        <div class="craft-meta-grid scroll-reveal delay-3">
-          <div class="meta-item">
-            <span class="meta-label">Role</span>
-            <span class="meta-value">Software Engineer & UI/UX Designer</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Timeline</span>
-            <span class="meta-value">August 2026</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Tech Stack</span>
-            <span class="meta-value">Java, Android Studio, Firebase</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Core Innovation</span>
-            <span class="meta-value">GPS Geofencing & SSID Validation</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Overview & Problem -->
-    <section class="craft-section">
-      <div class="container wide-container">
-        <h2 class="craft-heading scroll-reveal">The Architecture of Trust</h2>
-        <p class="craft-text scroll-reveal">
-          Many universities transition to digital attendance, only to find that single-factor QR codes actually <em>increase</em> proxy attendance (buddy punching). Students simply photograph the QR code and send it to an absent friend. SmartTrack isn't just an attendance logger—it is a fraud-prevention engine. By combining <strong>GPS proximity geofencing</strong> (using Haversine calculations) with <strong>Wi-Fi SSID validation</strong>, the system guarantees physical presence without the high cost or privacy concerns of biometric hardware.
-        </p>
-      </div>
-    </section>
-
-    <!-- Faculty Workflows -->
-    <section class="craft-section" style="background: var(--bg2);">
-      <div class="container wide-container">
-        <div class="section-header">
-          <h2 class="section-title">Faculty & Management <em>Workflows</em></h2>
-        </div>
-        
-        <!-- Dashboard & Settings -->
-        <div class="feature-split scroll-reveal">
-          <div class="feature-text">
-            <h3>Centralized Dashboards</h3>
-            <p>
-              The <strong>Teacher's Dashboard</strong> and <strong>Management Dashboard</strong> provide instant access to the core actions: generating active QRs, reviewing attendance logs, and spotting suspicious activity. The UI is designed to minimize cognitive load so lecturers can start a session in seconds. The <strong>Settings Page</strong> allows deep personalization and notification controls for faculty members.
-            </p>
-          </div>
-          <div class="feature-image double-img triple-img craft-gallery">
-            <img src="/assets/photo/SmartTrack/Teacher's_Dashboard.jpeg" alt="Teacher Dashboard" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Management_Dashboard.jpeg" alt="Management Dashboard" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Setteing_Page.jpeg" alt="Settings Page" class="mockup-img" />
-          </div>
-        </div>
-
-        <!-- Dynamic QR -->
-        <div class="feature-split reverse scroll-reveal">
-          <div class="feature-text">
-            <h3>Dynamic QR Generation</h3>
-            <p>
-              This is the heart of the system. When a lecturer selects a subject to generate a QR code, the app instantly captures the device's precise <strong>GPS coordinates</strong> and binds it to a <strong>time-scoped token</strong> (e.g., 5-30 minutes). The QR code displayed to the students refreshes continuously, immediately rendering screenshots useless for remote absent students.
-            </p>
-          </div>
-          <div class="feature-image double-img craft-gallery">
-            <img src="/assets/photo/SmartTrack/Subject_Detail_page.jpeg" alt="Subject Detail" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Generate_QR.jpeg" alt="Generate QR" class="mockup-img" />
-          </div>
-        </div>
-
-        <!-- Analytics & Records -->
-        <div class="feature-split scroll-reveal">
-          <div class="feature-text">
-            <h3>Visual Analytics & Real-Time Tracking</h3>
-            <p>
-              Instead of digging through CSVs, lecturers are greeted with <strong>Visual Analytics</strong> via MPAndroidChart. They can view attendance ratios as dynamic pie/bar charts. The <strong>Attendance Record</strong> and <strong>Teacher Detail Page</strong> provide granular, real-time synchronization so faculty can see who scanned in successfully exactly as it happens.
-            </p>
-          </div>
-          <div class="feature-image double-img triple-img craft-gallery">
-            <img src="/assets/photo/SmartTrack/Attendance_record.jpeg" alt="Attendance Record" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Attendance_Analytics_Graph.jpeg" alt="Analytics Graph" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Teacher's_Detail_Page.jpeg" alt="Teacher Details" class="mockup-img" />
-          </div>
-        </div>
-
-        <!-- Suspicious Activity -->
-        <div class="feature-split reverse scroll-reveal">
-          <div class="feature-text">
-            <h3>Auditing & Suspicious Activity</h3>
-            <p>
-              Fraud prevention is completely transparent. If a student attempts to scan from outside the geofence, the app fails their scan and logs it to the <strong>Suspicious Activity</strong> dashboard. Faculty can see the exact distance mismatch (e.g., 18,000+ meters away). The <strong>Recent Absence</strong> and <strong>Activity Logs</strong> help administrators identify chronic truancy immediately.
-            </p>
-          </div>
-          <div class="feature-image triple-img craft-gallery">
-            <img src="/assets/photo/SmartTrack/Suspicious_Activity_page.jpeg" alt="Suspicious Activity" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Recent_absence.jpeg" alt="Recent Absences" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Activity_Log_page.jpeg" alt="Activity Logs" class="mockup-img" />
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Student Experience -->
-    <section class="craft-section">
-      <div class="container wide-container">
-        <div class="section-header">
-          <h2 class="section-title">The Student <em>Experience</em></h2>
-        </div>
-        
-        <!-- Dashboard & Gamification -->
-        <div class="feature-split scroll-reveal">
-          <div class="feature-text">
-            <h3>Dashboard & Gamified Streaks</h3>
-            <p>
-              The <strong>Student Dashboard</strong> is engineered for speed, featuring a prominent 'Scan QR Code' button integrated with their daily schedule. To transform attendance from a chore into a rewarding habit, I introduced <strong>Gamification</strong>. Students build "Streaks" for consecutive attendance and unlock unique <strong>Avatar Frames</strong> (like Silver Sparkle or Diamond Crown) at key milestones.
-            </p>
-          </div>
-          <div class="feature-image double-img craft-gallery">
-            <img src="/assets/photo/SmartTrack/Student_Dashboard_Schedule_Integration.jpeg" alt="Student Dashboard" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/gamification_profile_avatar.jpeg" alt="Gamification Frames" class="mockup-img" />
-          </div>
-        </div>
-
-        <!-- Health Metrics & Scanning -->
-        <div class="feature-split reverse scroll-reveal">
-          <div class="feature-text">
-            <h3>Health Metrics & Camera Integration</h3>
-            <p>
-              The <strong>Attendance Percentage Page</strong> provides immediate color-coded feedback on their standing (Green for safe, Red for warning). When it's time to check in, the <strong>Camera Scanner</strong> utilizes CameraX and ZXing to quickly capture the dynamic payload, simultaneously initiating the background <strong>GPS & Database Sync</strong> to validate the network and location requirements instantly.
-            </p>
-          </div>
-          <div class="feature-image triple-img craft-gallery">
-            <img src="/assets/photo/SmartTrack/Attendance_percenatage_page.jpeg" alt="Health Metrics" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/Camera_Scanner_Integration.jpeg" alt="Scanner" class="mockup-img" />
-            <img src="/assets/photo/SmartTrack/GPS_Hardware_Database_Sync.jpeg" alt="Hardware Sync" class="mockup-img" />
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Security Edge Cases -->
-    <section class="craft-section" style="background: var(--bg2);">
-      <div class="container wide-container">
-        <div class="section-header">
-          <h2 class="section-title">Security <em>Interceptions</em></h2>
-        </div>
-
-        <div class="feature-split scroll-reveal">
-          <div class="feature-text">
-            <h3>Instant Validation Feedback</h3>
-            <p>
-              A robust system must communicate errors gracefully. When the dual-layer validation succeeds, the student sees a bright, confirmed <strong>Attendance Submitted</strong> screen. 
-            </p>
-            <p>
-              However, if they attempt to scan an old photograph of a QR code, the system throws a strict <strong>QR Expired</strong> error. If they scan a valid live code sent via WhatsApp but are not physically in the room, the GPS geofence catches them and throws an <strong>Out of Bounds (Distance)</strong> error. This ensures a 100% interception rate for fraudulent check-ins.
-            </p>
-          </div>
-          <div class="feature-image triple-img craft-gallery">
-            <img src="/assets/photo/SmartTrack/Attendance_Sumited.jpeg" alt="Success" class="mockup-img" style="border: 2px solid #28a745;" />
-            <img src="/assets/photo/SmartTrack/Attendance_failed_for_distance.jpeg" alt="Distance Fail" class="mockup-img" style="border: 2px solid #dc3545;" />
-            <img src="/assets/photo/SmartTrack/Attendance_failed_for_QR-Expire.jpeg" alt="Expiry Fail" class="mockup-img" style="border: 2px solid #dc3545;" />
-          </div>
-        </div>
-        
-      </div>
-    </section>
-
-  </main>
-
-  <div id="footer-placeholder"></div>
-
-  <script src="/assets/js/main.js"></script>
-  <script>
-    // Parallax Horizontal Scroll for Mobile
-    (function initMobileHorizontalScroll() {
-      const galleries = document.querySelectorAll('.feature-image.craft-gallery');
-      if (galleries.length === 0) return;
-
-      galleries.forEach(gallery => {
-        // If the user manually touches/swipes the gallery, disable the auto-animation
-        gallery.addEventListener('touchstart', () => {
-          gallery.dataset.manualScroll = 'true';
-          gallery.style.scrollSnapType = ''; // Ensure native snapping is re-enabled
-        }, { passive: true });
-      });
-
-      window.addEventListener('scroll', () => {
-        // Only run on mobile layouts
-        if (window.innerWidth >= 768) return; 
-        
-        const windowHeight = window.innerHeight;
-        
-        galleries.forEach(gallery => {
-          // Skip if user took manual control
-          if (gallery.dataset.manualScroll === 'true') return;
-
-          // Check if gallery actually has horizontal overflow
-          const maxScroll = gallery.scrollWidth - gallery.clientWidth;
-          if (maxScroll <= 0) return;
-          
-          const rect = gallery.getBoundingClientRect();
-          
-          // Start horizontal scroll when gallery is near the bottom of the screen
-          const startY = windowHeight * 0.85; 
-          // Finish horizontal scroll when it reaches the middle/top-ish
-          const endY = windowHeight * 0.35;
-          
-          let progress = (startY - rect.top) / (startY - endY);
-          
-          // Clamp between 0 and 1
-          if (progress < 0) progress = 0;
-          if (progress > 1) progress = 1;
-          
-          // Disable CSS scroll snapping during JS scroll to avoid jerky fighting
-          gallery.style.scrollSnapType = 'none';
-          gallery.scrollLeft = progress * maxScroll;
-          
-          // Re-enable snapping if they are fully past it so manual swipe works again
-          if (progress <= 0 || progress >= 1) {
-            gallery.style.scrollSnapType = '';
+      @media (min-width: 1200px) {
+        .feature-split {
+          flex-direction: row;
+          gap: 4rem;
+          align-items: flex-start;
+        }
+        .feature-split.reverse {
+          flex-direction: row-reverse;
+        }
+        .feature-text {
+          flex: 0 0 35%; /* Restrict text width, push to edge */
+          padding: 0;
+        }
+        .feature-image {
+          flex: 0 0 60%;
+          justify-content: flex-start;
+        }
+        .feature-split.reverse .feature-image {
+          justify-content: flex-end;
+        }
+      }
+    </style>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta
+      name="description"
+      content="SmartTrack case study by Nahid Jahan Bhuiyan. Software engineering and UI/UX design for an Android application built with Java and Firebase."
+    />
+    <meta name="theme-color" content="#f7f7f2" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/assets/css/projects/editorial.css" />
+  </head>
+  <body>
+    <!-- site-header -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <noscript
+      ><style>
+        @media (max-width: 760px) {
+          .nav-hamburger {
+            display: none !important;
           }
+          #mobileMenu[hidden] {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 24px;
+          }
+        }
+      </style></noscript
+    >
+    <header class="site-header" id="nav">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="wordmark" href="/" aria-label="Nahid Jahan Bhuiyan, home"
+          >njb<span>.</span></a
+        >
+        <div class="nav-links" id="navLinks">
+          <a class="nav-link" href="/index.html#projects">Work</a
+          ><a class="nav-link" href="/index.html#about">About</a
+          ><a class="nav-link" href="/index.html#community">Recognition</a>
+        </div>
+        <div class="nav-actions">
+          <a
+            class="resume-link"
+            href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
+            target="_blank"
+            rel="noopener"
+            >Résumé <span aria-hidden="true">↗</span
+            ><span class="sr-only"> (PDF, opens in a new tab)</span></a
+          ><a class="nav-contact" href="/index.html#contact"
+            >Let’s talk <span aria-hidden="true">↗</span></a
+          ><button
+            class="nav-hamburger"
+            id="hamburger"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <span></span><span></span>
+          </button>
+        </div>
+      </nav>
+      <nav
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-label="Mobile navigation"
+        hidden
+      >
+        <a href="/index.html#projects">Work <span aria-hidden="true">↗</span></a
+        ><a href="/index.html#about">About <span aria-hidden="true">↗</span></a
+        ><a href="/index.html#community"
+          >Recognition <span aria-hidden="true">↗</span></a
+        ><a
+          href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
+          target="_blank"
+          rel="noopener"
+          >Résumé <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+    <!-- /site-header -->
+
+    <main class="craft-main" id="main-content">
+      <!-- Hero Section -->
+      <section class="craft-hero">
+        <div class="container wide-container">
+          <a
+            href="/index.html#projects"
+            class="btn btn-ghost"
+            style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem"
+            >← All projects</a
+          >
+
+          <h1 class="craft-title scroll-reveal">Smart Attendance System</h1>
+          <div class="craft-subtitle scroll-reveal delay-1">
+            Dual-Layer Verification Architecture (SmartTrack)
+          </div>
+
+          <div class="project-tags scroll-reveal delay-2">
+            <span class="ptag">Android</span>
+            <span class="ptag">Firebase MBaaS</span>
+            <span class="ptag">UX/UI Case Study</span>
+          </div>
+
+          <div class="craft-meta-grid scroll-reveal delay-3">
+            <div class="meta-item">
+              <span class="meta-label">Role</span>
+              <span class="meta-value">Software Engineer & UI/UX Designer</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Timeline</span>
+              <span class="meta-value">August 2026</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Tech Stack</span>
+              <span class="meta-value">Java, Android Studio, Firebase</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Core Innovation</span>
+              <span class="meta-value">GPS Geofencing & SSID Validation</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <figure class="case-preview case-phones">
+          <figcaption class="case-preview-label">
+            <span>A LOOK AT THE APPLICATION</span
+            ><span>SELECT AN IMAGE TO EXPLORE ↗</span>
+          </figcaption>
+          <img
+            src="/assets/photo/SmartTrack/Teacher's_Dashboard.jpeg"
+            alt="SmartTrack teacher attendance dashboard"
+            fetchpriority="high"
+            width="540"
+            height="1107"
+          /><img
+            src="/assets/photo/SmartTrack/Student_Dashboard_Schedule_Integration.jpeg"
+            alt="SmartTrack student schedule and attendance dashboard"
+            width="540"
+            height="1170"
+          />
+        </figure>
+        <div class="case-summary" aria-label="Project at a glance">
+          <div>
+            <h2>The challenge</h2>
+            <p>
+              An attendance record should confirm that the student is actually
+              present, while remaining easy for teachers to manage.
+            </p>
+          </div>
+          <div>
+            <h2>My contribution</h2>
+            <p>
+              Software engineering and UI/UX design for an Android application
+              built with Java and Firebase.
+            </p>
+          </div>
+          <div>
+            <h2>The outcome</h2>
+            <p>
+              Teacher, management, and student workflows with QR attendance, GPS
+              geofencing, Wi-Fi validation, and analytics.
+            </p>
+          </div>
+        </div>
+        <nav class="case-toc" aria-label="Case study sections">
+          <a href="#project-story"
+            >The story <span aria-hidden="true">↓</span></a
+          ><a href="#project-visuals"
+            >Explore the visuals <span aria-hidden="true">↓</span></a
+          ><a href="/index.html#contact"
+            >Discuss a similar project <span aria-hidden="true">↗</span></a
+          >
+        </nav>
+      </div>
+
+      <!-- Overview & Problem -->
+      <section class="craft-section" id="project-story">
+        <div class="container wide-container">
+          <h2 class="craft-heading scroll-reveal">The Architecture of Trust</h2>
+          <p class="craft-text scroll-reveal">
+            Many universities transition to digital attendance, only to find
+            that single-factor QR codes actually <em>increase</em> proxy
+            attendance (buddy punching). Students simply photograph the QR code
+            and send it to an absent friend. SmartTrack isn't just an attendance
+            logger—it is a fraud-prevention engine. By combining
+            <strong>GPS proximity geofencing</strong> (using Haversine
+            calculations) with <strong>Wi-Fi SSID validation</strong>, the
+            system guarantees physical presence without the high cost or privacy
+            concerns of biometric hardware.
+          </p>
+        </div>
+      </section>
+
+      <!-- Faculty Workflows -->
+      <section class="craft-section" style="background: var(--bg2)">
+        <div class="container wide-container">
+          <div class="section-header">
+            <h2 class="section-title">
+              Faculty & Management <em>Workflows</em>
+            </h2>
+          </div>
+
+          <!-- Dashboard & Settings -->
+          <div class="feature-split scroll-reveal" id="project-visuals">
+            <div class="feature-text">
+              <h3>Centralized Dashboards</h3>
+              <p>
+                The <strong>Teacher's Dashboard</strong> and
+                <strong>Management Dashboard</strong> provide instant access to
+                the core actions: generating active QRs, reviewing attendance
+                logs, and spotting suspicious activity. The UI is designed to
+                minimize cognitive load so lecturers can start a session in
+                seconds. The <strong>Settings Page</strong> allows deep
+                personalization and notification controls for faculty members.
+              </p>
+            </div>
+            <div class="feature-image double-img triple-img craft-gallery">
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Teacher's_Dashboard.jpeg"
+                alt="Teacher Dashboard"
+                class="mockup-img"
+                width="540"
+                height="1107"
+              />
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Management_Dashboard.jpeg"
+                alt="Management Dashboard"
+                class="mockup-img"
+                width="1080"
+                height="829"
+              />
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Setteing_Page.jpeg"
+                alt="Settings Page"
+                class="mockup-img"
+                width="715"
+                height="1280"
+              />
+            </div>
+          </div>
+
+          <!-- Dynamic QR -->
+          <div class="feature-split reverse scroll-reveal">
+            <div class="feature-text">
+              <h3>Dynamic QR Generation</h3>
+              <p>
+                This is the heart of the system. When a lecturer selects a
+                subject to generate a QR code, the app instantly captures the
+                device's precise <strong>GPS coordinates</strong> and binds it
+                to a <strong>time-scoped token</strong> (e.g., 5-30 minutes).
+                The QR code displayed to the students refreshes continuously,
+                immediately rendering screenshots useless for remote absent
+                students.
+              </p>
+            </div>
+            <div class="feature-image double-img craft-gallery">
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Subject_Detail_page.jpeg"
+                alt="Subject Detail"
+                class="mockup-img"
+                width="1073"
+                height="1280"
+              />
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Generate_QR.jpeg"
+                alt="Generate QR"
+                class="mockup-img"
+                width="540"
+                height="1170"
+              />
+            </div>
+          </div>
+
+          <!-- Analytics & Records -->
+          <div class="feature-split scroll-reveal">
+            <div class="feature-text">
+              <h3>Visual Analytics & Real-Time Tracking</h3>
+              <p>
+                Instead of digging through CSVs, lecturers are greeted with
+                <strong>Visual Analytics</strong> via MPAndroidChart. They can
+                view attendance ratios as dynamic pie/bar charts. The
+                <strong>Attendance Record</strong> and
+                <strong>Teacher Detail Page</strong> provide granular, real-time
+                synchronization so faculty can see who scanned in successfully
+                exactly as it happens.
+              </p>
+            </div>
+            <div class="feature-image double-img triple-img craft-gallery">
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Attendance_record.jpeg"
+                alt="Attendance Record"
+                class="mockup-img"
+                width="540"
+                height="1144"
+              />
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Attendance_Analytics_Graph.jpeg"
+                alt="Analytics Graph"
+                class="mockup-img"
+                width="685"
+                height="1280"
+              />
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Teacher's_Detail_Page.jpeg"
+                alt="Teacher Details"
+                class="mockup-img"
+                width="540"
+                height="1129"
+              />
+            </div>
+          </div>
+
+          <!-- Suspicious Activity -->
+          <div class="feature-split reverse scroll-reveal">
+            <div class="feature-text">
+              <h3>Auditing & Suspicious Activity</h3>
+              <p>
+                Fraud prevention is completely transparent. If a student
+                attempts to scan from outside the geofence, the app fails their
+                scan and logs it to the
+                <strong>Suspicious Activity</strong> dashboard. Faculty can see
+                the exact distance mismatch (e.g., 18,000+ meters away). The
+                <strong>Recent Absence</strong> and
+                <strong>Activity Logs</strong> help administrators identify
+                chronic truancy immediately.
+              </p>
+            </div>
+            <div class="feature-image triple-img craft-gallery">
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Suspicious_Activity_page.jpeg"
+                alt="Suspicious Activity"
+                class="mockup-img"
+                width="540"
+                height="1170"
+              />
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Recent_absence.jpeg"
+                alt="Recent Absences"
+                class="mockup-img"
+                width="1080"
+                height="925"
+              />
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Activity_Log_page.jpeg"
+                alt="Activity Logs"
+                class="mockup-img"
+                width="540"
+                height="1129"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Student Experience -->
+      <section class="craft-section">
+        <div class="container wide-container">
+          <div class="section-header">
+            <h2 class="section-title">The Student <em>Experience</em></h2>
+          </div>
+
+          <!-- Dashboard & Gamification -->
+          <div class="feature-split scroll-reveal">
+            <div class="feature-text">
+              <h3>Dashboard & Gamified Streaks</h3>
+              <p>
+                The <strong>Student Dashboard</strong> is engineered for speed,
+                featuring a prominent 'Scan QR Code' button integrated with
+                their daily schedule. To transform attendance from a chore into
+                a rewarding habit, I introduced <strong>Gamification</strong>.
+                Students build "Streaks" for consecutive attendance and unlock
+                unique <strong>Avatar Frames</strong> (like Silver Sparkle or
+                Diamond Crown) at key milestones.
+              </p>
+            </div>
+            <div class="feature-image double-img craft-gallery">
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Student_Dashboard_Schedule_Integration.jpeg"
+                alt="Student Dashboard"
+                class="mockup-img"
+                width="540"
+                height="1170"
+              />
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/gamification_profile_avatar.jpeg"
+                alt="Gamification Frames"
+                class="mockup-img"
+                width="540"
+                height="1170"
+              />
+            </div>
+          </div>
+
+          <!-- Health Metrics & Scanning -->
+          <div class="feature-split reverse scroll-reveal">
+            <div class="feature-text">
+              <h3>Health Metrics & Camera Integration</h3>
+              <p>
+                The <strong>Attendance Percentage Page</strong> provides
+                immediate color-coded feedback on their standing (Green for
+                safe, Red for warning). When it's time to check in, the
+                <strong>Camera Scanner</strong> utilizes CameraX and ZXing to
+                quickly capture the dynamic payload, simultaneously initiating
+                the background <strong>GPS & Database Sync</strong> to validate
+                the network and location requirements instantly.
+              </p>
+            </div>
+            <div class="feature-image triple-img craft-gallery">
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Attendance_percenatage_page.jpeg"
+                alt="Health Metrics"
+                class="mockup-img"
+                width="1080"
+                height="2340"
+              />
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Camera_Scanner_Integration.jpeg"
+                alt="Scanner"
+                class="mockup-img"
+                width="1080"
+                height="2340"
+              />
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/GPS_Hardware_Database_Sync.jpeg"
+                alt="Hardware Sync"
+                class="mockup-img"
+                width="540"
+                height="1170"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Security Edge Cases -->
+      <section class="craft-section" style="background: var(--bg2)">
+        <div class="container wide-container">
+          <div class="section-header">
+            <h2 class="section-title">Security <em>Interceptions</em></h2>
+          </div>
+
+          <div class="feature-split scroll-reveal">
+            <div class="feature-text">
+              <h3>Instant Validation Feedback</h3>
+              <p>
+                A robust system must communicate errors gracefully. When the
+                dual-layer validation succeeds, the student sees a bright,
+                confirmed <strong>Attendance Submitted</strong> screen.
+              </p>
+              <p>
+                However, if they attempt to scan an old photograph of a QR code,
+                the system throws a strict <strong>QR Expired</strong> error. If
+                they scan a valid live code sent via WhatsApp but are not
+                physically in the room, the GPS geofence catches them and throws
+                an <strong>Out of Bounds (Distance)</strong> error. This ensures
+                a 100% interception rate for fraudulent check-ins.
+              </p>
+            </div>
+            <div class="feature-image triple-img craft-gallery">
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Attendance_Sumited.jpeg"
+                alt="Success"
+                class="mockup-img"
+                style="border: 2px solid #28a745"
+                width="1080"
+                height="2340"
+              />
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Attendance_failed_for_distance.jpeg"
+                alt="Distance Fail"
+                class="mockup-img"
+                style="border: 2px solid #dc3545"
+                width="590"
+                height="1280"
+              />
+              <img
+                loading="lazy"
+                src="/assets/photo/SmartTrack/Attendance_failed_for_QR-Expire.jpeg"
+                alt="Expiry Fail"
+                class="mockup-img"
+                style="border: 2px solid #dc3545"
+                width="1080"
+                height="2340"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="next-project" aria-label="Next project">
+        <div class="container">
+          <div>
+            <p class="eyebrow">KEEP EXPLORING</p>
+            <h2>IELTS Mock</h2>
+          </div>
+          <a class="btn btn-ghost" href="/projects/ieltsmock.html"
+            >Next case study <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </aside>
+    </main>
+
+    <!-- site-footer -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <a class="wordmark" href="/" aria-label="Nahid Jahan Bhuiyan, home"
+          >njb<span>.</span></a
+        ><span>© 2026 Nahid Jahan Bhuiyan</span
+        ><span class="footer-credit"
+          >Thoughtfully designed. Personally built.</span
+        ><a class="back-top" href="#main-content"
+          >Back to top <span aria-hidden="true">↑</span></a
+        >
+      </div>
+    </footer>
+    <!-- /site-footer -->
+
+    <script src="/assets/js/main.js"></script>
+    <script>
+      // Parallax Horizontal Scroll for Mobile
+      (function initMobileHorizontalScroll() {
+        const galleries = document.querySelectorAll(
+          ".feature-image.craft-gallery",
+        );
+        if (galleries.length === 0) return;
+
+        galleries.forEach((gallery) => {
+          // If the user manually touches/swipes the gallery, disable the auto-animation
+          gallery.addEventListener(
+            "touchstart",
+            () => {
+              gallery.dataset.manualScroll = "true";
+              gallery.style.scrollSnapType = ""; // Ensure native snapping is re-enabled
+            },
+            { passive: true },
+          );
         });
-      }, { passive: true });
-    })();
-  </script>
-</body>
+
+        window.addEventListener(
+          "scroll",
+          () => {
+            // Only run on mobile layouts
+            if (window.innerWidth >= 768) return;
+
+            const windowHeight = window.innerHeight;
+
+            galleries.forEach((gallery) => {
+              // Skip if user took manual control
+              if (gallery.dataset.manualScroll === "true") return;
+
+              // Check if gallery actually has horizontal overflow
+              const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+              if (maxScroll <= 0) return;
+
+              const rect = gallery.getBoundingClientRect();
+
+              // Start horizontal scroll when gallery is near the bottom of the screen
+              const startY = windowHeight * 0.85;
+              // Finish horizontal scroll when it reaches the middle/top-ish
+              const endY = windowHeight * 0.35;
+
+              let progress = (startY - rect.top) / (startY - endY);
+
+              // Clamp between 0 and 1
+              if (progress < 0) progress = 0;
+              if (progress > 1) progress = 1;
+
+              // Disable CSS scroll snapping during JS scroll to avoid jerky fighting
+              gallery.style.scrollSnapType = "none";
+              gallery.scrollLeft = progress * maxScroll;
+
+              // Re-enable snapping if they are fully past it so manual swipe works again
+              if (progress <= 0 || progress >= 1) {
+                gallery.style.scrollSnapType = "";
+              }
+            });
+          },
+          { passive: true },
+        );
+      })();
+    </script>
+  </body>
 </html>

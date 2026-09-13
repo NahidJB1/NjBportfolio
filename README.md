@@ -1,45 +1,53 @@
-# Nahid Jahan Bhuiyan — Personal Portfolio
+# Nahid Jahan Bhuiyan — Portfolio
 
-Welcome to the repository for my personal portfolio website. This project serves as a comprehensive showcase of my work as a Full-Stack Developer and UI/UX Designer, featuring my latest projects, technical skills, and professional journey.
+A static portfolio for a UI/UX designer and full-stack developer. The homepage leads with selected work, real product screenshots, clear contributions, and professional recognition. Eight detailed case studies remain available.
 
-## 🚀 Live Demo
-You can view the live portfolio at: **[nahidjahanbhuiyan.com](https://nahidjahanbhuiyan.com/)**
+## Run locally
 
-## 🎨 Design Philosophy
-This portfolio was recently redesigned from the ground up to embrace a **Premium Minimalist Editorial** aesthetic.
-- **Typography:** Built entirely on the *Inter* typeface for maximum readability and a timeless, modern feel.
-- **Color Palette:** A warm, dark-mode design (`#111111` background) accented by a sophisticated copper/amber (`#c8956c`) to reduce eye strain and highlight key information.
-- **User Experience:** Focuses on smooth, subtle micro-animations (like soft hover lifts and scroll reveals) rather than overwhelming visual noise. The goal is to let the work speak for itself.
+Requires Node.js 22 or newer.
 
-## 📁 Project Structure
-The repository is organized to keep the codebase clean, modular, and easy to maintain.
-
-```text
-NjBportfolio/
-├── index.html              # The main landing page (Hero, About, Projects, Skills, Contact)
-├── assets/                 # Core assets directory
-│   ├── css/                # Stylesheets (style.css, animations.css, project-specific CSS)
-│   ├── js/                 # Global Javascript (main.js) for interactions and components
-│   ├── photo/              # All high-res images and project screenshots
-│   ├── header.html         # Modular navigation header injected globally
-│   └── footer.html         # Modular footer injected globally
-└── projects/               # Individual deep-dive case study pages
-    ├── factshield.html
-    ├── medelife.html
-    ├── kerja-kad.html
-    └── ...
+```sh
+npm install
+npm run dev
 ```
 
-## 🛠️ Technical Stack
-- **HTML5:** Semantic and accessible markup.
-- **Vanilla CSS3:** Custom design system without reliance on heavy frameworks. Includes CSS variables for global theming, Flexbox/Grid for responsive layouts, and keyframe animations.
-- **Vanilla JavaScript (ES6):** Lightweight DOM manipulation, Intersection Observers for scroll animations, custom Lightbox implementation, and modular component injection.
+Open http://localhost:4173. The site has no runtime dependencies or build requirement; deploy the HTML, `assets`, and `projects` directories to a static host. Keep `404.html`, the favicons, `CNAME`, and `sitemap.xml` at the root when appropriate for the host.
 
-## 💡 Key Features
-- **Dynamic Component Injection:** The navigation header and footer are written once and injected into every page via JavaScript, ensuring DRY (Don't Repeat Yourself) principles.
-- **Smart Image Lightbox:** A custom-built, lightweight image viewer that automatically attaches to gallery images without cluttering the HTML with excessive data attributes.
-- **Rich Case Studies:** Detailed project pages (like FactShield and MEDeLIFE) that break down system architecture, UX psychology, and technical milestones.
-- **Fully Responsive:** Beautifully scaled across desktop, tablet, and mobile devices.
+## Design decisions
 
-## 📄 License
-This project and its assets are proprietary. &copy; 2026 Nahid Jahan Bhuiyan. All rights reserved.
+- **Visual hierarchy and proximity:** project screenshots, contributions, and outcomes are grouped together. A warm ivory background, charcoal typography, and restrained olive accents keep the work in focus.
+- **Hick’s law:** three main navigation choices and four featured projects simplify the first scan. A native disclosure contains the remaining four projects.
+- **Fitts’s law:** large project covers link to case studies. Primary actions, mobile navigation controls, and dialog controls have generous targets.
+- **Recognition over recall:** real screenshots and named projects give visitors evidence before the detailed story. Every case study begins with the challenge, contribution, and outcome.
+- **Predictable feedback:** visible keyboard focus, explicit navigation state, clipboard success/failure messages, Escape dismissal, and focus return for enlarged images.
+- **Accessible defaults:** semantic landmarks, a skip link, meaningful alternative text, reduced-motion support, and content visible immediately. Navigation, résumé links, and the archive work without JavaScript.
+
+The portfolio uses the supplied project information and real photography. Team design credits are preserved. Project descriptions do not introduce conversion metrics or client testimonials.
+
+## Edit content
+
+- `index.html`: homepage content and project selection.
+- `projects/*.html`: the full case studies.
+- `assets/css/style.css`: shared design tokens, homepage, navigation, and responsive layout.
+- `assets/css/projects/editorial.css`: the consistent case-study treatment, loaded after existing project styles.
+- `assets/js/main.js`: navigation, clipboard feedback, and accessible image dialogs.
+- `assets/header.html` and `assets/footer.html`: shared layout source. After editing either, run `npm run sync-layout` to update the static copies in every page. Visitors do not need JavaScript or an asynchronous fetch to see the navigation.
+
+Optimized WebP images are in `assets/images`; the original photos and screenshots remain in `assets/photo`. Inter is self-hosted in `assets/fonts` with its SIL Open Font License. `node scripts/prepare-assets.mjs` regenerates the image derivatives and downloads the font from Google Fonts and its license from the Inter project.
+
+## Verification
+
+Start the local server, then run:
+
+```sh
+npx playwright install chromium
+npm test
+```
+
+The browser checks cover all ten pages at 320, 390, 768, and 1440 pixels, including image loading, local destinations, duplicate IDs, landmarks, and horizontal overflow. Axe checks desktop and mobile pages. Interaction checks exercise the menu, archive, modal keyboard focus, clipboard success and failure, reduced motion, and the JavaScript-disabled fallback.
+
+Screenshots and the JSON report are saved to `.preview/` (ignored by Git). Automated accessibility checks are useful evidence, not a substitute for testing with assistive technology and real users.
+
+## License
+
+Portfolio content and project assets © 2026 Nahid Jahan Bhuiyan. All rights reserved. The Inter font uses its included SIL Open Font License.

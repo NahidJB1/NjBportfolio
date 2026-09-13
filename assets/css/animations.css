@@ -1,73 +1,9 @@
-/* ============================================
-   NJB PORTFOLIO — ANIMATIONS
-   Minimal / Refined
-   ============================================ */
-
-/* KEYFRAMES */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-@keyframes blink-cursor {
-  0%, 100% { border-color: var(--accent); }
-  50% { border-color: transparent; }
-}
-
-@keyframes scroll-line {
-  0% { left: -100%; }
-  100% { left: 100%; }
-}
-
-@keyframes reveal-up-anim {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes reveal-fade-anim {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* HERO PHOTO — gentle float */
-.hero-photo {
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(-50%); }
-  50% { transform: translateY(calc(-50% - 8px)); }
-}
-
-/* SECTION LABEL ANIMATION ON ENTRY */
-.section-label {
-  opacity: 0;
-  transform: translateX(-12px);
-  transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
-}
-.section-label.visible {
+/* Content remains visible without JavaScript; motion is limited to optional hover feedback. */
+.scroll-reveal,
+.reveal-up,
+.reveal-fade,
+.section-label,
+.section-title {
   opacity: 1;
-  transform: translateX(0);
-}
-
-/* BADGE CARD STAGGER */
-.badge-card:nth-child(1) { transition-delay: 0.05s; }
-.badge-card:nth-child(2) { transition-delay: 0.1s; }
-.badge-card:nth-child(3) { transition-delay: 0.15s; }
-.badge-card:nth-child(4) { transition-delay: 0.2s; }
-
-/* PILL HOVER — subtle */
-.pill { transition: color 0.2s, border-color 0.2s, transform 0.2s; }
-.pill:hover { transform: scale(1.02); }
-
-/* NAV LOGO HOVER */
-.nav-logo a:hover .nav-logo-img { opacity: 0.8; transition: opacity 0.3s; }
-
-/* SMOOTH SECTION DIVIDERS */
-.section { position: relative; }
-.section::before {
-  content: '';
-  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-  width: 60px; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-hover), transparent);
+  transform: none;
 }

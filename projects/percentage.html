@@ -1,123 +1,351 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Percentage, Nahid Jahan Bhuiyan</title>
-  
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  <link rel="stylesheet" href="/assets/css/projects/project-base.css" />
-  <link rel="stylesheet" href="/assets/css/projects/percentage.css" />
-  <link rel="stylesheet" href="/assets/css/animations.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/favicon.png" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Percentage, Nahid Jahan Bhuiyan</title>
 
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/projects/project-base.css" />
+    <link rel="stylesheet" href="/assets/css/projects/percentage.css" />
+    <link rel="stylesheet" href="/assets/css/animations.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta
+      name="description"
+      content="Percentage case study by Nahid Jahan Bhuiyan. Solo UI/UX designer and full-stack developer for Big Dreamers SDN BHD, including deployment and maintenance."
+    />
+    <meta name="theme-color" content="#f7f7f2" />
+    <link
+      rel="preload"
+      href="/assets/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/assets/css/projects/editorial.css" />
+  </head>
+  <body>
+    <!-- site-header -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <noscript
+      ><style>
+        @media (max-width: 760px) {
+          .nav-hamburger {
+            display: none !important;
+          }
+          #mobileMenu[hidden] {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 24px;
+          }
+        }
+      </style></noscript
+    >
+    <header class="site-header" id="nav">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="wordmark" href="/" aria-label="Nahid Jahan Bhuiyan, home"
+          >njb<span>.</span></a
+        >
+        <div class="nav-links" id="navLinks">
+          <a class="nav-link" href="/index.html#projects">Work</a
+          ><a class="nav-link" href="/index.html#about">About</a
+          ><a class="nav-link" href="/index.html#community">Recognition</a>
+        </div>
+        <div class="nav-actions">
+          <a
+            class="resume-link"
+            href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
+            target="_blank"
+            rel="noopener"
+            >Résumé <span aria-hidden="true">↗</span
+            ><span class="sr-only"> (PDF, opens in a new tab)</span></a
+          ><a class="nav-contact" href="/index.html#contact"
+            >Let’s talk <span aria-hidden="true">↗</span></a
+          ><button
+            class="nav-hamburger"
+            id="hamburger"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <span></span><span></span>
+          </button>
+        </div>
+      </nav>
+      <nav
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-label="Mobile navigation"
+        hidden
+      >
+        <a href="/index.html#projects">Work <span aria-hidden="true">↗</span></a
+        ><a href="/index.html#about">About <span aria-hidden="true">↗</span></a
+        ><a href="/index.html#community"
+          >Recognition <span aria-hidden="true">↗</span></a
+        ><a
+          href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
+          target="_blank"
+          rel="noopener"
+          >Résumé <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+    <!-- /site-header -->
 
+    <main class="craft-main" id="main-content">
+      <section class="craft-hero">
+        <div class="container">
+          <a
+            href="/index.html#projects"
+            class="btn btn-ghost"
+            style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem"
+            >← All projects</a
+          >
 
-  <div id="header-placeholder"></div>
+          <h1 class="craft-title scroll-reveal">Percentage</h1>
+          <div class="craft-subtitle scroll-reveal delay-1">
+            E-Commerce Platform for Premium Apparel
+          </div>
 
-  <main class="craft-main">
-    
-    <section class="craft-hero">
+          <div class="project-tags scroll-reveal delay-2">
+            <span
+              class="ptag"
+              style="
+                color: var(--cyan);
+                background: var(--cyan-dim);
+                border-color: rgba(0, 212, 255, 0.15);
+              "
+              >Commercial Project</span
+            >
+            <span class="ptag">Full-Stack</span>
+            <span class="ptag">E-Commerce</span>
+          </div>
+
+          <div class="craft-meta-grid scroll-reveal delay-3">
+            <div class="meta-item">
+              <span class="meta-label">Client</span>
+              <span class="meta-value">Big Dreamers SDN BHD</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Role</span>
+              <span class="meta-value"
+                >Solo Full-Stack Developer &amp; UI/UX Designer</span
+              >
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Scope</span>
+              <span class="meta-value"
+                >End-to-End Retail Platform &amp; Maintenance</span
+              >
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Live Link</span>
+              <a
+                href="https://percentage.my"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="meta-value"
+                style="color: var(--cyan); text-decoration: underline"
+                >Visit Store ↗</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
       <div class="container">
-        <a href="/" class="btn btn-ghost" style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem;">← Back to Home</a>
-        
-        <h1 class="craft-title scroll-reveal">Percentage</h1>
-        <div class="craft-subtitle scroll-reveal delay-1">E-Commerce Platform for Premium Apparel</div>
-        
-        <div class="project-tags scroll-reveal delay-2">
-          <span class="ptag" style="color: var(--cyan); background: var(--cyan-dim); border-color: rgba(0, 212, 255, 0.15);">Commercial Project</span>
-          <span class="ptag">Full-Stack</span>
-          <span class="ptag">E-Commerce</span>
+        <figure class="case-preview">
+          <figcaption class="case-preview-label">
+            <span>A LOOK AT THE PRODUCT</span
+            ><span>SELECT AN IMAGE TO EXPLORE ↗</span>
+          </figcaption>
+          <img
+            src="/assets/images/percentage.webp"
+            alt="Percentage apparel storefront and product collection"
+            fetchpriority="high"
+            width="1357"
+            height="628"
+          />
+        </figure>
+        <div class="case-summary" aria-label="Project at a glance">
+          <div>
+            <h2>The challenge</h2>
+            <p>
+              Give a clothing brand a complete online storefront, with the
+              operations behind it to manage products and orders.
+            </p>
+          </div>
+          <div>
+            <h2>My contribution</h2>
+            <p>
+              Solo UI/UX designer and full-stack developer for Big Dreamers SDN
+              BHD, including deployment and maintenance.
+            </p>
+          </div>
+          <div>
+            <h2>The outcome</h2>
+            <p>
+              A commissioned retail platform covering product discovery,
+              inventory, customer accounts, orders, and checkout.
+            </p>
+          </div>
         </div>
-
-        <div class="craft-meta-grid scroll-reveal delay-3">
-          <div class="meta-item">
-            <span class="meta-label">Client</span>
-            <span class="meta-value">Big Dreamers SDN BHD</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Role</span>
-            <span class="meta-value">Solo Full-Stack Developer &amp; UI/UX Designer</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Scope</span>
-            <span class="meta-value">End-to-End Retail Platform &amp; Maintenance</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Live Link</span>
-            <a href="https://percentage.my" target="_blank" class="meta-value" style="color: var(--cyan); text-decoration: underline;">Visit Store ↗</a>
-          </div>
-        </div>
+        <nav class="case-toc" aria-label="Case study sections">
+          <a href="#project-story"
+            >The story <span aria-hidden="true">↓</span></a
+          ><a href="#project-visuals"
+            >Explore the visuals <span aria-hidden="true">↓</span></a
+          ><a href="/index.html#contact"
+            >Discuss a similar project <span aria-hidden="true">↗</span></a
+          >
+        </nav>
       </div>
-    </section>
 
-    <section class="craft-section">
-      <div class="container">
-        <h2 class="craft-heading scroll-reveal">The Project &amp; Commercial Scope</h2>
-        <p class="craft-text scroll-reveal">
-          Percentage is an active clothing brand operating under <strong>Big Dreamers SDN BHD</strong>. As a paid contract project, I was commissioned to architect, design, and develop the entire full-stack digital retail ecosystem. The primary business objective was to deliver a high-converting, blazing-fast e-commerce application capable of managing high concurrent traffic, dynamic catalogs, and secure customer profiles.
-        </p>
-        <p class="craft-text scroll-reveal" style="margin-top: -1.5rem;">
-          From mapping user journeys to engineering database layouts and configuring web deployment architecture, I managed the entire lifecycle solo. The platform remains actively maintained and optimized to preserve performance margins under production retail loads.
-        </p>
+      <section class="craft-section" id="project-story">
+        <div class="container">
+          <h2 class="craft-heading scroll-reveal">
+            The Project &amp; Commercial Scope
+          </h2>
+          <p class="craft-text scroll-reveal">
+            Percentage is an active clothing brand operating under
+            <strong>Big Dreamers SDN BHD</strong>. As a paid contract project, I
+            was commissioned to architect, design, and develop the entire
+            full-stack digital retail ecosystem. The primary business objective
+            was to deliver a high-converting, blazing-fast e-commerce
+            application capable of managing high concurrent traffic, dynamic
+            catalogs, and secure customer profiles.
+          </p>
+          <p class="craft-text scroll-reveal" style="margin-top: -1.5rem">
+            From mapping user journeys to engineering database layouts and
+            configuring web deployment architecture, I managed the entire
+            lifecycle solo. The platform remains actively maintained and
+            optimized to preserve performance margins under production retail
+            loads.
+          </p>
 
-        <h2 class="craft-heading scroll-reveal" style="margin-top: 4rem;">Technical Execution &amp; Core Components</h2>
-        <div class="feature-grid">
-          
-          <div class="feature-card scroll-reveal">
-            <h3 class="feature-title">High-Performance Storefront</h3>
-            <p class="feature-desc">Designed an ultra-clean, minimal interactive frontend optimized for asset-heavy clothing imagery. Built multi-device responsive search systems, dynamic product filtering, sizing variables, and fluid canvas animations to elevate customer retention rates.</p>
+          <h2 class="craft-heading scroll-reveal" style="margin-top: 4rem">
+            Technical Execution &amp; Core Components
+          </h2>
+          <div class="feature-grid">
+            <div class="feature-card scroll-reveal">
+              <h3 class="feature-title">High-Performance Storefront</h3>
+              <p class="feature-desc">
+                Designed an ultra-clean, minimal interactive frontend optimized
+                for asset-heavy clothing imagery. Built multi-device responsive
+                search systems, dynamic product filtering, sizing variables, and
+                fluid canvas animations to elevate customer retention rates.
+              </p>
+            </div>
+
+            <div class="feature-card scroll-reveal delay-1">
+              <h3 class="feature-title">
+                Robust Inventory &amp; Order Backend
+              </h3>
+              <p class="feature-desc">
+                Engineered a highly structural relational schema backend to
+                seamlessly track product variables, item allocations, customer
+                orders, and dispatch logs. Handled security layers to prevent
+                cart anomalies and system vulnerabilities.
+              </p>
+            </div>
+
+            <div class="feature-card scroll-reveal delay-2">
+              <h3 class="feature-title">Optimized Checkout Pipeline</h3>
+              <p class="feature-desc">
+                Focused heavily on cart psychology by pruning the user checkout
+                flow down to core essential interactions. Implemented real-time
+                order summaries, local shipping rules logic, and optimized
+                transaction state processing pipelines.
+              </p>
+            </div>
           </div>
-
-          <div class="feature-card scroll-reveal delay-1">
-            <h3 class="feature-title">Robust Inventory &amp; Order Backend</h3>
-            <p class="feature-desc">Engineered a highly structural relational schema backend to seamlessly track product variables, item allocations, customer orders, and dispatch logs. Handled security layers to prevent cart anomalies and system vulnerabilities.</p>
-          </div>
-
-          <div class="feature-card scroll-reveal delay-2">
-            <h3 class="feature-title">Optimized Checkout Pipeline</h3>
-            <p class="feature-desc">Focused heavily on cart psychology by pruning the user checkout flow down to core essential interactions. Implemented real-time order summaries, local shipping rules logic, and optimized transaction state processing pipelines.</p>
-          </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="craft-section" style="background: var(--bg2);">
-      <div class="container">
-        <h2 class="craft-heading scroll-reveal">Digital Retail Experience</h2>
-        <p class="craft-text scroll-reveal">Production snapshots of the frontend deployment and responsive checkout workflows.</p>
-        
-        <div class="craft-gallery">
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/PC/SS1-PC.png" alt="Percentage Frontpage Catalog" />
-            <div class="craft-img-caption">The Interactive Digital Lookbook &amp; Frontpage</div>
-          </div>
-          
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/PC/SS2-PC.png" alt="Percentage Product Interface" />
-            <div class="craft-img-caption">Responsive Product Showcases &amp; Interactive UI</div>
-          </div>
+      <section class="craft-section" style="background: var(--bg2)">
+        <div class="container">
+          <h2 class="craft-heading scroll-reveal">Digital Retail Experience</h2>
+          <p class="craft-text scroll-reveal">
+            Production snapshots of the frontend deployment and responsive
+            checkout workflows.
+          </p>
 
-          <div class="craft-img-wrapper scroll-reveal">
-            <img src="/assets/photo/PC/SS3-PC.png" alt="Percentage Backend Architecture" />
-            <div class="craft-img-caption">Robust Inventory Backend &amp; Product Management Dashboard</div>
+          <div class="craft-gallery" id="project-visuals">
+            <div class="craft-img-wrapper scroll-reveal">
+              <img
+                loading="lazy"
+                src="/assets/photo/PC/SS1-PC.png"
+                alt="Percentage Frontpage Catalog"
+                width="1357"
+                height="628"
+              />
+              <div class="craft-img-caption">
+                The Interactive Digital Lookbook &amp; Frontpage
+              </div>
+            </div>
+
+            <div class="craft-img-wrapper scroll-reveal">
+              <img
+                loading="lazy"
+                src="/assets/photo/PC/SS2-PC.png"
+                alt="Percentage Product Interface"
+                width="1356"
+                height="631"
+              />
+              <div class="craft-img-caption">
+                Responsive Product Showcases &amp; Interactive UI
+              </div>
+            </div>
+
+            <div class="craft-img-wrapper scroll-reveal">
+              <img
+                loading="lazy"
+                src="/assets/photo/PC/SS3-PC.png"
+                alt="Percentage Backend Architecture"
+                width="1322"
+                height="639"
+              />
+              <div class="craft-img-caption">
+                Robust Inventory Backend &amp; Product Management Dashboard
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
+      <aside class="next-project" aria-label="Next project">
+        <div class="container">
+          <div>
+            <p class="eyebrow">KEEP EXPLORING</p>
+            <h2>Kerja-Kad</h2>
+          </div>
+          <a class="btn btn-ghost" href="/projects/kerja-kad.html"
+            >Next case study <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </aside>
+    </main>
+
+    <!-- site-footer -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <a class="wordmark" href="/" aria-label="Nahid Jahan Bhuiyan, home"
+          >njb<span>.</span></a
+        ><span>© 2026 Nahid Jahan Bhuiyan</span
+        ><span class="footer-credit"
+          >Thoughtfully designed. Personally built.</span
+        ><a class="back-top" href="#main-content"
+          >Back to top <span aria-hidden="true">↑</span></a
+        >
       </div>
-    </section>
+    </footer>
+    <!-- /site-footer -->
 
-  </main>
-
-  <div id="footer-placeholder"></div>
-
-  <script src="/assets/js/main.js"></script>
-</body>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>

@@ -1,28 +1,64 @@
-<nav class="nav" id="nav">
-  <div class="nav-logo">
-    <a href="/index.html#hero">
-      <img src="/assets/photo/njblogo.png" alt="NJB Logo" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-      <span class="nav-logo-fallback">NJB</span>
-    </a>
-  </div>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="/index.html#about" class="nav-link" data-text="About">About</a></li>
-    <li><a href="/index.html#projects" class="nav-link" data-text="Projects">Projects</a></li>
-    <li><a href="/index.html#skills" class="nav-link" data-text="Skills">Skills</a></li>
-    <li><a href="/index.html#contact" class="nav-link" data-text="Contact">Contact</a></li>
-    <li><a href="#community" class="nav-link" data-text="Community">Community</a></li>
-  </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <ul>
-    <li><a href="/index.html#about" class="mobile-link">About</a></li>
-    <li><a href="/index.html#projects" class="mobile-link">Projects</a></li>
-    <li><a href="/index.html#skills" class="mobile-link">Skills</a></li>
-    <li><a href="/index.html#contact" class="mobile-link">Contact</a></li>
-    <li><a href="#community" class="mobile-link">Community</a></li>
-  </ul>
-</div>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<noscript
+  ><style>
+    @media (max-width: 760px) {
+      .nav-hamburger {
+        display: none !important;
+      }
+      #mobileMenu[hidden] {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 24px;
+      }
+    }
+  </style></noscript
+>
+<header class="site-header" id="nav">
+  <nav class="nav container" aria-label="Main navigation">
+    <a class="wordmark" href="/" aria-label="Nahid Jahan Bhuiyan, home"
+      >njb<span>.</span></a
+    >
+    <div class="nav-links" id="navLinks">
+      <a class="nav-link" href="/index.html#projects">Work</a
+      ><a class="nav-link" href="/index.html#about">About</a
+      ><a class="nav-link" href="/index.html#community">Recognition</a>
+    </div>
+    <div class="nav-actions">
+      <a
+        class="resume-link"
+        href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
+        target="_blank"
+        rel="noopener"
+        >Résumé <span aria-hidden="true">↗</span
+        ><span class="sr-only"> (PDF, opens in a new tab)</span></a
+      ><a class="nav-contact" href="/index.html#contact"
+        >Let’s talk <span aria-hidden="true">↗</span></a
+      ><button
+        class="nav-hamburger"
+        id="hamburger"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <nav
+    class="mobile-menu"
+    id="mobileMenu"
+    aria-label="Mobile navigation"
+    hidden
+  >
+    <a href="/index.html#projects">Work <span aria-hidden="true">↗</span></a
+    ><a href="/index.html#about">About <span aria-hidden="true">↗</span></a
+    ><a href="/index.html#community"
+      >Recognition <span aria-hidden="true">↗</span></a
+    ><a
+      href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
+      target="_blank"
+      rel="noopener"
+      >Résumé <span aria-hidden="true">↗</span></a
+    >
+  </nav>
+</header>

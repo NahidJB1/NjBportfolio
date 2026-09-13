@@ -1,251 +1,170 @@
-/* ============================================
-   NJB PORTFOLIO, MAIN JS
-   Minimal / Clean
-   ============================================ */
+"use strict";
 
-'use strict';
-
-/* ===== LOAD GLOBALS ===== */
-async function loadGlobals() {
-  try {
-    const [headerRes, footerRes] = await Promise.all([
-      fetch('/assets/header.html'),
-      fetch('/assets/footer.html')
-    ]);
-    const headerHtml = await headerRes.text();
-    const footerHtml = await footerRes.text();
-    
-    document.getElementById('header-placeholder').outerHTML = headerHtml;
-    document.getElementById('footer-placeholder').outerHTML = footerHtml;
-
-    // Initialize nav events AFTER injection
-    if(typeof initNav === 'function') initNav();
-  } catch (error) {
-    console.error('Error loading global components:', error);
-  }
+// HTML supplies the navigation. JavaScript adds the small-screen disclosure.
+const menuButton = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+function closeMenu(returnFocus = false) {
+  if (!menuButton || !mobileMenu) return;
+  menuButton.setAttribute("aria-expanded", "false");
+  menuButton.setAttribute("aria-label", "Open navigation");
+  mobileMenu.hidden = true;
+  if (returnFocus) menuButton.focus();
 }
-loadGlobals();
-
-/* ===== LOADER ===== */
-(function initLoader() {
-  const loader = document.getElementById('loader');
-  const bar = document.getElementById('loaderBar');
-  const loaderText = document.getElementById('loaderText');
-
-  // If no loader on this page, skip
-  if (!loader) return;
-
-  const steps = [
-    { pct: 30, text: 'Loading...' },
-    { pct: 70, text: 'Almost there...' },
-    { pct: 100, text: '' },
-  ];
-
-  let i = 0;
-  function nextStep() {
-    if (i >= steps.length) {
-      setTimeout(() => {
-        loader.classList.add('hidden');
-        document.querySelectorAll('.reveal-up, .reveal-fade').forEach(el => el.classList.add('loaded'));
-      }, 200);
-      return;
-    }
-    const s = steps[i++];
-    if (bar) bar.style.width = s.pct + '%';
-    if (loaderText) loaderText.textContent = s.text;
-    setTimeout(nextStep, i === steps.length ? 300 : 200);
-  }
-  setTimeout(nextStep, 150);
-})();
-
-/* ===== NAVIGATION ===== */
-function initNav() {
-  const nav = document.getElementById('nav');
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  if (!nav || !hamburger || !mobileMenu) return;
-
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-
-  hamburger.addEventListener('click', () => {
-    const open = hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
+if (menuButton && mobileMenu) {
+  menuButton.addEventListener("click", () => {
+    const open = menuButton.getAttribute("aria-expanded") !== "true";
+    menuButton.setAttribute("aria-expanded", String(open));
+    menuButton.setAttribute(
+      "aria-label",
+      open ? "Close navigation" : "Open navigation",
+    );
+    mobileMenu.hidden = !open;
   });
-
-  document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+  mobileMenu.addEventListener("click", (event) => {
+    if (event.target.closest("a")) closeMenu();
   });
-
-  // Active nav link on scroll
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 120) current = s.id;
-    });
-    navLinks.forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-    });
-  }, { passive: true });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !mobileMenu.hidden) closeMenu(true);
+  });
+  document.addEventListener("click", (event) => {
+    if (!mobileMenu.hidden && !event.target.closest(".site-header"))
+      closeMenu();
+  });
+  matchMedia("(min-width: 761px)").addEventListener("change", (event) => {
+    if (event.matches) closeMenu();
+  });
 }
 
-/* ===== TYPEWRITER ROLES ===== */
-(function initTypewriter() {
-  const el = document.getElementById('roleDynamic');
-  if (!el) return;
-  const roles = ['Full-Stack Solutions', 'Beautiful Interfaces', 'Scalable Platforms', 'Award-winning Apps'];
-  let ri = 0, ci = 0, deleting = false;
+// Local anchors avoid an unnecessary reload from the homepage.
+if (
+  !location.pathname.includes("/projects/") &&
+  document.getElementById("hero")
+) {
+  document
+    .querySelectorAll('a[href^="/index.html#"]')
+    .forEach((link) => link.setAttribute("href", new URL(link.href).hash));
+  const navLinks = [...document.querySelectorAll(".nav-link")];
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach((link) => {
+            const active = link.hash === "#" + entry.target.id;
+            link.classList.toggle("active", active);
+            if (active) link.setAttribute("aria-current", "location");
+            else link.removeAttribute("aria-current");
+          });
+        });
+      },
+      { rootMargin: "-15% 0px -65% 0px", threshold: 0 },
+    );
+    ["projects", "about", "community", "contact"]
+      .map((id) => document.getElementById(id))
+      .filter(Boolean)
+      .forEach((section) => observer.observe(section));
+  }
+}
 
-  function type() {
-    const current = roles[ri];
-    if (!deleting) {
-      el.textContent = current.slice(0, ++ci);
-      if (ci === current.length) {
-        deleting = true;
-        setTimeout(type, 1800);
-        return;
-      }
-    } else {
-      el.textContent = current.slice(0, --ci);
-      if (ci === 0) {
-        deleting = false;
-        ri = (ri + 1) % roles.length;
-      }
+document.querySelectorAll("[data-copy-email]").forEach((button) => {
+  let resetTimer;
+  button.addEventListener("click", async () => {
+    const status = document.getElementById("copy-status");
+    clearTimeout(resetTimer);
+    try {
+      if (!navigator.clipboard?.writeText)
+        throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(button.dataset.copyEmail);
+      if (status)
+        status.textContent = "Email copied. Say hello when you’re ready.";
+      button.setAttribute("aria-label", "Email address copied");
+    } catch {
+      if (status)
+        status.textContent =
+          "Couldn’t copy. Select the address or use the email link.";
     }
-    setTimeout(type, deleting ? 45 : 80);
-  }
-  setTimeout(type, 1200);
-})();
-
-/* ===== SCROLL REVEAL ===== */
-(function initScrollReveal() {
-  const targets = document.querySelectorAll('.scroll-reveal, .section-label, .section-title');
-  if (!('IntersectionObserver' in window)) {
-    targets.forEach(el => { el.classList.add('visible'); });
-    return;
-  }
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry, idx) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), idx * 60);
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  targets.forEach(el => io.observe(el));
-})();
-
-/* ===== COUNTER ANIMATION ===== */
-(function initCounters() {
-  const stats = document.querySelectorAll('.stat-number');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        if (!el.dataset.target) return;
-        const target = +el.dataset.target;
-        if (isNaN(target)) return;
-        let current = 0;
-        const step = target / 40;
-        const timer = setInterval(() => {
-          current = Math.min(current + step, target);
-          el.textContent = Math.ceil(current);
-          if (current >= target) clearInterval(timer);
-        }, 30);
-        io.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  stats.forEach(s => io.observe(s));
-})();
-
-/* ===== SMOOTH ANCHOR SCROLL ===== */
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const id = link.getAttribute('href').slice(1);
-    const target = document.getElementById(id);
-    if (!target) return;
-    e.preventDefault();
-    const top = target.getBoundingClientRect().top + window.scrollY - 72;
-    window.scrollTo({ top, behavior: 'smooth' });
+    resetTimer = setTimeout(() => {
+      if (status) status.textContent = "";
+      button.setAttribute("aria-label", "Copy email address");
+    }, 5000);
   });
 });
 
-
-/* ===== CRAFT PAGE LOGIC ===== */
-(function initCraftPages() {
-  // Fix navigation links for subpages
-  const isCraftPage = window.location.pathname.includes('/projects/');
-  if (!isCraftPage) return;
-
-  // Wait for the header to be injected by loadGlobals()
-  setTimeout(() => {
-    document.querySelectorAll('.nav-link, .mobile-link').forEach(link => {
-      const href = link.getAttribute('href');
-      // If the link is just a hash (e.g. "#community"), force it to absolute index path
-      if (href && href.startsWith('#')) {
-        link.setAttribute('href', '/' + href);
-      }
-    });
-  }, 500); // Small delay ensures DOM is populated
-})();
-
-/* ===== LIGHTBOX ===== */
-(function initLightbox() {
-  const lb = document.createElement('div');
-  lb.id = 'craft-lightbox';
-  lb.innerHTML = `
-    <div class="craft-lightbox-content">
-      <img id="craft-lightbox-img" src="" alt="">
-      <div id="craft-lightbox-caption"></div>
-      <button id="craft-lightbox-close" aria-label="Close">&times;</button>
-    </div>
-  `;
-  document.body.appendChild(lb);
-
-  const imgEl = document.getElementById('craft-lightbox-img');
-  const capEl = document.getElementById('craft-lightbox-caption');
-  const closeBtn = document.getElementById('craft-lightbox-close');
-
-  const openLightbox = (src, caption) => {
-    imgEl.src = src;
-    capEl.innerHTML = caption || '';
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeLightbox = () => {
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-    setTimeout(() => { if(!lb.classList.contains('open')) imgEl.src = ''; }, 300);
-  };
-
-  const galleryImgs = document.querySelectorAll('.craft-gallery img, .hackathon-gallery img, .gallery-img-wrapper img');
-  galleryImgs.forEach(img => {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', () => {
-      const wrapper = img.closest('.craft-img-wrapper, .gallery-card');
-      const captionEl = wrapper ? wrapper.querySelector('.craft-img-caption, .gallery-desc') : null;
-      const caption = captionEl ? captionEl.innerHTML : img.alt;
-      openLightbox(img.src, caption);
-    });
+// Native dialog provides focus containment, Escape, and screen reader semantics.
+const lightbox = document.createElement("dialog");
+lightbox.className = "image-dialog";
+lightbox.setAttribute("aria-label", "Expanded image");
+lightbox.setAttribute("aria-describedby", "dialog-caption");
+lightbox.innerHTML =
+  '<button class="dialog-close" type="button" aria-label="Close image">×</button><img alt=""><p class="dialog-caption" id="dialog-caption"></p>';
+document.body.append(lightbox);
+const lightboxImage = lightbox.querySelector("img");
+const lightboxCaption = lightbox.querySelector(".dialog-caption");
+let previousOverflow = "";
+let imageTrigger;
+function openImage(src, caption, alt) {
+  imageTrigger = document.activeElement;
+  lightboxImage.src = src;
+  lightboxImage.alt = alt || caption || "Project screenshot";
+  lightboxCaption.textContent = caption || alt || "";
+  previousOverflow = document.body.style.overflow;
+  document.body.style.overflow = "hidden";
+  lightbox.showModal();
+}
+lightbox
+  .querySelector("button")
+  .addEventListener("click", () => lightbox.close());
+lightbox.addEventListener("keydown", (event) => {
+  if (event.key === "Tab") {
+    event.preventDefault();
+    lightbox.querySelector("button").focus();
+  }
+});
+lightbox.addEventListener("click", (event) => {
+  const bounds = lightbox.getBoundingClientRect();
+  if (
+    event.target === lightbox &&
+    (event.clientX < bounds.left ||
+      event.clientX > bounds.right ||
+      event.clientY < bounds.top ||
+      event.clientY > bounds.bottom)
+  )
+    lightbox.close();
+});
+lightbox.addEventListener("close", () => {
+  document.body.style.overflow = previousOverflow;
+  lightboxImage.removeAttribute("src");
+  imageTrigger?.focus({ preventScroll: true });
+});
+document
+  .querySelectorAll("[data-lightbox]")
+  .forEach((button) =>
+    button.addEventListener("click", () =>
+      openImage(
+        button.dataset.lightbox,
+        button.dataset.caption,
+        button.querySelector("img")?.alt,
+      ),
+    ),
+  );
+document
+  .querySelectorAll(
+    ".craft-gallery img, .hackathon-gallery img, .mockup-img, .case-preview img",
+  )
+  .forEach((img) => {
+    if (img.closest("a,button")) return;
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "case-image-button";
+    button.setAttribute("aria-label", "Enlarge " + img.alt);
+    img.before(button);
+    button.append(img);
+    const caption =
+      img
+        .closest(".craft-img-wrapper")
+        ?.querySelector(".craft-img-caption")
+        ?.textContent.trim() || img.alt;
+    button.addEventListener("click", () =>
+      openImage(img.currentSrc || img.src, caption, img.alt),
+    );
   });
-
-  closeBtn.addEventListener('click', closeLightbox);
-  lb.addEventListener('click', (e) => {
-    if (e.target === lb || e.target.classList.contains('craft-lightbox-content')) closeLightbox();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
-  });
-})();
