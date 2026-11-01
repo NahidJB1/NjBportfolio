@@ -11,6 +11,8 @@ const footer = (
 const files = [
   "index.html",
   "404.html",
+  "research/index.html",
+  "research/entry-template.html",
   ...(await readdir(resolve(root, "projects")))
     .filter((file) => file.endsWith(".html"))
     .map((file) => "projects/" + file),
@@ -26,9 +28,19 @@ for (const file of files) {
     const pattern = new RegExp(
       `<!-- site-${name} -->[\\s\\S]*?<!-- /site-${name} -->`,
     );
-    html = pattern.test(html)
-      ? html.replace(pattern, block)
-      : html.replace(`<div id="${name}-placeholder"></div>`, block);
+    if (pattern.test(html)) {
+      html = html.replace(pattern, block);
+    } else if (html.includes(`<div id="${name}-placeholder"></div>`)) {
+      html = html.replace(`<div id="${name}-placeholder"></div>`, block);
+    } else {
+      // Older research templates shipped with static layout but no sync markers.
+      const existing =
+        name === "header"
+          ? /<a class="skip-link"[\s\S]*?<\/header>/
+          : /<footer class="footer">[\s\S]*?<\/footer>/;
+      if (!existing.test(html)) throw new Error(`Missing ${name} in ${file}`);
+      html = html.replace(existing, block);
+    }
   }
   await writeFile(path, await format(html, { parser: "html" }));
 }

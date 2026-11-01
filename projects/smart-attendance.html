@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart Attendance System, Nahid Jahan Bhuiyan</title>
 
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/projects/project-base.css" />
-    <link rel="stylesheet" href="/assets/css/animations.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
     <style>
       /* Expand container width specifically for this dense layout */
       .wide-container {
@@ -119,99 +111,74 @@
         }
       }
     </style>
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
+
     <meta
       name="description"
       content="SmartTrack case study by Nahid Jahan Bhuiyan. Software engineering and UI/UX design for an Android application built with Java and Firebase."
     />
     <meta name="theme-color" content="#f7f7f2" />
+
     <link
       rel="preload"
-      href="/assets/fonts/inter-latin.woff2"
+      href="/assets/fonts/barlow-condensed-latin.woff2"
       as="font"
       type="font/woff2"
-      crossorigin
+      crossorigin=""
     />
-    <link rel="stylesheet" href="/assets/css/projects/editorial.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/ibm-plex-sans-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/js/main.js" defer=""></script>
+    <link
+      rel="icon"
+      href="/favicon.ico"
+      sizes="16x16 32x32 48x48 64x64 128x128 256x256"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   </head>
   <body>
     <!-- site-header -->
-<a class="skip-link" href="#main-content">Skip to content</a>
-<noscript
-  ><style>
-    @media (max-width: 760px) {
-      .nav-hamburger {
-        display: none !important;
-      }
-      #mobileMenu[hidden] {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr;
-        gap: 0 24px;
-      }
-    }
-  </style></noscript
->
-<header class="site-header" id="nav">
-  <nav class="nav container" aria-label="Main navigation">
-    <a class="wordmark" href="/" aria-label="Nahid Jahan Bhuiyan, home" style="display: flex; align-items: center; padding: 0;"
-      ><img src="/assets/photo/njblogo.png" alt="NJB Logo" style="height: 40px; width: auto; display: block; filter: invert(0.85);" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" /><span style="display: none;">njb<span>.</span></span></a
-    >
-    <div class="nav-links" id="navLinks">
-      <a class="nav-link" href="/index.html#projects">Work</a
-      ><a class="nav-link" href="/index.html#about">About</a
-      ><a class="nav-link" href="/index.html#community">Recognition</a>
-    </div>
-    <div class="nav-actions">
-      <a
-        class="resume-link"
-        href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
-        target="_blank"
-        rel="noopener"
-        >Résumé <span aria-hidden="true">↗</span
-        ><span class="sr-only"> (PDF, opens in a new tab)</span></a
-      ><a class="nav-contact" href="/index.html#contact"
-        >Let’s talk <span aria-hidden="true">↗</span></a
-      ><button
-        class="nav-hamburger"
-        id="hamburger"
-        aria-label="Open navigation"
-        aria-expanded="false"
-        aria-controls="mobileMenu"
-      >
-        <span></span><span></span>
-      </button>
-    </div>
-  </nav>
-  <nav
-    class="mobile-menu"
-    id="mobileMenu"
-    aria-label="Mobile navigation"
-    hidden
-  >
-    <a href="/index.html#projects">Work <span aria-hidden="true">↗</span></a
-    ><a href="/index.html#about">About <span aria-hidden="true">↗</span></a
-    ><a href="/index.html#community"
-      >Recognition <span aria-hidden="true">↗</span></a
-    ><a
-      href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
-      target="_blank"
-      rel="noopener"
-      >Résumé <span aria-hidden="true">↗</span></a
-    >
-  </nav>
-</header>
-  <!-- /site-header -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <nav class="container nav" aria-label="Main navigation">
+        <a
+          class="wordmark brand-logo"
+          href="/"
+          aria-label="Nahid Jahan Bhuiyan, home"
+          ><img
+            src="/assets/photo/njblogo.png"
+            width="480"
+            height="480"
+            alt="Nahid Jahan Bhuiyan logo"
+        /></a>
+        <div class="nav-links">
+          <a href="/index.html#projects">Work</a
+          ><a href="/index.html#about">About</a><a href="/research/">Research</a
+          ><a href="/index.html#contact">Contact</a>
+        </div>
+        <a
+          class="resume-link"
+          href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
+          target="_blank"
+          rel="noopener"
+          >Résumé <span class="sr-only">(PDF, opens in a new tab)</span></a
+        >
+      </nav>
+    </header>
+    <!-- /site-header -->
 
     <main class="craft-main" id="main-content">
       <!-- Hero Section -->
       <section class="craft-hero">
         <div class="container wide-container">
-          <a
-            href="/index.html#projects"
-            class="btn btn-ghost"
-            style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem"
+          <a href="/index.html#projects" class="btn btn-ghost"
             >← All projects</a
           >
 
@@ -229,7 +196,9 @@
           <div class="craft-meta-grid scroll-reveal delay-3">
             <div class="meta-item">
               <span class="meta-label">Role</span>
-              <span class="meta-value">Software Engineer & UI/UX Designer</span>
+              <span class="meta-value"
+                >Software Engineer &amp; UI/UX Designer</span
+              >
             </div>
             <div class="meta-item">
               <span class="meta-label">Timeline</span>
@@ -241,7 +210,9 @@
             </div>
             <div class="meta-item">
               <span class="meta-label">Core Innovation</span>
-              <span class="meta-value">GPS Geofencing & SSID Validation</span>
+              <span class="meta-value"
+                >GPS Geofencing &amp; SSID Validation</span
+              >
             </div>
           </div>
         </div>
@@ -263,6 +234,7 @@
             alt="SmartTrack student schedule and attendance dashboard"
             width="540"
             height="1170"
+            loading="lazy"
           />
         </figure>
         <div class="case-summary" aria-label="Project at a glance">
@@ -305,10 +277,10 @@
           <h2 class="craft-heading scroll-reveal">The Architecture of Trust</h2>
           <p class="craft-text scroll-reveal">
             Many universities transition to digital attendance, only to find
-            that single-factor QR codes actually <em>increase</em> proxy
-            attendance (buddy punching). Students simply photograph the QR code
-            and send it to an absent friend. SmartTrack isn't just an attendance
-            logger—it is a fraud-prevention engine. By combining
+            that single-factor QR codes actually increase proxy attendance
+            (buddy punching). Students simply photograph the QR code and send it
+            to an absent friend. SmartTrack isn't just an attendance logger—it
+            is a fraud-prevention engine. By combining
             <strong>GPS proximity geofencing</strong> (using Haversine
             calculations) with <strong>Wi-Fi SSID validation</strong>, the
             system guarantees physical presence without the high cost or privacy
@@ -318,12 +290,10 @@
       </section>
 
       <!-- Faculty Workflows -->
-      <section class="craft-section" style="background: var(--bg2)">
+      <section class="craft-section">
         <div class="container wide-container">
           <div class="section-header">
-            <h2 class="section-title">
-              Faculty & Management <em>Workflows</em>
-            </h2>
+            <h2 class="section-title">Faculty &amp; Management Workflows</h2>
           </div>
 
           <!-- Dashboard & Settings -->
@@ -405,7 +375,7 @@
           <!-- Analytics & Records -->
           <div class="feature-split scroll-reveal">
             <div class="feature-text">
-              <h3>Visual Analytics & Real-Time Tracking</h3>
+              <h3>Visual Analytics &amp; Real-Time Tracking</h3>
               <p>
                 Instead of digging through CSVs, lecturers are greeted with
                 <strong>Visual Analytics</strong> via MPAndroidChart. They can
@@ -447,7 +417,7 @@
           <!-- Suspicious Activity -->
           <div class="feature-split reverse scroll-reveal">
             <div class="feature-text">
-              <h3>Auditing & Suspicious Activity</h3>
+              <h3>Auditing &amp; Suspicious Activity</h3>
               <p>
                 Fraud prevention is completely transparent. If a student
                 attempts to scan from outside the geofence, the app fails their
@@ -493,13 +463,13 @@
       <section class="craft-section">
         <div class="container wide-container">
           <div class="section-header">
-            <h2 class="section-title">The Student <em>Experience</em></h2>
+            <h2 class="section-title">The Student Experience</h2>
           </div>
 
           <!-- Dashboard & Gamification -->
           <div class="feature-split scroll-reveal">
             <div class="feature-text">
-              <h3>Dashboard & Gamified Streaks</h3>
+              <h3>Dashboard &amp; Gamified Streaks</h3>
               <p>
                 The <strong>Student Dashboard</strong> is engineered for speed,
                 featuring a prominent 'Scan QR Code' button integrated with
@@ -533,15 +503,15 @@
           <!-- Health Metrics & Scanning -->
           <div class="feature-split reverse scroll-reveal">
             <div class="feature-text">
-              <h3>Health Metrics & Camera Integration</h3>
+              <h3>Health Metrics &amp; Camera Integration</h3>
               <p>
                 The <strong>Attendance Percentage Page</strong> provides
                 immediate color-coded feedback on their standing (Green for
                 safe, Red for warning). When it's time to check in, the
                 <strong>Camera Scanner</strong> utilizes CameraX and ZXing to
                 quickly capture the dynamic payload, simultaneously initiating
-                the background <strong>GPS & Database Sync</strong> to validate
-                the network and location requirements instantly.
+                the background <strong>GPS &amp; Database Sync</strong> to
+                validate the network and location requirements instantly.
               </p>
             </div>
             <div class="feature-image triple-img craft-gallery">
@@ -575,10 +545,10 @@
       </section>
 
       <!-- Security Edge Cases -->
-      <section class="craft-section" style="background: var(--bg2)">
+      <section class="craft-section">
         <div class="container wide-container">
           <div class="section-header">
-            <h2 class="section-title">Security <em>Interceptions</em></h2>
+            <h2 class="section-title">Security Interceptions</h2>
           </div>
 
           <div class="feature-split scroll-reveal">
@@ -604,7 +574,6 @@
                 src="/assets/photo/SmartTrack/Attendance_Sumited.jpeg"
                 alt="Success"
                 class="mockup-img"
-                style="border: 2px solid #28a745"
                 width="1080"
                 height="2340"
               />
@@ -613,7 +582,6 @@
                 src="/assets/photo/SmartTrack/Attendance_failed_for_distance.jpeg"
                 alt="Distance Fail"
                 class="mockup-img"
-                style="border: 2px solid #dc3545"
                 width="590"
                 height="1280"
               />
@@ -622,7 +590,6 @@
                 src="/assets/photo/SmartTrack/Attendance_failed_for_QR-Expire.jpeg"
                 alt="Expiry Fail"
                 class="mockup-img"
-                style="border: 2px solid #dc3545"
                 width="1080"
                 height="2340"
               />
@@ -645,82 +612,21 @@
     </main>
 
     <!-- site-footer -->
-<footer class="footer">
-  <div class="container footer-inner">
-    <a class="wordmark" href="/" aria-label="Nahid Jahan Bhuiyan, home" style="display: flex; align-items: center; padding: 0;"
-      ><img src="/assets/photo/njblogo.png" alt="NJB Logo" style="height: 32px; width: auto; display: block; filter: invert(0.85);" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" /><span style="display: none;">njb<span>.</span></span></a
-    ><span>© 2026 Nahid Jahan Bhuiyan</span
-    ><span class="footer-credit">Thoughtfully designed. Personally built.</span
-    ><a class="back-top" href="#main-content"
-      >Back to top <span aria-hidden="true">↑</span></a
-    >
-  </div>
-</footer>
-  <!-- /site-footer -->
-
-    <script src="/assets/js/main.js"></script>
-    <script>
-      // Parallax Horizontal Scroll for Mobile
-      (function initMobileHorizontalScroll() {
-        const galleries = document.querySelectorAll(
-          ".feature-image.craft-gallery",
-        );
-        if (galleries.length === 0) return;
-
-        galleries.forEach((gallery) => {
-          // If the user manually touches/swipes the gallery, disable the auto-animation
-          gallery.addEventListener(
-            "touchstart",
-            () => {
-              gallery.dataset.manualScroll = "true";
-              gallery.style.scrollSnapType = ""; // Ensure native snapping is re-enabled
-            },
-            { passive: true },
-          );
-        });
-
-        window.addEventListener(
-          "scroll",
-          () => {
-            // Only run on mobile layouts
-            if (window.innerWidth >= 768) return;
-
-            const windowHeight = window.innerHeight;
-
-            galleries.forEach((gallery) => {
-              // Skip if user took manual control
-              if (gallery.dataset.manualScroll === "true") return;
-
-              // Check if gallery actually has horizontal overflow
-              const maxScroll = gallery.scrollWidth - gallery.clientWidth;
-              if (maxScroll <= 0) return;
-
-              const rect = gallery.getBoundingClientRect();
-
-              // Start horizontal scroll when gallery is near the bottom of the screen
-              const startY = windowHeight * 0.85;
-              // Finish horizontal scroll when it reaches the middle/top-ish
-              const endY = windowHeight * 0.35;
-
-              let progress = (startY - rect.top) / (startY - endY);
-
-              // Clamp between 0 and 1
-              if (progress < 0) progress = 0;
-              if (progress > 1) progress = 1;
-
-              // Disable CSS scroll snapping during JS scroll to avoid jerky fighting
-              gallery.style.scrollSnapType = "none";
-              gallery.scrollLeft = progress * maxScroll;
-
-              // Re-enable snapping if they are fully past it so manual swipe works again
-              if (progress <= 0 || progress >= 1) {
-                gallery.style.scrollSnapType = "";
-              }
-            });
-          },
-          { passive: true },
-        );
-      })();
-    </script>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <a
+          href="/"
+          class="wordmark brand-logo"
+          aria-label="Nahid Jahan Bhuiyan, home"
+          ><img
+            src="/assets/photo/njblogo.png"
+            width="480"
+            height="480"
+            alt="Nahid Jahan Bhuiyan logo" /></a
+        ><span>© 2026 Nahid Jahan Bhuiyan</span
+        ><a href="#main-content">Back to top ↑</a>
+      </div>
+    </footer>
+    <!-- /site-footer -->
   </body>
 </html>

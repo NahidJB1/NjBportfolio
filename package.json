@@ -8,7 +8,7 @@
     "sync-layout": "node scripts/sync-layout.mjs",
     "test": "node scripts/verify.mjs",
     "prepare-assets": "node scripts/prepare-assets.mjs",
-    "format": "prettier --write index.html 404.html assets/header.html assets/footer.html assets/css/style.css assets/css/animations.css assets/css/projects/editorial.css assets/js/main.js projects/*.html scripts/*.mjs package.json README.md"
+    "format": "prettier --write index.html 404.html assets/header.html assets/footer.html assets/css/styles.css assets/js/main.js projects/*.html research/*.html scripts/*.mjs package.json README.md"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",

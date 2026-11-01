@@ -30,6 +30,8 @@ const pages = [
     .filter((file) => file.endsWith(".html"))
     .map((file) => "/projects/" + file),
   "/404.html",
+  "/research/",
+  "/research/entry-template.html",
 ];
 const links = new Set();
 for (const route of pages) {
@@ -153,29 +155,25 @@ console.log(
 );
 await page.goto(base, { waitUntil: "networkidle" });
 await page.setViewportSize({ width: 390, height: 844 });
-await page
-  .getByRole("button", { name: "Open navigation", exact: true })
-  .click();
-assert.equal(
-  await page.locator("#hamburger").getAttribute("aria-expanded"),
-  "true",
-);
-await page.keyboard.press("Escape");
-assert.equal(await page.locator("#mobileMenu").isVisible(), false);
+assert.equal(await page.locator(".index-row").count(), 8);
+await page.setViewportSize({ width: 1440, height: 1000 });
+await page.locator(".project-link").first().focus();
+await page.waitForTimeout(300);
 assert.equal(
   await page
-    .locator("#hamburger")
-    .evaluate((el) => el === document.activeElement),
-  true,
+    .locator(".index-preview")
+    .first()
+    .evaluate((el) => getComputedStyle(el).opacity),
+  "1",
 );
-await page.locator("#hamburger").click();
-await page.locator("#mobileMenu").getByRole("link", { name: "Work" }).click();
-assert.equal(new URL(page.url()).hash, "#projects");
-assert.equal(await page.locator("#mobileMenu").isVisible(), false);
-await page.locator(".project-archive summary").click();
-assert.equal(await page.locator(".archive-card:visible").count(), 4);
-await page.locator(".project-archive summary").click();
-assert.equal(await page.locator(".archive-card:visible").count(), 0);
+await page.setViewportSize({ width: 390, height: 844 });
+assert.equal(
+  await page
+    .locator(".index-preview")
+    .first()
+    .evaluate((el) => getComputedStyle(el).opacity),
+  "1",
+);
 const imageButton = page.getByRole("button", {
   name: "Enlarge CityU hackathon championship photo",
 });
@@ -225,7 +223,7 @@ assert.equal(
   "auto",
 );
 console.log(
-  "Passed: mobile menu, Escape/focus return, project archive, image dialog, clipboard success/failure, reduced motion.",
+  "Passed: project index hover/focus, Escape/focus return, image dialog, clipboard success/failure, reduced motion.",
 );
 
 const noJS = await browser.newContext({
@@ -236,10 +234,13 @@ const plain = await noJS.newPage();
 await plain.goto(base);
 assert.equal(await plain.locator("h1").isVisible(), true);
 assert.equal(await plain.locator("header").isVisible(), true);
-await plain.locator(".project-archive summary").click();
-assert.equal(await plain.locator(".archive-card:visible").count(), 4);
+assert.equal(await plain.locator(".index-row").count(), 8);
+assert.equal(
+  await plain.getByRole("navigation", { name: "Main navigation" }).isVisible(),
+  true,
+);
 console.log(
-  "Passed: content, shared navigation, and project archive without JavaScript.",
+  "Passed: content, shared navigation, and project index without JavaScript.",
 );
 await noJS.close();
 const report = {

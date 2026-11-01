@@ -1,69 +1,27 @@
 "use strict";
 
-// HTML supplies the navigation. JavaScript adds the small-screen disclosure.
-const menuButton = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
-function closeMenu(returnFocus = false) {
-  if (!menuButton || !mobileMenu) return;
-  menuButton.setAttribute("aria-expanded", "false");
-  menuButton.setAttribute("aria-label", "Open navigation");
-  mobileMenu.hidden = true;
-  if (returnFocus) menuButton.focus();
-}
-if (menuButton && mobileMenu) {
-  menuButton.addEventListener("click", () => {
-    const open = menuButton.getAttribute("aria-expanded") !== "true";
-    menuButton.setAttribute("aria-expanded", String(open));
-    menuButton.setAttribute(
-      "aria-label",
-      open ? "Close navigation" : "Open navigation",
-    );
-    mobileMenu.hidden = !open;
-  });
-  mobileMenu.addEventListener("click", (event) => {
-    if (event.target.closest("a")) closeMenu();
-  });
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !mobileMenu.hidden) closeMenu(true);
-  });
-  document.addEventListener("click", (event) => {
-    if (!mobileMenu.hidden && !event.target.closest(".site-header"))
-      closeMenu();
-  });
-  matchMedia("(min-width: 761px)").addEventListener("change", (event) => {
-    if (event.matches) closeMenu();
-  });
-}
-
-// Local anchors avoid an unnecessary reload from the homepage.
+// Content remains visible unless motion is supported and explicitly permitted.
 if (
-  !location.pathname.includes("/projects/") &&
-  document.getElementById("hero")
+  !matchMedia("(prefers-reduced-motion: reduce)").matches &&
+  "IntersectionObserver" in window
 ) {
+  const reveal = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          reveal.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08 },
+  );
   document
-    .querySelectorAll('a[href^="/index.html#"]')
-    .forEach((link) => link.setAttribute("href", new URL(link.href).hash));
-  const navLinks = [...document.querySelectorAll(".nav-link")];
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          navLinks.forEach((link) => {
-            const active = link.hash === "#" + entry.target.id;
-            link.classList.toggle("active", active);
-            if (active) link.setAttribute("aria-current", "location");
-            else link.removeAttribute("aria-current");
-          });
-        });
-      },
-      { rootMargin: "-15% 0px -65% 0px", threshold: 0 },
-    );
-    ["projects", "about", "community", "contact"]
-      .map((id) => document.getElementById(id))
-      .filter(Boolean)
-      .forEach((section) => observer.observe(section));
-  }
+    .querySelectorAll(".section-heading, .craft-heading, .recognition-card")
+    .forEach((el) => {
+      el.classList.add("reveal-ready");
+      reveal.observe(el);
+    });
 }
 
 document.querySelectorAll("[data-copy-email]").forEach((button) => {

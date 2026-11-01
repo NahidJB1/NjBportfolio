@@ -5,106 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OneStepMY, Nahid Jahan Bhuiyan</title>
 
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/projects/project-base.css" />
-    <link rel="stylesheet" href="/assets/css/projects/onestepmy.css" />
-    <link rel="stylesheet" href="/assets/css/animations.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
     <meta
       name="description"
       content="OneStepMY case study by Nahid Jahan Bhuiyan. Solo UI/UX design and full-stack development, from information architecture to the finished platform."
     />
     <meta name="theme-color" content="#f7f7f2" />
+
     <link
       rel="preload"
-      href="/assets/fonts/inter-latin.woff2"
+      href="/assets/fonts/barlow-condensed-latin.woff2"
       as="font"
       type="font/woff2"
-      crossorigin
+      crossorigin=""
     />
-    <link rel="stylesheet" href="/assets/css/projects/editorial.css" />
+    <link
+      rel="preload"
+      href="/assets/fonts/ibm-plex-sans-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="/assets/js/main.js" defer=""></script>
+    <link
+      rel="icon"
+      href="/favicon.ico"
+      sizes="16x16 32x32 48x48 64x64 128x128 256x256"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   </head>
   <body>
     <!-- site-header -->
-<a class="skip-link" href="#main-content">Skip to content</a>
-<noscript
-  ><style>
-    @media (max-width: 760px) {
-      .nav-hamburger {
-        display: none !important;
-      }
-      #mobileMenu[hidden] {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr;
-        gap: 0 24px;
-      }
-    }
-  </style></noscript
->
-<header class="site-header" id="nav">
-  <nav class="nav container" aria-label="Main navigation">
-    <a class="wordmark" href="/" aria-label="Nahid Jahan Bhuiyan, home" style="display: flex; align-items: center; padding: 0;"
-      ><img src="/assets/photo/njblogo.png" alt="NJB Logo" style="height: 40px; width: auto; display: block; filter: invert(0.85);" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" /><span style="display: none;">njb<span>.</span></span></a
-    >
-    <div class="nav-links" id="navLinks">
-      <a class="nav-link" href="/index.html#projects">Work</a
-      ><a class="nav-link" href="/index.html#about">About</a
-      ><a class="nav-link" href="/index.html#community">Recognition</a>
-    </div>
-    <div class="nav-actions">
-      <a
-        class="resume-link"
-        href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
-        target="_blank"
-        rel="noopener"
-        >Résumé <span aria-hidden="true">↗</span
-        ><span class="sr-only"> (PDF, opens in a new tab)</span></a
-      ><a class="nav-contact" href="/index.html#contact"
-        >Let’s talk <span aria-hidden="true">↗</span></a
-      ><button
-        class="nav-hamburger"
-        id="hamburger"
-        aria-label="Open navigation"
-        aria-expanded="false"
-        aria-controls="mobileMenu"
-      >
-        <span></span><span></span>
-      </button>
-    </div>
-  </nav>
-  <nav
-    class="mobile-menu"
-    id="mobileMenu"
-    aria-label="Mobile navigation"
-    hidden
-  >
-    <a href="/index.html#projects">Work <span aria-hidden="true">↗</span></a
-    ><a href="/index.html#about">About <span aria-hidden="true">↗</span></a
-    ><a href="/index.html#community"
-      >Recognition <span aria-hidden="true">↗</span></a
-    ><a
-      href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
-      target="_blank"
-      rel="noopener"
-      >Résumé <span aria-hidden="true">↗</span></a
-    >
-  </nav>
-</header>
-  <!-- /site-header -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <nav class="container nav" aria-label="Main navigation">
+        <a
+          class="wordmark brand-logo"
+          href="/"
+          aria-label="Nahid Jahan Bhuiyan, home"
+          ><img
+            src="/assets/photo/njblogo.png"
+            width="480"
+            height="480"
+            alt="Nahid Jahan Bhuiyan logo"
+        /></a>
+        <div class="nav-links">
+          <a href="/index.html#projects">Work</a
+          ><a href="/index.html#about">About</a><a href="/research/">Research</a
+          ><a href="/index.html#contact">Contact</a>
+        </div>
+        <a
+          class="resume-link"
+          href="/assets/Nahid_Jahan_Bhuiyan_Resume.pdf"
+          target="_blank"
+          rel="noopener"
+          >Résumé <span class="sr-only">(PDF, opens in a new tab)</span></a
+        >
+      </nav>
+    </header>
+    <!-- /site-header -->
 
     <main class="craft-main" id="main-content">
       <section class="craft-hero">
         <div class="container">
-          <a
-            href="/index.html#projects"
-            class="btn btn-ghost"
-            style="margin-bottom: 3rem; padding: 0.5rem 1rem; font-size: 0.7rem"
+          <a href="/index.html#projects" class="btn btn-ghost"
             >← All projects</a
           >
 
@@ -141,7 +107,6 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="meta-value"
-                style="color: var(--cyan); text-decoration: underline"
                 >Visit Platform ↗</a
               >
             </div>
@@ -209,8 +174,8 @@
             feeling overwhelmed.
           </p>
 
-          <h2 class="craft-heading scroll-reveal" style="margin-top: 4rem">
-            Key Features & Architecture
+          <h2 class="craft-heading scroll-reveal">
+            Key Features &amp; Architecture
           </h2>
           <div class="feature-grid">
             <div class="feature-card scroll-reveal">
@@ -245,9 +210,9 @@
         </div>
       </section>
 
-      <section class="craft-section" style="background: var(--bg2)">
+      <section class="craft-section">
         <div class="container">
-          <h2 class="craft-heading scroll-reveal">Visuals & Interface</h2>
+          <h2 class="craft-heading scroll-reveal">Visuals &amp; Interface</h2>
           <p class="craft-text scroll-reveal">
             A look at how complex global data was structured into a clean UI.
           </p>
@@ -309,19 +274,21 @@
     </main>
 
     <!-- site-footer -->
-<footer class="footer">
-  <div class="container footer-inner">
-    <a class="wordmark" href="/" aria-label="Nahid Jahan Bhuiyan, home" style="display: flex; align-items: center; padding: 0;"
-      ><img src="/assets/photo/njblogo.png" alt="NJB Logo" style="height: 32px; width: auto; display: block; filter: invert(0.85);" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" /><span style="display: none;">njb<span>.</span></span></a
-    ><span>© 2026 Nahid Jahan Bhuiyan</span
-    ><span class="footer-credit">Thoughtfully designed. Personally built.</span
-    ><a class="back-top" href="#main-content"
-      >Back to top <span aria-hidden="true">↑</span></a
-    >
-  </div>
-</footer>
-  <!-- /site-footer -->
-
-    <script src="/assets/js/main.js"></script>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <a
+          href="/"
+          class="wordmark brand-logo"
+          aria-label="Nahid Jahan Bhuiyan, home"
+          ><img
+            src="/assets/photo/njblogo.png"
+            width="480"
+            height="480"
+            alt="Nahid Jahan Bhuiyan logo" /></a
+        ><span>© 2026 Nahid Jahan Bhuiyan</span
+        ><a href="#main-content">Back to top ↑</a>
+      </div>
+    </footer>
+    <!-- /site-footer -->
   </body>
 </html>
