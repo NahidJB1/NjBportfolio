@@ -1,11 +1,9 @@
 {
-  "scope": "Updated synchronized research edition supplied 2026-11-02; source PNGs and public PDFs copied from the current bundle.",
+  "scope": "Updated synchronized research edition supplied 2026-11-02; source PNGs copied from the current bundle.",
   "files": {
     "figure1_longitudinal_dynastic_trajectory_1973_2026.png": "2291249f34584c096241b13dd2acc651c8a31aed34259f5a66bd37aa97331c40",
     "figure2_executive_gatekeeping_and_freshman_fast_track.png": "0e5b0af054529610f109f20446b8cf460a49bc5ce3666af300897e65bd5d998b",
     "figure3_econometric_forest_plot_and_regime_eras.png": "02d2a4907571fd2d860d9472a13aa3bf2a9be64ba5733432cd211cb8e1124ef9",
-    "figure4_generational_crossover_and_gender_pathways.png": "6ae0815df759b8aecb120badb7b604051ce382f881c5cfaea24a58c94f50af90",
-    "supplementary-appendix.pdf": "5089b0ac2d9abb399078a275c9c9b0c1df8166032d855df6a3abbaebbcaa85a8",
-    "working-paper.pdf": "a7280b04f22c731950f73a2dbf33ce22e1cec555fa017e6190e3a6e40d8a8d8c"
+    "figure4_generational_crossover_and_gender_pathways.png": "6ae0815df759b8aecb120badb7b604051ce382f881c5cfaea24a58c94f50af90"
   }
 }

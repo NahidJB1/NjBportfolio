@@ -99,20 +99,6 @@ assert(await fallback.locator("#career-evidence").isVisible());
 assert(await fallback.locator("#evidence-basis").isDisabled());
 assert.equal(await fallback.locator(".article-figure").count(), 4);
 await plain.close();
-const s = JSON.parse(
-  await readFile(
-    "assets/research/bangladesh-dynasties/descriptive-checks.json",
-    "utf8",
-  ),
-);
-assert.equal(s.records, 4527);
-assert.equal(s.uniqueNamed, 2700);
-assert.equal(s.termCabinet.dynastic, 381);
-assert.equal(s.termCabinet.records, 934);
-assert.equal(
-  s.freshmen.reduce((n, r) => n + r.total, 0),
-  2508,
-);
 const hash = (b) => createHash("sha256").update(b).digest("hex");
 const integrity = JSON.parse(
   await readFile(

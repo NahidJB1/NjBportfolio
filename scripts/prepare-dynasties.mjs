@@ -127,10 +127,6 @@ summary.familyPartyDefinitions = {
   excludingIndependents: sum(fam, "Multi_Party_NoInd_52"),
   majorThree: sum(fam, "Multi_Party_Major_44"),
 };
-await writeFile(
-  out + "/descriptive-checks.json",
-  JSON.stringify(summary, null, 2) + "\n",
-);
 console.log(JSON.stringify({ ...summary, parliaments: undefined }, null, 2));
 console.log(
   "Generations:",
@@ -157,22 +153,11 @@ for (const file of (await readdir(figureDir))
   figures.push({ name, width: meta.width, height: meta.height });
 }
 await writeFile(out + "/figures.json", JSON.stringify(figures, null, 2));
-for (const [source, name] of [
-  [
-    "bangladesh_dynasties_q1_step1_theoretical_and_econometric_paper.pdf",
-    "working-paper.pdf",
-  ],
-  [
-    "bangladesh_dynasties_q1_online_supplementary_appendix.pdf",
-    "supplementary-appendix.pdf",
-  ],
-])
-  await copyFile(await sourceFile("01_Manuscript_and_Cover_Letter", source), join(out, name));
 const integrity = {
-  scope: "Updated synchronized research edition supplied 2026-11-02; source PNGs and public PDFs copied from the current bundle.",
+  scope: "Updated synchronized research edition supplied 2026-11-02; source PNGs copied from the current bundle.",
   files: {},
 };
-for (const file of [...figures.map(({ name }) => `${name}.png`), "supplementary-appendix.pdf", "working-paper.pdf"]) {
+for (const file of figures.map(({ name }) => `${name}.png`)) {
   integrity.files[file] = createHash("sha256").update(await readFile(join(out, file))).digest("hex");
 }
 await writeFile(join(out, "source-integrity.json"), JSON.stringify(integrity, null, 2) + "\n");

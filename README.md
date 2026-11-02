@@ -1,4 +1,4 @@
-﻿# Nahid Jahan Bhuiyan — Portfolio
+# Nahid Jahan Bhuiyan — Portfolio
 
 Buildless HTML, CSS and vanilla JavaScript. Oxblood ink (#651F2B), grey paper (#ECEDEA), self-hosted Barlow Condensed and IBM Plex Sans. Font licenses are included in assets/fonts.
 
@@ -53,7 +53,7 @@ Portfolio content and project assets © 2026 Nahid Jahan Bhuiyan. Font licenses 
 
 ## Bangladesh research article
 
-`research/bangladesh-political-families.html` explains the working research for general readers. It uses all four updated figures, alongside responsive WebP copies, and comparison graphics calculated from the replication CSV. Measure definitions and denominators are explained in the article. The source research folder is read only; only figure originals, manuscript/appendix PDFs and aggregate descriptive checks are copied into the site. Raw personal-profile CSVs and internal editorial reports are not included in the website.
+`research/bangladesh-political-families.html` explains the working research for general readers. It uses all four updated figures, alongside responsive WebP copies, and comparison graphics calculated from the replication CSV. Measure definitions and denominators are explained in the article. The source research folder is read only; only figure originals and responsive WebP copies are copied into the site. Raw personal-profile CSVs, working manuscripts, appendices and internal editorial reports are not included in the website.
 
 `node scripts/prepare-dynasties.mjs` regenerates these assets from the current flat bundle or the original nested layout; pass a bundle path as the first argument if it moved. Article prose is edited directly in its HTML. This helper does not rerun the full econometric models.
 
@@ -67,6 +67,6 @@ The article's `#geography` section contains a district/regional choropleth, parl
 
 `node scripts/prepare-dynasty-map.mjs [bundle-directory]` regenerates the map data, preview, SVG and article section. It accepts the original nested bundle or the replacement flat bundle. The census checksum is recorded in `map-match-audit.json`; the replacement CSV matched the original article census exactly. The map uses 4,050 named general-seat records in 19 comparable regional groups for 1973–2026, or 3,433 records in 64 modern districts for 1986–2026. Reserved seats, vacancy placeholders and ten cross-district entries are handled explicitly; no early constituency is guessed into a modern district. Regional shapes group modern district outlines and do not reconstruct historical boundaries. These are representation measures, not voter-preference or vote-share data.
 
-Boundaries are from geoBoundaries' BBS/OCHA 2020 district layer, under CC BY 3.0 IGO. Attribution, source URLs and adaptation details are in the article and `map-boundary-source.json`. Paths are simplified for screen display, with subpixel components omitted. Run `node scripts/verify-dynasty-map.mjs [seat-csv-path]` to reconcile the per-parliament source totals and test all 1,034 supported area/period combinations, keyboard controls, eight widths, accessibility and the static-table fallback.
+Boundaries are from geoBoundaries' BBS/OCHA 2020 district layer, under CC BY 3.0 IGO. Attribution and adaptation details are in the article. Paths are simplified for screen display, with subpixel components omitted. Run `node scripts/verify-dynasty-map.mjs [seat-csv-path]` to reconcile the per-parliament source totals and test all 1,034 supported area/period combinations, keyboard controls, eight widths, accessibility and the static-table fallback.
 
-`source-integrity.json` records the updated research edition's imported figures and PDFs. Research asset checks use that manifest by default; pass the current bundle directory to `verify-research.mjs` for an additional direct PNG comparison. The updated figure and PDF files were supplied with the same seat CSV checksum as the earlier bundle.
+`source-integrity.json` records the updated research edition's imported figures. Research asset checks use that manifest by default; pass the current bundle directory to `verify-research.mjs` for an additional direct PNG comparison. The updated figure files were supplied with the same seat CSV checksum as the earlier bundle.
