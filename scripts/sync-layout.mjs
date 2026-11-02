@@ -11,8 +11,9 @@ const footer = (
 const files = [
   "index.html",
   "404.html",
-  "research/index.html",
-  "research/entry-template.html",
+  ...(await readdir(resolve(root, "research")))
+    .filter((file) => file.endsWith(".html"))
+    .map((file) => "research/" + file),
   ...(await readdir(resolve(root, "projects")))
     .filter((file) => file.endsWith(".html"))
     .map((file) => "projects/" + file),

@@ -32,6 +32,7 @@ const pages = [
   "/404.html",
   "/research/",
   "/research/entry-template.html",
+  "/research/bangladesh-political-families.html",
 ];
 const links = new Set();
 for (const route of pages) {

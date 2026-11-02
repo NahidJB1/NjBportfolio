@@ -7,8 +7,9 @@ const p = await b.newPage({ reducedMotion: "reduce" });
 const routes = [
   "/",
   "/404.html",
-  "/research/",
-  "/research/entry-template.html",
+  ...(await readdir("research"))
+    .filter((f) => f.endsWith(".html"))
+    .map((f) => "/research/" + f),
   ...(await readdir("projects")).map((f) => "/projects/" + f),
 ];
 let checks = 0;

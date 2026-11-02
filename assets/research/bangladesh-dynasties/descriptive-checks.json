@@ -1,0 +1,419 @@
+{
+  "source": "Supplied replication CSVs; descriptive aggregation only. Original model estimates have not been independently replicated.",
+  "records": 4527,
+  "namedSeatRecords": 4514,
+  "uniqueNamed": 2700,
+  "placeholders": 13,
+  "dynasticSeats": 1014,
+  "families": 170,
+  "uniqueDynasts": 401,
+  "careerCabinet": {
+    "records": 1461,
+    "dynastic": 565,
+    "percent": 38.672142368240934
+  },
+  "termCabinet": {
+    "records": 934,
+    "dynastic": 381,
+    "percent": 40.79229122055675
+  },
+  "careerFull": {
+    "records": 900,
+    "dynastic": 432,
+    "percent": 48
+  },
+  "termFull": {
+    "records": 597,
+    "dynastic": 300,
+    "percent": 50.25125628140704
+  },
+  "freshmen": [
+    {
+      "dynastic": true,
+      "total": 453,
+      "careerCabinet": 190,
+      "careerFull": 134,
+      "termCabinet": 118,
+      "termFull": 86
+    },
+    {
+      "dynastic": false,
+      "total": 2055,
+      "careerCabinet": 319,
+      "careerFull": 155,
+      "termCabinet": 186,
+      "termFull": 96
+    }
+  ],
+  "parliaments": [
+    {
+      "parliament": 1,
+      "total": 317,
+      "dynastic": 54,
+      "heirs": 5,
+      "inTerm": {
+        "records": 43,
+        "dynastic": 14,
+        "percent": 32.55813953488372
+      },
+      "parties": [
+        {
+          "party": "AL",
+          "total": 311,
+          "dynastic": 53
+        },
+        {
+          "party": "BNP",
+          "total": 0,
+          "dynastic": 0
+        },
+        {
+          "party": "JP",
+          "total": 0,
+          "dynastic": 0
+        }
+      ]
+    },
+    {
+      "parliament": 2,
+      "total": 335,
+      "dynastic": 52,
+      "heirs": 13,
+      "inTerm": {
+        "records": 72,
+        "dynastic": 26,
+        "percent": 36.111111111111114
+      },
+      "parties": [
+        {
+          "party": "AL",
+          "total": 43,
+          "dynastic": 6
+        },
+        {
+          "party": "BNP",
+          "total": 252,
+          "dynastic": 40
+        },
+        {
+          "party": "JP",
+          "total": 0,
+          "dynastic": 0
+        }
+      ]
+    },
+    {
+      "parliament": 3,
+      "total": 331,
+      "dynastic": 57,
+      "heirs": 22,
+      "inTerm": {
+        "records": 59,
+        "dynastic": 16,
+        "percent": 27.11864406779661
+      },
+      "parties": [
+        {
+          "party": "AL",
+          "total": 82,
+          "dynastic": 21
+        },
+        {
+          "party": "BNP",
+          "total": 0,
+          "dynastic": 0
+        },
+        {
+          "party": "JP",
+          "total": 207,
+          "dynastic": 30
+        }
+      ]
+    },
+    {
+      "parliament": 4,
+      "total": 305,
+      "dynastic": 35,
+      "heirs": 14,
+      "inTerm": {
+        "records": 69,
+        "dynastic": 23,
+        "percent": 33.333333333333336
+      },
+      "parties": [
+        {
+          "party": "AL",
+          "total": 0,
+          "dynastic": 0
+        },
+        {
+          "party": "BNP",
+          "total": 0,
+          "dynastic": 0
+        },
+        {
+          "party": "JP",
+          "total": 266,
+          "dynastic": 35
+        }
+      ]
+    },
+    {
+      "parliament": 5,
+      "total": 352,
+      "dynastic": 87,
+      "heirs": 22,
+      "inTerm": {
+        "records": 46,
+        "dynastic": 22,
+        "percent": 47.82608695652174
+      },
+      "parties": [
+        {
+          "party": "AL",
+          "total": 98,
+          "dynastic": 29
+        },
+        {
+          "party": "BNP",
+          "total": 182,
+          "dynastic": 40
+        },
+        {
+          "party": "JP",
+          "total": 39,
+          "dynastic": 12
+        }
+      ]
+    },
+    {
+      "parliament": 6,
+      "total": 330,
+      "dynastic": 59,
+      "heirs": 20,
+      "inTerm": {
+        "records": 76,
+        "dynastic": 36,
+        "percent": 47.36842105263158
+      },
+      "parties": [
+        {
+          "party": "AL",
+          "total": 0,
+          "dynastic": 0
+        },
+        {
+          "party": "BNP",
+          "total": 319,
+          "dynastic": 59
+        },
+        {
+          "party": "JP",
+          "total": 0,
+          "dynastic": 0
+        }
+      ]
+    },
+    {
+      "parliament": 7,
+      "total": 358,
+      "dynastic": 110,
+      "heirs": 31,
+      "inTerm": {
+        "records": 109,
+        "dynastic": 53,
+        "percent": 48.62385321100918
+      },
+      "parties": [
+        {
+          "party": "AL",
+          "total": 194,
+          "dynastic": 58
+        },
+        {
+          "party": "BNP",
+          "total": 120,
+          "dynastic": 37
+        },
+        {
+          "party": "JP",
+          "total": 38,
+          "dynastic": 14
+        }
+      ]
+    },
+    {
+      "parliament": 8,
+      "total": 371,
+      "dynastic": 108,
+      "heirs": 42,
+      "inTerm": {
+        "records": 87,
+        "dynastic": 51,
+        "percent": 58.62068965517241
+      },
+      "parties": [
+        {
+          "party": "AL",
+          "total": 64,
+          "dynastic": 33
+        },
+        {
+          "party": "BNP",
+          "total": 252,
+          "dynastic": 63
+        },
+        {
+          "party": "JP",
+          "total": 18,
+          "dynastic": 6
+        }
+      ]
+    },
+    {
+      "parliament": 9,
+      "total": 369,
+      "dynastic": 98,
+      "heirs": 45,
+      "inTerm": {
+        "records": 68,
+        "dynastic": 24,
+        "percent": 35.294117647058826
+      },
+      "parties": [
+        {
+          "party": "AL",
+          "total": 287,
+          "dynastic": 70
+        },
+        {
+          "party": "BNP",
+          "total": 39,
+          "dynastic": 11
+        },
+        {
+          "party": "JP",
+          "total": 32,
+          "dynastic": 13
+        }
+      ]
+    },
+    {
+      "parliament": 10,
+      "total": 367,
+      "dynastic": 102,
+      "heirs": 58,
+      "inTerm": {
+        "records": 88,
+        "dynastic": 31,
+        "percent": 35.22727272727273
+      },
+      "parties": [
+        {
+          "party": "AL",
+          "total": 290,
+          "dynastic": 84
+        },
+        {
+          "party": "BNP",
+          "total": 0,
+          "dynastic": 0
+        },
+        {
+          "party": "JP",
+          "total": 45,
+          "dynastic": 10
+        }
+      ]
+    },
+    {
+      "parliament": 11,
+      "total": 390,
+      "dynastic": 115,
+      "heirs": 77,
+      "inTerm": {
+        "records": 95,
+        "dynastic": 35,
+        "percent": 36.8421052631579
+      },
+      "parties": [
+        {
+          "party": "AL",
+          "total": 334,
+          "dynastic": 97
+        },
+        {
+          "party": "BNP",
+          "total": 8,
+          "dynastic": 3
+        },
+        {
+          "party": "JP",
+          "total": 30,
+          "dynastic": 9
+        }
+      ]
+    },
+    {
+      "parliament": 12,
+      "total": 351,
+      "dynastic": 83,
+      "heirs": 68,
+      "inTerm": {
+        "records": 68,
+        "dynastic": 25,
+        "percent": 36.76470588235294
+      },
+      "parties": [
+        {
+          "party": "AL",
+          "total": 273,
+          "dynastic": 73
+        },
+        {
+          "party": "BNP",
+          "total": 0,
+          "dynastic": 0
+        },
+        {
+          "party": "JP",
+          "total": 13,
+          "dynastic": 3
+        }
+      ]
+    },
+    {
+      "parliament": 13,
+      "total": 351,
+      "dynastic": 54,
+      "heirs": 44,
+      "inTerm": {
+        "records": 54,
+        "dynastic": 25,
+        "percent": 46.2962962962963
+      },
+      "parties": [
+        {
+          "party": "AL",
+          "total": 0,
+          "dynastic": 0
+        },
+        {
+          "party": "BNP",
+          "total": 249,
+          "dynastic": 50
+        },
+        {
+          "party": "JP",
+          "total": 0,
+          "dynastic": 0
+        }
+      ]
+    }
+  ],
+  "familyPartyDefinitions": {
+    "allLabels": 60,
+    "excludingIndependents": 52,
+    "majorThree": 44
+  }
+}

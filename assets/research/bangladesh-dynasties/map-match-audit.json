@@ -1,0 +1,63 @@
+{
+  "sourceSHA256": "ce3fb4557a465dca81da8525a7e27b65d3696ebf5f6afd4b28137b9bd6d8f1d1",
+  "total": 4527,
+  "reserved": 464,
+  "vacantGeneral": 13,
+  "eligibleGeneral": 4050,
+  "regionalMapped": 4050,
+  "districtMapped": 3433,
+  "earlyRegionalOnly": 607,
+  "ambiguousDistrict": [
+    {
+      "parliament": 4,
+      "constituency": "Bakerganj-cum-Pirojpur (Barisal-cum-Pirojpur)",
+      "dynastic": 0
+    },
+    {
+      "parliament": 4,
+      "constituency": "Mymensingh-cum-Netrokona",
+      "dynastic": 0
+    },
+    {
+      "parliament": 5,
+      "constituency": "Bakerganj-cum-Pirojpur (Barisal-cum-Pirojpur)",
+      "dynastic": 0
+    },
+    {
+      "parliament": 5,
+      "constituency": "Mymensingh-cum-Netrokona",
+      "dynastic": 0
+    },
+    {
+      "parliament": 6,
+      "constituency": "Bakerganj-cum-Pirojpur (Barisal-cum-Pirojpur)",
+      "dynastic": 0
+    },
+    {
+      "parliament": 6,
+      "constituency": "Mymensingh-cum-Netrokona",
+      "dynastic": 0
+    },
+    {
+      "parliament": 7,
+      "constituency": "Bakerganj-cum-Pirojpur (Barisal-cum-Pirojpur)",
+      "dynastic": 1
+    },
+    {
+      "parliament": 7,
+      "constituency": "Mymensingh-cum-Netrokona",
+      "dynastic": 0
+    },
+    {
+      "parliament": 8,
+      "constituency": "Bakerganj-cum-Pirojpur (Barisal-cum-Pirojpur)",
+      "dynastic": 0
+    },
+    {
+      "parliament": 8,
+      "constituency": "Mymensingh-cum-Netrokona",
+      "dynastic": 0
+    }
+  ],
+  "unmapped": []
+}
